@@ -1,0 +1,4 @@
+ErrorDocument 404 /gestion-de-stock/404.php
+
+# Prevent directory listings
+Options -Indexes

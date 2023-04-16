@@ -13,7 +13,7 @@
             $page = ucfirst($_GET['page']);
             echo $page;
         } else {
-            echo "Gestion de stock SBA";
+            echo $appName;
         }
         ?>
     </title>
@@ -28,7 +28,6 @@
 
     <link rel="stylesheet" href="assets/plugins/fontawesome/css/fontawesome.min.css">
     <link rel="stylesheet" href="assets/plugins/fontawesome/css/all.min.css">
-    <link rel="stylesheet" href="assets/css/owl.carousel.min.css">
     <!-- <link rel="stylesheet" href="assets/css"> -->
     <link rel="stylesheet" href="assets/css/style.css">
 </head>

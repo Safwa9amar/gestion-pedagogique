@@ -2,14 +2,14 @@
 $user = "root";
 $password = '';
 $host = "localhost";
-$db = "gestion_stock";
+$db = "service_technique";
 $connection = mysqli_connect($host, $user, $password) or die("Unable to connect!");
 
 $db_q = "CREATE DATABASE IF NOT EXISTS gestion_stock";
 mysqli_query($connection, $db_q);
 mysqli_select_db($connection, $db) or die("Unable to select database!");
 // check if db is empty
-$check = mysqli_query($connection, "SELECT * FROM `clients`");
+$check = mysqli_query($connection, "SELECT * FROM `config`");
 if (mysqli_num_rows($check) == 0) {
     // import sql file
     $sql = file_get_contents("./gestion_stock.sql");

@@ -1,11 +1,8 @@
 <?php
 
+
 $pages = [
     'dashboard',
-    'produits',
-    'ventes',
-    'achats',
-    'clients',
     'profile',
     'settings',
 ];
@@ -19,6 +16,6 @@ $is_logged = isset($_SESSION['user']) ?? false;
 
 // CURRENCY SETTINGS
 $currency = 'DZD';
-$appName = 'Gestion de stock sba';
+$appName = 'Gestion de service technique';
 
 $api = './api/?route=';

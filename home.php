@@ -14,6 +14,26 @@ if (isset($_GET['logout'])) {
     session_destroy();
     header('location:index.php');
 }
+
+// language
+$config = getRowById('config', 1);
+$selcted_lang = $config['lang'];
+
+if ($selcted_lang) {
+    $_SESSION['lang'] = $selcted_lang;
+}
+
+if (isset($_GET['lang'])) {
+    $_SESSION['lang'] = $_GET['lang'];
+    // update lang in db
+    editRow('config', ['lang' => $_GET['lang']], 1);
+} else if (!isset($_SESSION['lang'])) {
+    $_SESSION['lang'] = 'fr';
+}
+
+if (isset($_SESSION['lang'])) {
+    include 'lang/' . $_SESSION['lang'] . '.php';
+}
 ?>
 <!DOCTYPE html>
 <?php include 'templates/components/header.php'; ?>
@@ -44,6 +64,8 @@ if (isset($_GET['logout'])) {
                 ?>
             </div>
         </div>
+      
+    </div>
 </body>
 <?php include 'templates/components/scripts.php'; ?>
 <script>
@@ -51,4 +73,5 @@ if (isset($_GET['logout'])) {
     //     console.clear()
     // })
 </script>
+
 </html>

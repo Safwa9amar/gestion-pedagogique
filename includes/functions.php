@@ -118,7 +118,7 @@ function getRowById($table, $id)
 }
 function getRowByParam($table, $param, $qr)
 {
-    isApi($_SERVER['REQUEST_URI']) ? include '../includes/database.php' : include '../includes/database.php';
+    isApi($_SERVER['REQUEST_URI']) ? include '../includes/database.php' : include './includes/database.php';
     $query = "SELECT * FROM $table WHERE $param = '$qr'";
     $row = mysqli_fetch_assoc(mysqli_query($connection, $query));
     return $row;

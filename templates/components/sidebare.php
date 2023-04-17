@@ -1,5 +1,5 @@
 <?php
-$page = $_GET['page'];
+$page = $_GET['page'] ?? '';
 $sub_page = $_GET['sub_page'] ?? '';
 ?>
 <div class="sidebar" id="sidebar">
@@ -13,16 +13,89 @@ $sub_page = $_GET['sub_page'] ?? '';
           </a>
         </li>
         <li class="submenu">
-          <a href="javascript:void(0);"><img src="assets/img/icons/product.svg" alt="img" /><span>
+          <a href="javascript:void(0);">
 
-              <?php echo $lang['produit'] ?>
+            <!-- <img src="assets/img/icons/product.svg" alt="img" /> -->
+
+            <span>
+              <?php echo $lang['orientation'] ?>
             </span>
             <span class="menu-arrow"></span></a>
           <ul>
 
             <li>
-              <a href="?page=produits&sub_page=add_product"
-                class="<?php echo $sub_page == 'add_product' ? 'active' : '' ?>">Ajouter un produit</a>
+              <a href="?page=produits&sub_page=add_product" class="<?php echo $sub_page == 'add_product' ? 'active' : '' ?>">
+                <?php echo $lang['inscriptions_des_demandeurs'] ?>
+              </a>
+            </li>
+
+          </ul>
+        </li>
+        <li class="submenu">
+          <a href="javascript:void(0);">
+
+            <!-- <img src="assets/img/icons/product.svg" alt="img" /> -->
+
+            <span>
+              <?php echo $lang['formations'] ?>
+            </span>
+            <span class="menu-arrow"></span></a>
+          <ul>
+
+            <li>
+              <a href="?page=produits&sub_page=add_product" class="<?php echo $sub_page == 'add_product' ? 'active' : '' ?>">Ajouter un produit</a>
+            </li>
+
+          </ul>
+        </li>
+        <li class="submenu">
+          <a href="javascript:void(0);">
+
+            <!-- <img src="assets/img/icons/product.svg" alt="img" /> -->
+
+            <span>
+              <?php echo $lang['recherche'] ?>
+            </span>
+            <span class="menu-arrow"></span></a>
+          <ul>
+
+            <li>
+              <a href="?page=produits&sub_page=add_product" class="<?php echo $sub_page == 'add_product' ? 'active' : '' ?>">Ajouter un produit</a>
+            </li>
+
+          </ul>
+        </li>
+        <li class="submenu">
+          <a href="javascript:void(0);">
+
+            <!-- <img src="assets/img/icons/product.svg" alt="img" /> -->
+
+            <span>
+              <?php echo $lang['techniques'] ?>
+            </span>
+            <span class="menu-arrow"></span></a>
+          <ul>
+
+            <li>
+              <a href="?page=produits&sub_page=add_product" class="<?php echo $sub_page == 'add_product' ? 'active' : '' ?>">Ajouter un produit</a>
+            </li>
+
+          </ul>
+        </li>
+
+        <li class="submenu">
+          <a href="javascript:void(0);">
+
+            <!-- <img src="assets/img/icons/product.svg" alt="img" /> -->
+
+            <span>
+              <?php echo $lang['manifestations'] ?>
+            </span>
+            <span class="menu-arrow"></span></a>
+          <ul>
+
+            <li>
+              <a href="?page=produits&sub_page=add_product" class="<?php echo $sub_page == 'add_product' ? 'active' : '' ?>">Ajouter un produit</a>
             </li>
 
           </ul>

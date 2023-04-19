@@ -18,9 +18,11 @@ $lang['manifestations'] = "discipline et manifestations culturelles et sportives
 // side bar lang file end
 
 
-// login page lang file start
 
 
-
-
-// login page lang file end
+// 404 page lang file start
+$lang['404'] = '404';
+$lang['page_not_found'] = ' Oups! Page non trouvée!';
+$lang['page_not_found_desc'] = 'La page que vous avez demandée n\'a pas été trouvée.';
+$lang['back_to_home'] = 'Retour à l\'accueil';
+// 404 page lang file end

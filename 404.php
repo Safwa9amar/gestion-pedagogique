@@ -1,6 +1,9 @@
 <!DOCTYPE html>
 <html lang="en">
-<?php include 'templates/components/header.php'; ?>
+<?php 
+include 'includes/config.php';
+include 'includes/functions.php';
+include 'templates/components/header.php'; ?>
 
 <body class="error-page">
     <div id="global-loader">

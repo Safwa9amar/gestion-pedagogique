@@ -1,12 +1,12 @@
 <?php
 // start session
 session_start();
-include '../includes/database.php';
-include '../includes/functions.php';
-include '../includes/config.php';
-
+include '../config.php';
+include '../helpers/urlFor.php';
+include '../controllers/dataBaseController.php';
 
 $error_message = false;
+$db = new DatabaseController();
 
 // handle form submit
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
@@ -29,7 +29,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             // sanitize password
             $password = filter_var($password, FILTER_SANITIZE_STRING);
             // TODO: check if user exists in database
-            $user = getRowByParam('users', 'email', $email);
+            $user = $db->getRowByParam('users', 'email', $email);
             if (count($user) > 0) {
                 // get hashed password from database
                 $hashed_password = $user['password'];
@@ -39,9 +39,9 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                     // create session and redirect to dashboard
                     $user_id = $user['id'];
                     $_SESSION['user'] = $user['name']; // set user session variable
-                    sleep(2);
+                    $_SESSION['is_logged'] = true;
+                    sleep(1);
                     http_response_code(200);
-
                     echo '{"message":"connexion réussie"}';
                     // header('Location: home.php'); // redirect to home page
                     exit();

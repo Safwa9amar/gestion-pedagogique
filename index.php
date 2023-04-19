@@ -1,5 +1,6 @@
 <?php
-include './includes/config.php';
+include 'config.php';
+include './helpers/urlFor.php';
 session_start();
 
 if (isset($_SESSION['user'])) {
@@ -13,7 +14,9 @@ if (isset($_SESSION['user'])) {
 <html>
 
 <head>
-    <?php include './templates/components/header.php' ?>
+    <?php
+    include urlFor(COMPONENTS, 'header.php');
+    ?>
     <style>
         body {
             display: flex;
@@ -69,7 +72,8 @@ if (isset($_SESSION['user'])) {
         </div>
     </div>
 </body>
-<?php include './templates/components/scripts.php' ?>
+<?php include urlFor(COMPONENTS, 'scripts.php'); ?>
+
 <script>
     $(document).ready(function () {
         $('#loginForm').submit(function (event) {

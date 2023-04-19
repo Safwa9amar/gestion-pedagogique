@@ -1,7 +1,7 @@
 <?php
 include 'config.php';
 include '../includes/config.php';
-if ($is_logged) {
+if (isset($_SESSION['is_logged'])) {
     // check if request is valid 
     if (isset($_GET['route'])) {
         // get the route

@@ -1,4 +1,18 @@
-<div class="header">
+<?php
+// check if language is set and back referer is set
+if (isset($_GET['lang']) && isset($_SERVER['HTTP_REFERER'])) {
+  // set language
+  $_SESSION['lang'] = $_GET['lang'];
+  // redirect to back referer
+  header('Location: ' . $_SERVER['HTTP_REFERER']);
+}
+?>
+
+<div style="
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+" class="header">
   <div class="header-left active">
     <a href="./" class="logo">
       <img src="https://via.placeholder.com/350x150" alt="" />

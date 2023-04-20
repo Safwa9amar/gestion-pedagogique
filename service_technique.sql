@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Apr 19, 2023 at 09:09 PM
+-- Generation Time: Apr 20, 2023 at 05:45 AM
 -- Server version: 10.4.27-MariaDB
 -- PHP Version: 8.0.25
 
@@ -38,6 +38,32 @@ CREATE TABLE `config` (
 
 INSERT INTO `config` (`id`, `lang`) VALUES
 (1, 'ar');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `formulaires`
+--
+
+CREATE TABLE `formulaires` (
+  `id` int(11) NOT NULL,
+  `name` varchar(255) NOT NULL,
+  `name_ar` varchar(255) NOT NULL,
+  `name_fr` varchar(255) NOT NULL,
+  `description_ar` varchar(255) NOT NULL,
+  `description_fr` varchar(255) NOT NULL,
+  `filename_ar` varchar(255) NOT NULL,
+  `filename_fr` varchar(255) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `formulaires`
+--
+
+INSERT INTO `formulaires` (`id`, `name`, `name_ar`, `name_fr`, `description_ar`, `description_fr`, `filename_ar`, `filename_fr`) VALUES
+(1, 'Fiche d’inscription et de voeux', 'استمارة التسجيل والرغبات', 'Fiche d’inscription et de voeux', 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Laudantium, voluptatum.', 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Laudantium, voluptatum.', 'fich_ar.docx', 'fich_fr.docx'),
+(2, 'test.docx', 'استمارة التسجيل والرغبات', 'Fiche d’inscription et de voeux', 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Laudantium, voluptatum.', 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Laudantium, voluptatum.', '', ''),
+(3, 'test.docx', 'استمارة التسجيل والرغبات', 'Fiche d’inscription et de voeux', 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Laudantium, voluptatum.', 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Laudantium, voluptatum.', '', '');
 
 -- --------------------------------------------------------
 
@@ -149,6 +175,12 @@ ALTER TABLE `config`
   ADD PRIMARY KEY (`id`);
 
 --
+-- Indexes for table `formulaires`
+--
+ALTER TABLE `formulaires`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Indexes for table `lang`
 --
 ALTER TABLE `lang`
@@ -169,6 +201,12 @@ ALTER TABLE `session`
 --
 ALTER TABLE `config`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+
+--
+-- AUTO_INCREMENT for table `formulaires`
+--
+ALTER TABLE `formulaires`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT for table `lang`

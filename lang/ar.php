@@ -5,10 +5,22 @@ $lang['produit'] = 'المنتج';
 $lang['logout'] = 'تسجيل خروج';
 
 $lang['orientation'] = 'توجيه وإدماج المترشحين';
-    // sub menu
-    $lang['inscriptions_des_demandeurs'] = "تنظيم تسجيلات طالبي التكوين";
-    // sub menu
-    
+// sub menu
+$lang['inscriptions_des_demandeurs'] = "تنظيم تسجيلات طالبي التكوين";
+// طباعة استمارات
+$lang['impression_des_formulaires'] = "طباعة النماذج";
+// sub menu
+
+
+// general lang file
+$lang['imprimer'] = 'طباعة';
+$lang['telecharger'] = 'تحميل';
+$lang['ar'] = 'عربي';
+$lang['error'] = 'خطأ';
+$lang['print_error'] = 'خطأ في طباعة النموذج';
+$lang['success'] = 'نجاح';
+
+
 $lang['formations'] = 'تنظيم وتسيير التكوين';
 $lang['recherche'] = "تنظيم ومتابعة نشاطات البحث والدراسات";
 $lang['techniques'] = "تسيير الأجهزة التقنية والبيداغوجية";

@@ -1,106 +1,85 @@
 <?php
-$page = $_GET['page'] ?? '';
-$sub_page = $_GET['sub_page'] ?? '';
-?>
-<div class="sidebar" id="sidebar">
+$view = $_GET['view'] ?? '';
+$sub_view = $_GET['sub_view'] ?? '';
+
+$side_menu = array(
+
+  'orientation' =>
+  array(
+    'title' => $lang['orientation'],
+    'icon' => 'product.svg',
+    'link' => '#',
+    'sub_menu' => array(
+      'impression_des_formulaires' => array(
+        'title' =>
+        $lang['impression_des_formulaires'],
+        'link' =>
+        '?view=orientation&sub_view=impression_des_formulaires'
+      )
+    )
+  ),
+  'formations' =>
+  array(
+    'title' => $lang['formations'],
+    'icon' => 'product.svg',
+    'link' => '#',
+    'sub_menu' => array(
+      'inscriptions_des_demandeurs' => array(
+        'title' =>
+        $lang['inscriptions_des_demandeurs'],
+        'link' =>
+        '?view=produits&sub_view=add_product'
+      )
+    )
+  ),
+); ?>
+<div style="<?php
+if (isset($_SESSION['lang']) && $_SESSION['lang'] == 'ar') {
+  echo 'right: 0;';
+} ?>
+" class="sidebar" id="sidebar">
   <div class="sidebar-inner slimscroll">
     <div id="sidebar-menu" class="sidebar-menu">
       <ul>
-        <li class="active">
+        <li>
           <a href="./"><img src="assets/img/icons/dashboard.svg" alt="img" /><span>
               <?php echo $lang['dashboard'] ?>
             </span>
           </a>
         </li>
-        <li class="submenu">
-          <a href="javascript:void(0);">
-
-            <!-- <img src="assets/img/icons/product.svg" alt="img" /> -->
-
-            <span>
-              <?php echo $lang['orientation'] ?>
-            </span>
-            <span class="menu-arrow"></span></a>
-          <ul>
-
-            <li>
-              <a href="?page=produits&sub_page=add_product" class="<?php echo $sub_page == 'add_product' ? 'active' : '' ?>">
-                <?php echo $lang['inscriptions_des_demandeurs'] ?>
+        <?php
+        foreach ($side_menu as $key => $value) {
+          if (count($value['sub_menu']) > 0) { ?>
+            <li class="submenu">
+              <a class="<?php echo $view == $key ? 'active' : '' ?>" href="<?php echo $value['link'] ?>">
+                <img style="margin-left: 10px;" src="assets/img/icons/<?php echo $value['icon'] ?>" alt="img" />
+                <span>
+                  <?php echo $value['title'] ?>
+                </span>
+                <?php
+                // check lang
+                if (isset($_SESSION['lang']) && $_SESSION['lang'] == 'fr') {
+                  echo '<span class="menu-arrow"></span>';
+                }
+                ?>
               </a>
+              <ul style="display: none">
+                <?php
+                foreach ($value['sub_menu'] as $sub_key => $sub_value) { ?>
+                  <li>
+                    <a class="<?php echo $sub_view == $sub_key ? 'active' : '' ?>" href="<?php echo $sub_value['link'] ?>">
+                      <?php echo $sub_value['title'] ?>
+                    </a>
+                  </li>
+                  <?php
+                }
+                ?>
+              </ul>
             </li>
-
-          </ul>
-        </li>
-        <li class="submenu">
-          <a href="javascript:void(0);">
-
-            <!-- <img src="assets/img/icons/product.svg" alt="img" /> -->
-
-            <span>
-              <?php echo $lang['formations'] ?>
-            </span>
-            <span class="menu-arrow"></span></a>
-          <ul>
-
-            <li>
-              <a href="?page=produits&sub_page=add_product" class="<?php echo $sub_page == 'add_product' ? 'active' : '' ?>">Ajouter un produit</a>
-            </li>
-
-          </ul>
-        </li>
-        <li class="submenu">
-          <a href="javascript:void(0);">
-
-            <!-- <img src="assets/img/icons/product.svg" alt="img" /> -->
-
-            <span>
-              <?php echo $lang['recherche'] ?>
-            </span>
-            <span class="menu-arrow"></span></a>
-          <ul>
-
-            <li>
-              <a href="?page=produits&sub_page=add_product" class="<?php echo $sub_page == 'add_product' ? 'active' : '' ?>">Ajouter un produit</a>
-            </li>
-
-          </ul>
-        </li>
-        <li class="submenu">
-          <a href="javascript:void(0);">
-
-            <!-- <img src="assets/img/icons/product.svg" alt="img" /> -->
-
-            <span>
-              <?php echo $lang['techniques'] ?>
-            </span>
-            <span class="menu-arrow"></span></a>
-          <ul>
-
-            <li>
-              <a href="?page=produits&sub_page=add_product" class="<?php echo $sub_page == 'add_product' ? 'active' : '' ?>">Ajouter un produit</a>
-            </li>
-
-          </ul>
-        </li>
-
-        <li class="submenu">
-          <a href="javascript:void(0);">
-
-            <!-- <img src="assets/img/icons/product.svg" alt="img" /> -->
-
-            <span>
-              <?php echo $lang['manifestations'] ?>
-            </span>
-            <span class="menu-arrow"></span></a>
-          <ul>
-
-            <li>
-              <a href="?page=produits&sub_page=add_product" class="<?php echo $sub_page == 'add_product' ? 'active' : '' ?>">Ajouter un produit</a>
-            </li>
-
-          </ul>
-        </li>
-
+            <?php
+          }
+        }
+        ?>
       </ul>
     </div>
   </div>

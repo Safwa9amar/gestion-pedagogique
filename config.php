@@ -14,6 +14,7 @@ define('COMPONENTS', 'components');
 define('LANG', 'lang');
 define('INCLUDES', 'includes');
 define('CONTROLLERS', 'controllers');
+define('HELPERS', 'helpers');
 
 // database config
 define('DB_HOST', 'localhost');
@@ -27,4 +28,17 @@ define('VIEWSLIST', [
     'dashboard',
     'profile',
     'settings',
+    'orientation',
+]);
+// SUBVIEWSLIST
+define('SUBVIEWSLIST', [
+   'impression_des_formulaires'
+]);
+
+// msessage types
+define('MSG_TYPES', [
+    'success',
+    'error',
+    'warning',
+    'info',
 ]);

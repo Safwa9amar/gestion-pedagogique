@@ -10,6 +10,7 @@ print_r($_SESSION['lang']);
 // ignore fatal errors
 
 $filename = $_GET['file'];
+$prin_name = $_GET['name'];
 
 try {
     // create a new instance of Word
@@ -17,7 +18,8 @@ try {
 
     // open the file
     $doc = $word->Documents->Open(realpath($filename));
-    // print the file
+    // print the file with name
+    
     $doc->PrintOut();
 
     // close the file and Word

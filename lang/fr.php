@@ -27,6 +27,22 @@ $lang['fr'] = 'français';
 $lang['error'] = 'Erreur';
 $lang['print_error'] = 'Erreur d\'impression de formulaire'; 
 $lang['success'] = 'Succès';
+$lang['ajouter'] = 'Ajouter';
+// view all 
+$lang['view_all'] = 'Voir tout';
+// add formulaire
+$lang['add_form'] = 'Ajouter un formulaire';
+$lang['delete'] = 'Supprimer';
+
+// Nom
+$lang['nom'] = 'Nom';
+// Description
+$lang['description'] = 'Description';
+// Fichier
+$lang['fichier'] = 'Fichier';
+// Actions
+$lang['actions'] = 'Actions';
+
 
 
 

@@ -1,5 +1,6 @@
 <script src="<?php echo urlFor(JS,'jquery-3.6.0.min.js') ?>"></script>
 <script src="<?php echo urlFor(JS,'jquery.slimscroll.min.js') ?>"></script>
+<script src="<?php echo urlFor(JS,'jquery.dataTables.min.js') ?>"></script>
 <script src="<?php echo urlFor(JS,'feather.min.js') ?>"></script>
 <script src="<?php echo urlFor(JS,'dataTables.bootstrap4.min.js') ?>"></script>
 <script src="<?php echo urlFor(JS,'bootstrap.bundle.min.js') ?>"></script>

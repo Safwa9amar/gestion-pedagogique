@@ -1,6 +1,6 @@
 <!-- bootstrap error box -->
 <div style="
-    position: absolute;
+    position: fixed;
     bottom: 0;
     left: 0;
     z-index: 9999;

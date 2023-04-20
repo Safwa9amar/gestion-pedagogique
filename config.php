@@ -15,6 +15,9 @@ define('LANG', 'lang');
 define('INCLUDES', 'includes');
 define('CONTROLLERS', 'controllers');
 define('HELPERS', 'helpers');
+define('VIEWS','views');
+// uploads/formulaires/
+define('DOC_UPLOADS', VIEWS . '/orientation/formulaires/');
 
 // database config
 define('DB_HOST', 'localhost');
@@ -23,7 +26,6 @@ define('DB_PASS', '');
 define('DB_NAME', 'service_technique');
 
 // define pages
-define('VIEWS','views');
 define('VIEWSLIST', [
     'dashboard',
     'profile',

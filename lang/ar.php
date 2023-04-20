@@ -19,6 +19,24 @@ $lang['ar'] = 'عربي';
 $lang['error'] = 'خطأ';
 $lang['print_error'] = 'خطأ في طباعة النموذج';
 $lang['success'] = 'نجاح';
+$lang['ajouter'] = 'إضافة';
+
+// view all
+$lang['view_all'] = 'عرض الكل';
+// add formulaire
+$lang['add_form'] = 'إضافة نموذج';
+// delete
+$lang['delete'] = 'حذف';
+
+// Nom
+$lang['nom'] = 'الاسم';
+// Description
+$lang['description'] = 'الوصف';
+// Fichier
+$lang['fichier'] = 'الملف';
+// Actions
+$lang['actions'] = 'الإجراءات';
+
 
 
 $lang['formations'] = 'تنظيم وتسيير التكوين';

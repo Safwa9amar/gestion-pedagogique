@@ -4,6 +4,8 @@ include 'config.php';
 include 'helpers/urlFor.php';
 include 'helpers/goTopage.php';
 include 'helpers/alert.php';
+include 'helpers/uploadFile.php';
+
 include urlFor(CONTROLLERS, 'dataBaseController.php');
 // check if user is logged in
 if (!isset($_SESSION['user'])) {

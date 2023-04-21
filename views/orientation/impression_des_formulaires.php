@@ -1,10 +1,9 @@
 <?php
 // list des formulaires
 $db = new DataBaseController();
-$forms = $db->getAllRows('formulaires');
+$forms = $db->getAllRows('formulaires', 'id', 'DESC');
 // list des formulaires
-$table_head = '
-    <tr>
+$table_head = '<tr>
         <th scope="col">' . $lang['nom'] . '</th>
         <th scope="col">
             ' . $lang['description'] . '
@@ -15,37 +14,45 @@ $table_head = '
         <th scope="col">
             ' . $lang['actions'] . '
         </th>
-    </tr>
-';
+    </tr>';
 // delete form
 if (isset($_GET['delete'])) {
     $id = $_GET['delete'];
     // get row
     $row = $db->getRowById('formulaires', $id);
-    // delete files
-    $filename_ar = $row['filename_ar'];
-    $filename_fr = $row['filename_fr'];
-    echo $filename_ar;
-    echo $filename_fr;
-    $file_ar = DOC_UPLOADS . $filename_ar;
-    $file_fr = DOC_UPLOADS . $filename_fr;
-    
-    if (file_exists($file_ar)) {
-        unlink($file_ar);
-    }
-    if (file_exists($file_fr)) {
-        unlink($file_fr);
-    }
-    // delete row
+    if ($row) {
 
-    $db->deleteRow('formulaires', $id);
-    if (isset($_SESSION['lang']) && $_SESSION['lang'] == 'ar') {
-        $_SESSION['success'] = 'تم حذف النموذج بنجاح';
-    } else {
-        $_SESSION['success'] = 'Formulaire supprimé avec succès';
+        // delete files
+        $filename_ar = $row['filename_ar'];
+        $filename_fr = $row['filename_fr'];
+        echo $filename_ar;
+        echo $filename_fr;
+        $file_ar = DOC_UPLOADS . $filename_ar;
+        $file_fr = DOC_UPLOADS . $filename_fr;
+
+        if (file_exists($file_ar)) {
+            unlink($file_ar);
+        }
+        if (file_exists($file_fr)) {
+            unlink($file_fr);
+        }
+        // delete row
+
+        $db->deleteRow('formulaires', $id);
+        if ($db) {
+
+            if (isset($_SESSION['lang']) && $_SESSION['lang'] == 'ar') {
+                $_SESSION['success'] = 'تم حذف النموذج بنجاح';
+            } else {
+                $_SESSION['success'] = 'Formulaire supprimé avec succès';
+            }
+            // unset success
+            unset($_SESSION['success']);
+            echo '<script>window.location.href = "' . $_SERVER['HTTP_REFERER'] . '";</script>';
+        }
     }
+
 }
-
 // insert data and uplad files using uploadFile function
 if ($_SERVER['REQUEST_METHOD'] == 'POST' && $_SESSION['user']) {
     $filename_ar = uploadFile($_FILES['filename_ar'], DOC_UPLOADS);
@@ -60,9 +67,10 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && $_SESSION['user']) {
     ];
     $db->insertRow('formulaires', $data);
     $_SESSION['success'] = 'Formulaire ajouté avec succès';
-    // redirect to the same page
-    // header('Location: ' . $_SERVER['REQUEST_URI']);
+    // reload page
+    header('Location: ' . $_SERVER['HTTP_REFERER']);
 }
+
 ?>
 <div class="card flex-fill bg-white">
     <div class="card-header">
@@ -106,12 +114,15 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && $_SESSION['user']) {
                                     class="btn btn-primary"><?php echo $lang['imprimer'] ?></a>
                             <?php } else { ?>
                                 <a href="views/orientation/formulaires/?file=<?php echo $filename_fr ?>&name=<?php echo $form['name_fr'] ?>"
-                                    class="btn btn-primary"><?php echo $lang['imprimer'] ?></a>
+                                    class="btn btn-primary">
+                                    <?php echo $lang['imprimer'] ?></a>
                             <?php } ?>
                         </td>
                         <td>
-                            <a href="views/orientation/formulaires/?delete=<?php echo $form['id'] ?>"
-                                class="btn btn-danger"><?php echo $lang['delete'] ?></a>
+                            <a href="`<?php echo $_SERVER['REQUEST_URI'] . '`&delete=' . $form['id'] ?>" class="btn ">
+                                <i class="fa fa-trash"></i>
+                                <?php echo $lang['delete'] ?>
+                            </a>
                         </td>
                     </tr>
                 <?php } ?>

@@ -26,7 +26,7 @@ $lang['view_all'] = 'عرض الكل';
 // add formulaire
 $lang['add_form'] = 'إضافة نموذج';
 // delete
-$lang['delete'] = 'حذف';
+$lang['delete'] = 'ازالة';
 
 // Nom
 $lang['nom'] = 'الاسم';

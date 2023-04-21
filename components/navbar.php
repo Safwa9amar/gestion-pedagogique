@@ -4,15 +4,8 @@ if (isset($_GET['lang']) && isset($_SERVER['HTTP_REFERER'])) {
   // set language
   $_SESSION['lang'] = $_GET['lang'];
   // redirect to back referer
-  header('Location: ' . $_SERVER['HTTP_REFERER']);
-}
-?>
-
-<div style="
-    display: flex;
-    width: 100%;
-    justify-content: space-between;
-" class="header">
+  header('Location: ' . $_SERVER['HTTP_REFERER']);}?>
+<div style="display: flex; width: 100%; justify-content: space-between;" class="header">
   <div class="header-left active">
     <a href="./" class="logo">
       <img src="https://via.placeholder.com/350x150" alt="" />
@@ -45,8 +38,7 @@ if (isset($_GET['lang']) && isset($_SERVER['HTTP_REFERER'])) {
           <img src="assets/img/flags/ar.ico" alt="" height="16"> Arabe
         </a>
         <a href="?lang=fr" class="dropdown-item">
-          <img src="assets/img/flags/fr.ico" alt="" height="16"> Français
-        </a>
+          <img src="assets/img/flags/fr.ico" alt="" height="16">Français</a>
       </div>
     </li>
     <li class="nav-item dropdown has-arrow main-drop">

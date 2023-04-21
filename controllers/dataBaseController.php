@@ -27,9 +27,9 @@ class DataBaseController
         }
     }
     // get all rows from table
-    public function getAllRows($table)
+    public function getAllRows($table, $order = 'id', $sort = 'DESC')
     {
-        $query = "SELECT * FROM $table";
+        $query = "SELECT * FROM $table ORDER BY $order $sort";
         // fetch all rows from the table
         $rows = mysqli_fetch_all(mysqli_query($this->connection, $query), MYSQLI_ASSOC);
         return $rows;

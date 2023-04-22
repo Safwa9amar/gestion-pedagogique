@@ -28,17 +28,17 @@ if (isset($_GET['lang']) && isset($_SERVER['HTTP_REFERER'])) {
       <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="javascript:void(0);" role="button"
         aria-expanded="false">
         <?php if ($_SESSION['lang'] == 'ar'): ?>
-          <img src="assets/img/flags/ar.ico" alt="" height="20">
+          <img src="<?php echo IMG ?>/flags/ar.ico" alt="" height="20">
         <?php else: ?>
-          <img src="assets/img/flags/fr.ico" alt="" height="20">
+          <img src="<?php echo IMG ?>/flags/fr.ico" alt="" height="20">
         <?php endif; ?>
       </a>
       <div class="dropdown-menu dropdown-menu-right">
         <a href="?lang=ar" class="dropdown-item">
-          <img src="assets/img/flags/ar.ico" alt="" height="16"> Arabe
+          <img src="<?php echo IMG ?>/flags/ar.ico" alt="" height="16"> Arabe
         </a>
         <a href="?lang=fr" class="dropdown-item">
-          <img src="assets/img/flags/fr.ico" alt="" height="16">Français</a>
+          <img src="<?php echo IMG ?>/flags/fr.ico" alt="" height="16">Français</a>
       </div>
     </li>
     <li class="nav-item dropdown has-arrow main-drop">
@@ -68,7 +68,7 @@ if (isset($_GET['lang']) && isset($_SERVER['HTTP_REFERER'])) {
             ><i class="me-2" data-feather="settings"></i>Settings</a
           > -->
           <hr class="m-0" />
-          <a class="dropdown-item logout pb-0" href="?logout"><img src="assets/img/icons/log-out.svg" class="me-2"
+          <a class="dropdown-item logout pb-0" href="?logout"><img src="<?php echo ICONS ?>/log-out.svg" class="me-2"
               alt="img" />
             <?php echo $lang['logout'] ?>
           </a>

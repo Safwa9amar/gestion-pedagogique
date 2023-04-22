@@ -1,9 +1,8 @@
 <?php
 // start session
 session_start();
-include '../config.php';
-include '../helpers/urlFor.php';
-include '../controllers/dataBaseController.php';
+include '../app/config/config.php';
+include '../app/controllers/dataBaseController.php';
 
 $error_message = false;
 $db = new DatabaseController();

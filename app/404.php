@@ -1,9 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
-<?php 
-include 'includes/config.php';
-include 'includes/functions.php';
-include 'templates/components/header.php'; ?>
+<?php
+include 'config/config.php';
+include 'helpers/urlFor.php';
+include COMPONENTS . '/header.php';
+
+?>
 
 <body class="error-page">
     <div id="global-loader">
@@ -15,11 +17,12 @@ include 'templates/components/header.php'; ?>
             <h1>404</h1>
             <h3 class="h2 mb-3"><i class="fas fa-exclamation-circle"></i>Oops! Page non trouvée!</h3>
             <p class="h4 font-weight-normal">La page que vous avez demandée n'a pas été trouvée.</p>
-            <a href="./" class="btn btn-primary">Retour </a>
+            <a href="index.php" class="btn btn-primary">Retour </a>
         </div>
     </div>
 
 
 </body>
-<?php include 'templates/components/scripts.php'; ?>
+<?php include  COMPONENTS . '/scripts.php'; ?>
+
 </html>

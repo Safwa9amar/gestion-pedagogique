@@ -42,7 +42,7 @@ if (isset($_SESSION['lang']) && $_SESSION['lang'] == 'ar') {
     <div id="sidebar-menu" class="sidebar-menu">
       <ul>
         <li>
-          <a href="./"><img src="assets/img/icons/dashboard.svg" alt="img" /><span>
+          <a href="./"><img src="<?php echo ICONS ?>/dashboard.svg" alt="img" /><span>
               <?php echo $lang['dashboard'] ?>
             </span>
           </a>
@@ -52,7 +52,7 @@ if (isset($_SESSION['lang']) && $_SESSION['lang'] == 'ar') {
           if (count($value['sub_menu']) > 0) { ?>
             <li class="submenu">
               <a class="<?php echo $view == $key ? 'active' : '' ?>" href="<?php echo $value['link'] ?>">
-                <img style="margin-left: 10px;" src="assets/img/icons/<?php echo $value['icon'] ?>" alt="img" />
+                <img style="margin-left: 10px;" src="<?php echo ICONS ?>/<?php echo $value['icon'] ?>" alt="img" />
                 <span>
                   <?php echo $value['title'] ?>
                 </span>

@@ -1,4 +1,4 @@
-ErrorDocument 404 /service/404.php
+ErrorDocument 404 /service/app/404.php
 
 # Prevent directory listings
 Options -Indexes

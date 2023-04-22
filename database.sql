@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Apr 20, 2023 at 08:29 PM
+-- Generation Time: Apr 22, 2023 at 04:11 AM
 -- Server version: 10.4.27-MariaDB
 -- PHP Version: 8.0.25
 
@@ -60,8 +60,10 @@ CREATE TABLE `formulaires` (
 --
 
 INSERT INTO `formulaires` (`id`, `name_ar`, `name_fr`, `description_ar`, `description_fr`, `filename_ar`, `filename_fr`) VALUES
-(1, 'استمارة التسجيل والرغبات', 'Fiche d’inscription et de voeux', 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Laudantium, voluptatum.', 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Laudantium, voluptatum.', 'fich_ar.docx', 'fich_fr.docx'),
-(18, 'qwe', 'qwe', 'qwe\r\n', 'qwe', '64416c93d98a38.87092147.docx', '64416c93d9bb83.28716560.docx');
+(22, 'qwe', 'qwe', 'qweqwe', 'weqe', '6441dc8b87d2d3.90977575.docx', '6441dc8b87f178.40194522.docx'),
+(38, 'qwe', 'e', 'qwe', 'qwe', '6441df29d7aca0.45200113.docx', '6441df29d7d040.60780062.docx'),
+(75, 'qwe', 'qwe', 'qw', 'qw', '6441e169d5b6a1.09229251.docx', '6441e169d61c00.99525350.docx'),
+(76, 'qwe', 'qwe', 'qw', 'qw', '6441e1f477fc45.33669608.docx', '6441e1f4781515.19433311.docx');
 
 -- --------------------------------------------------------
 
@@ -108,6 +110,7 @@ INSERT INTO `session` (`id`, `name`, `date`) VALUES
 --
 
 CREATE TABLE `speciality` (
+  `id` int(11) NOT NULL,
   `Department code` varchar(1024) DEFAULT NULL,
   `Department` varchar(1024) DEFAULT NULL,
   `Specialty code` varchar(1024) DEFAULT NULL,
@@ -123,21 +126,21 @@ CREATE TABLE `speciality` (
 -- Dumping data for table `speciality`
 --
 
-INSERT INTO `speciality` (`Department code`, `Department`, `Specialty code`, `Specialty`, `Intitulé de la spécialité`, `Training period`, `Level`, `Required level`, `Training style`) VALUES
-('INT', 'إعلام آلي - الرقمنة - الاتصالات', 'INT0701', 'مُستغل المعلوماتية', 'Exploitant informatique', '24 شهرًا', '4', 'الثانية ثانوي', 'دروس مسائية'),
-('TAG', 'تقنيات الادارة و التسيير', 'TAG0709', 'المحاسبة', 'Comptabilité', '24 شهرًا', '4', 'الثانية ثانوي', 'دروس مسائية'),
-('MEE', 'مهن البيئة و المياه', 'MEE0702', 'صيانة شبكات التزويد بالماء الشروب', 'Entretien des réseaux d’alimentation en eau potable', '18 شهرًا', '3', 'الرابعة متوسط', 'دروس مسائية'),
-('ART', 'الحرف التقليدية', 'ART11Q', 'إنجاز أعمال الطرز اليدوي', 'Réalisation des ouvrages de broderie à la main', '06 أشهر', 'CQP', 'مستوى تعليمي محدود طور محو الامية منتهي', 'تأهيلي'),
-('MEE', 'مهن البيئة و المياه', 'MEE04Q', 'استعادة النفايات وإعادة تدويرها', 'Récupération et recyclage des déchets', '06 أشهر', 'CQP', 'بدون مستوى دراسي', 'تأهيلي'),
-('MEE', 'مهن البيئة و المياه', 'MEE04Q', 'استعادة النفايات وإعادة تدويرها', 'Récupération et recyclage des déchets', '06 أشهر', 'CQP', 'بدون مستوى دراسي', 'تأهيلي'),
-('THC', 'النسيج والألبسة', 'THC04Q', 'خياطة و تجميع الملابس', 'Piquage et montage de vêtements', '03 أشهر', 'CQP', 'مستوى تعليمي محدود طور محو الامية منتهي', 'تأهيلي'),
-('MEE', 'مهن البيئة و المياه', 'MEE04Q', 'استعادة النفايات وإعادة تدويرها', 'Récupération et recyclage des déchets', '06 أشهر', 'CQP', 'بدون مستوى دراسي', 'تأهيلي'),
-('INT', 'إعلام آلي - الرقمنة - الاتصالات', 'INT01Q', 'تلقين الإعلام الألي( Word-Excel- Power Point)', 'Initiation à l’informatique (Word, Excel, Power Point)', '06 أشهر', 'CQP', 'الرابعة متوسط', 'تأهيلي'),
-('AGR', 'الفلاحة', 'AGR14Q', 'مربي المواشي', 'Eleveur de bétail', '06 أشهر', 'CQP', 'مستوى تعليمي محدود طور محو الامية منتهي', 'تأهيلي'),
-('AGR', 'الفلاحة', 'AGR25Q', 'تغذية الماشية', 'Alimentation du bétail', '06 أشهر', 'CQP', 'مستوى تعليمي محدود طور محو الامية منتهي', 'تأهيلي'),
-('BTP', 'البناء و الأشغال العمومية', 'BTP05Q', 'دهان البنايات', 'Peintre bâtiment', '03 أشهر', 'CQP', 'مستوى تعليمي محدود طور محو الامية منتهي', 'تأهيلي'),
-('INT', 'إعلام آلي - الرقمنة - الاتصالات', 'INT0701P', 'مُستغل المعلوماتية', 'Exploitant informatique', '06 أشهر', '4', '/', 'معــــــابـــــــر'),
-('ART', 'الحرف التقليدية', 'ART0710', 'الطرز', 'Broderie', '12 شهرًا', '2', 'الطور الابتدائي', 'حضوري');
+INSERT INTO `speciality` (`id`, `Department code`, `Department`, `Specialty code`, `Specialty`, `Intitulé de la spécialité`, `Training period`, `Level`, `Required level`, `Training style`) VALUES
+(1, 'INT', 'إعلام آلي - الرقمنة - الاتصالات', 'INT0701', 'مُستغل المعلوماتية', 'Exploitant informatique', '24 شهرًا', '4', 'الثانية ثانوي', 'دروس مسائية'),
+(2, 'TAG', 'تقنيات الادارة و التسيير', 'TAG0709', 'المحاسبة', 'Comptabilité', '24 شهرًا', '4', 'الثانية ثانوي', 'دروس مسائية'),
+(3, 'MEE', 'مهن البيئة و المياه', 'MEE0702', 'صيانة شبكات التزويد بالماء الشروب', 'Entretien des réseaux d’alimentation en eau potable', '18 شهرًا', '3', 'الرابعة متوسط', 'دروس مسائية'),
+(4, 'ART', 'الحرف التقليدية', 'ART11Q', 'إنجاز أعمال الطرز اليدوي', 'Réalisation des ouvrages de broderie à la main', '06 أشهر', 'CQP', 'مستوى تعليمي محدود طور محو الامية منتهي', 'تأهيلي'),
+(5, 'MEE', 'مهن البيئة و المياه', 'MEE04Q', 'استعادة النفايات وإعادة تدويرها', 'Récupération et recyclage des déchets', '06 أشهر', 'CQP', 'بدون مستوى دراسي', 'تأهيلي'),
+(6, 'MEE', 'مهن البيئة و المياه', 'MEE04Q', 'استعادة النفايات وإعادة تدويرها', 'Récupération et recyclage des déchets', '06 أشهر', 'CQP', 'بدون مستوى دراسي', 'تأهيلي'),
+(7, 'THC', 'النسيج والألبسة', 'THC04Q', 'خياطة و تجميع الملابس', 'Piquage et montage de vêtements', '03 أشهر', 'CQP', 'مستوى تعليمي محدود طور محو الامية منتهي', 'تأهيلي'),
+(8, 'MEE', 'مهن البيئة و المياه', 'MEE04Q', 'استعادة النفايات وإعادة تدويرها', 'Récupération et recyclage des déchets', '06 أشهر', 'CQP', 'بدون مستوى دراسي', 'تأهيلي'),
+(9, 'INT', 'إعلام آلي - الرقمنة - الاتصالات', 'INT01Q', 'تلقين الإعلام الألي( Word-Excel- Power Point)', 'Initiation à l’informatique (Word, Excel, Power Point)', '06 أشهر', 'CQP', 'الرابعة متوسط', 'تأهيلي'),
+(10, 'AGR', 'الفلاحة', 'AGR14Q', 'مربي المواشي', 'Eleveur de bétail', '06 أشهر', 'CQP', 'مستوى تعليمي محدود طور محو الامية منتهي', 'تأهيلي'),
+(11, 'AGR', 'الفلاحة', 'AGR25Q', 'تغذية الماشية', 'Alimentation du bétail', '06 أشهر', 'CQP', 'مستوى تعليمي محدود طور محو الامية منتهي', 'تأهيلي'),
+(12, 'BTP', 'البناء و الأشغال العمومية', 'BTP05Q', 'دهان البنايات', 'Peintre bâtiment', '03 أشهر', 'CQP', 'مستوى تعليمي محدود طور محو الامية منتهي', 'تأهيلي'),
+(13, 'INT', 'إعلام آلي - الرقمنة - الاتصالات', 'INT0701P', 'مُستغل المعلوماتية', 'Exploitant informatique', '06 أشهر', '4', '/', 'معــــــابـــــــر'),
+(14, 'ART', 'الحرف التقليدية', 'ART0710', 'الطرز', 'Broderie', '12 شهرًا', '2', 'الطور الابتدائي', 'حضوري');
 
 -- --------------------------------------------------------
 
@@ -191,6 +194,12 @@ ALTER TABLE `session`
   ADD PRIMARY KEY (`id`);
 
 --
+-- Indexes for table `speciality`
+--
+ALTER TABLE `speciality`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- AUTO_INCREMENT for dumped tables
 --
 
@@ -204,7 +213,7 @@ ALTER TABLE `config`
 -- AUTO_INCREMENT for table `formulaires`
 --
 ALTER TABLE `formulaires`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=19;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=87;
 
 --
 -- AUTO_INCREMENT for table `lang`
@@ -217,6 +226,12 @@ ALTER TABLE `lang`
 --
 ALTER TABLE `session`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+
+--
+-- AUTO_INCREMENT for table `speciality`
+--
+ALTER TABLE `speciality`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

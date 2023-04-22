@@ -1,7 +1,7 @@
 <?php
 // create array of routes 
 session_start();
-include '../dataBaseController.php';
+include '../app/controllers/dataBaseController.php';
 $routes = [
     'users' => 'users',
 ];
@@ -27,7 +27,7 @@ function globalApi($table, $id = null)
                 // check if the search query is in the item name and suk
                 if (strpos(strtolower($item['name']), strtolower($search)) !== false) {
                     return true;
-                } else if (strpos($item['SKU'], $search) !== false) {
+                } else if (strpos($item['id'], $search) !== false) {
                     return true;
                 } else {
                     return false;

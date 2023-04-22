@@ -1,6 +1,6 @@
 <?php
+include '../app/config/config.php';
 include 'config.php';
-include '../includes/config.php';
 if (isset($_SESSION['is_logged'])) {
     // check if request is valid 
     if (isset($_GET['route'])) {
@@ -11,7 +11,6 @@ if (isset($_SESSION['is_logged'])) {
             // get the file name
             $table = $routes[$route];
             // include the file
-            include '../includes/functions.php';
             try {
                 // handle fatal errors from routes 
                 if (isset($_GET['id'])) {

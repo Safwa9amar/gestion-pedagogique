@@ -3,7 +3,7 @@
 $db = new DataBaseController();
 
 // get all specialities from database
-$specialities = $db->getAllRows('speciality');
+$specialities = $db->getAllRows('speciality', 'id', 'ASC');
 
 // create html select element with all specialities
 echo '<select class="form-control" name="speciality" id="speciality">';

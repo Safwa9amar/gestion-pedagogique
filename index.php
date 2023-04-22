@@ -1,10 +1,11 @@
 <?php
-include 'config.php';
-include './helpers/urlFor.php';
+include './app/helpers/urlFor.php';
+include './app/config/config.php';
+
 session_start();
 
 if (isset($_SESSION['user'])) {
-    header('location:home.php');
+    header('location:' .APP);
 }
 
 
@@ -15,7 +16,7 @@ if (isset($_SESSION['user'])) {
 
 <head>
     <?php
-    include urlFor(COMPONENTS, 'header.php');
+    include APP.DIRECTORY_SEPARATOR.COMPONENTS.DIRECTORY_SEPARATOR.'header.php';
     ?>
     <style>
         body {
@@ -72,7 +73,7 @@ if (isset($_SESSION['user'])) {
         </div>
     </div>
 </body>
-<?php include urlFor(COMPONENTS, 'scripts.php'); ?>
+<?php include APP.DIRECTORY_SEPARATOR.COMPONENTS.DIRECTORY_SEPARATOR.'scripts.php'; ?>
 
 <script>
     $(document).ready(function () {
@@ -103,7 +104,7 @@ if (isset($_SESSION['user'])) {
                             </div>
                         `)
                     setTimeout(() => {
-                        window.location.href = 'home.php'
+                        window.location.href = 'app'
                     }, 2000);
                 },
                 error: function (response) {

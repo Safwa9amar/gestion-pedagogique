@@ -1,20 +1,20 @@
 <?php
 session_start();
-include 'config.php';
+include 'config/config.php';
 include 'helpers/urlFor.php';
 include 'helpers/goTopage.php';
 include 'helpers/alert.php';
 include 'helpers/uploadFile.php';
-
-include urlFor(CONTROLLERS, 'dataBaseController.php');
+include 'controllers/dataBaseController.php';
+// url for config
 // check if user is logged in
 if (!isset($_SESSION['user'])) {
-    header('location:index.php');
+    header('location:../index.php');
 }
 if (isset($_GET['logout'])) {
     unset($_SESSION['user']);
     session_destroy();
-    header('location:index.php');
+    header('location:../index.php');
 }
 
 // language

@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Apr 22, 2023 at 04:11 AM
+-- Generation Time: Apr 23, 2023 at 09:34 PM
 -- Server version: 10.4.27-MariaDB
 -- PHP Version: 8.0.25
 
@@ -82,6 +82,59 @@ CREATE TABLE `lang` (
 
 INSERT INTO `lang` (`id`, `lang`) VALUES
 (1, 'ar');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `niveau_scolar`
+--
+
+CREATE TABLE `niveau_scolar` (
+  `id` bigint(20) DEFAULT NULL,
+  `niveau` varchar(1024) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `niveau_scolar`
+--
+
+INSERT INTO `niveau_scolar` (`id`, `niveau`) VALUES
+(0, 'AUCUN NIVEAU SCOLAIRE'),
+(1, 'NIVEAU SCOLAIRE RÉDUIT CYCLE D’ALPHABÉTISATION ACHEVÉ'),
+(2, 'CYCLE PRIMAIRE'),
+(3, 'FIN DU CYCLE PRIMAIRE'),
+(4, 'CYCLE MOYEN'),
+(5, '4ÈME ANNÉE MOYENNE'),
+(6, '2ÈME ANNÉE SECONDAIRE'),
+(7, '3ÈME ANNÉE SECONDAIRE'),
+(8, 'CFPS + 02 ans d’expérience professionnelle'),
+(9, 'CFPS + classés parmi les cinq (5) premiers'),
+(10, 'CAP + 02 ans d’expérience professionnelle'),
+(11, 'CAP + 03 ans d’expérience pour les candidats justifiant d’un niveau scolaire inférieur à la 4ème année moyenne'),
+(12, 'CAP + 03 ans d’expérience pour les candidats justifiant d’un niveau scolaire inférieur à la 2ème année secondaire'),
+(13, 'CAP + 02 ans d’expérience pour les candidats justifiant niveau scolaire du cycle primaire'),
+(14, 'CAP + 02 ans d’expérience professionnelle pour les candidats justifiant d’un niveau scolaire de 4ème année moyenne'),
+(15, 'CAP + classés parmi les cinq (5) premiers'),
+(16, 'CMP + 02 ans d’expérience professionnelle'),
+(17, 'CMP + niveau scolaire 2ème année secondaire'),
+(18, 'CMP + 02 ans d’expérience professionnelle, pour les candidats justifiant du niveau scolaire inférieur à la 2ème'),
+(19, 'CMP + 03 ans d’expérience professionnelle pour les candidats justifiant d’un niveau scolaire inférieur à la 4ème année moyenne'),
+(20, 'CMP_OU_CAP_+_2ème AS_\"OU\"_+_EXPER-PROF_\"OU\"_+_Major De Promo'),
+(21, 'BT + 3ème année secondaire'),
+(22, 'BT + 02 ans d’expérience professionnelle'),
+(23, 'BT + 02 ans d’expérience professionnelle pour les candidats justifiant de la 2ème année secondaire'),
+(24, 'BT + 04 ans d’expérience professionnelle pour les candidats justifiant d’un niveau scolaire inférieur à la 2ème année secondaire'),
+(25, 'BT + classés parmi les cinq (5) premiers'),
+(26, 'DEP1'),
+(27, 'DEP2'),
+(28, '4ème année moyenne Admis'),
+(29, '1ére AS réorientés'),
+(30, 'BEP'),
+(31, 'BT + 06 ans d’expérience professionnelle pour les candidats justifiant d’un niveau scolaire inférieur à la 2ème année secondaire'),
+(32, 'CMP + 02 ans d’expérience professionnelle, pour les candidats justifiant du niveau scolaire inférieur à la 4eme annee moyenne'),
+(33, 'CMTC_+_3ème AS_OU__EXPER-PROF__\"OU\"_Major De Promo'),
+(34, 'CMTC + دورة تكوينية في CED'),
+(35, 'CMP + classés parmi les cinq (5) premiers');
 
 -- --------------------------------------------------------
 

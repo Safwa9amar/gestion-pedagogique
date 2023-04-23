@@ -1,7 +1,8 @@
 <?php
 include urlFor(LANG, $_SESSION['lang'] . '.php');
 $sub_views = [
-    'impression_des_formulaires'
+    'impression_des_formulaires',
+    'add_aprentis',
 ];
 if (isset($_GET['sub_view'])) {
     $sub_view = $_GET['sub_view'];

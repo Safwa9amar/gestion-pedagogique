@@ -13,6 +13,30 @@ $lang['orientation'] = 'Orientation et recrutement des stagiaires et apprentis';
     $lang['inscriptions_des_demandeurs'] = "Gestion des inscriptions des demandeurs de formation";
     // طباعة استمارات 
     $lang['impression_des_formulaires'] = "Impression des formulaires";
+    // ==========================================================================================
+    $lang['add_aprentis'] = "Ajouter des apprentis";
+    // معلومات المتربص
+    $lang['informations_de_lapprenti'] = "Informations de l'apprenti";
+    // رقم التسجيل
+    $lang['numero_dinscription'] = "Numéro d'inscription";
+    // السنة : رقم id الخاص بالسنة
+    $lang['annee'] = "Année";
+    // الفصل : رقم id الخاص بالفصل
+    $lang['classe'] = "Classe";
+    // الشعبة : رقم id الخاص بالشعبة
+    $lang['section'] = "Section";
+    // الاسم العائلي
+    $lang['nom_de_famille'] = "Nom de famille";
+    // الاسم الشخصي
+    $lang['prenom'] = "Prénom";
+    // تاريخ الازدياد
+    $lang['date_de_naissance'] = "Date de naissance";
+    // مكان الازدياد
+    $lang['lieu_de_naissance'] = "Lieu de naissance";
+    // المستوى الدراسي
+    $lang['niveau_dinstruction'] = "Niveau d'instruction";
+    // السنة الدراسية
+    
     // sub menu
 $lang['formations'] = 'Organisation et gestion des formations';
 $lang['recherche'] = "Organisation et suivi des activités d'études et de recherche";

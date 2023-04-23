@@ -75,7 +75,9 @@ if (isset($_SESSION['lang'])) {
         }
         ?>
     " class="page-wrapper">
-            <div class="content container-fluid">
+            <div class="content container-fluid "
+            style="width: max-content;"
+            >
                 <?php
                 if (isset($_GET['view'])) {
                     $view = $_GET['view'];

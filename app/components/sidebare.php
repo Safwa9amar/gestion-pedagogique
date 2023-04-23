@@ -10,12 +10,18 @@ $side_menu = array(
     'icon' => 'product.svg',
     'link' => '#',
     'sub_menu' => array(
+      'add_aprentis' => array(
+        'title' =>
+        $lang['add_aprentis'],
+        'link' =>
+        '?view=orientation&sub_view=add_aprentis'
+      ),
       'impression_des_formulaires' => array(
         'title' =>
         $lang['impression_des_formulaires'],
         'link' =>
         '?view=orientation&sub_view=impression_des_formulaires'
-      )
+      ),
     )
   ),
   'formations' =>
@@ -29,9 +35,11 @@ $side_menu = array(
         $lang['inscriptions_des_demandeurs'],
         'link' =>
         '?view=produits&sub_view=add_product'
-      )
+      ),
+     
     )
   ),
+  
 ); ?>
 <div style="<?php
 if (isset($_SESSION['lang']) && $_SESSION['lang'] == 'ar') {

@@ -79,3 +79,10 @@ define('MSG_TYPES', [
     'warning',
     'info',
 ]);
+
+// languages list ['ui', 'aprentis', 'sideBare']
+define('LANUAGES_FILES', [
+    'ui',
+    'aprentis',
+    'sideBare',
+]);

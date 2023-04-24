@@ -16,28 +16,7 @@ if (isset($_GET['logout'])) {
     session_destroy();
     header('location:../index.php');
 }
-
-// language
-$db = new DatabaseController();
-$config = $db->getRowById('config', 1);
-$selcted_lang = $config['lang'];
-
-if ($selcted_lang) {
-    $_SESSION['lang'] = $selcted_lang;
-}
-
-if (isset($_GET['lang'])) {
-    $_SESSION['lang'] = $_GET['lang'];
-    // update lang in db
-    $db->updateRow('config', 1, ['lang' => $_GET['lang']]);
-} else if (!isset($_SESSION['lang'])) {
-    $_SESSION['lang'] = 'fr';
-}
-
-if (isset($_SESSION['lang'])) {
-    include urlFor(LANG, $_SESSION['lang'] . '.php');
-}
-
+include urlFor(LANG, 'lang.php');
 ?>
 <!DOCTYPE html>
 <?php include urlFor(COMPONENTS, 'header.php'); ?>
@@ -75,9 +54,7 @@ if (isset($_SESSION['lang'])) {
         }
         ?>
     " class="page-wrapper">
-            <div class="content container-fluid "
-            style="width: max-content;"
-            >
+            <div class="content container-fluid ">
                 <?php
                 if (isset($_GET['view'])) {
                     $view = $_GET['view'];

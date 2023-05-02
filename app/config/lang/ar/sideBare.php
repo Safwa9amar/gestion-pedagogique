@@ -1,21 +1,21 @@
 <?php
 
-$lang['orientation'] = 'توجيه وإدماج المترشحين';
+$app_lang['orientation'] = 'توجيه وإدماج المترشحين';
 // sub menu
-$lang['inscriptions_des_demandeurs'] = "تنظيم تسجيلات طالبي التكوين";
+$app_lang['inscriptions_des_demandeurs'] = "تنظيم تسجيلات طالبي التكوين";
 // ==========================================================================================
-$lang['add_aprentis'] = "إضافة متدربين";
+$app_lang['add_aprentis'] = "إضافة متدربين";
 
 
 // ==========================================================================================
 
 // طباعة استمارات
-$lang['impression_des_formulaires'] = "طباعة النماذج";
+$app_lang['impression_des_formulaires'] = "طباعة النماذج";
 // sub menu
 
 
-$lang['formations'] = 'تنظيم وتسيير التكوين';
-$lang['recherche'] = "تنظيم ومتابعة نشاطات البحث والدراسات";
-$lang['techniques'] = "تسيير الأجهزة التقنية والبيداغوجية";
-$lang['manifestations'] = "الإنضباط والتظاهرات الثقافية والرياضية";
-// side bar lang file
+$app_lang['formations'] = 'تنظيم وتسيير التكوين';
+$app_lang['recherche'] = "تنظيم ومتابعة نشاطات البحث والدراسات";
+$app_lang['techniques'] = "تسيير الأجهزة التقنية والبيداغوجية";
+$app_lang['manifestations'] = "الإنضباط والتظاهرات الثقافية والرياضية";
+// side bar app_lang file

@@ -2,9 +2,8 @@
 // check if language is set and back referer is set
 if (isset($_GET['lang']) && isset($_SERVER['HTTP_REFERER'])) {
   // set language
-  $_SESSION['lang'] = $_GET['lang'];
-  // redirect to back referer
-  header('Location: ' . $_SERVER['HTTP_REFERER']);}?>
+  header('Location: ' . $_SERVER['HTTP_REFERER']);}
+  ?>
 <div style="display: flex; width: 100%; justify-content: space-between;" class="header">
   <div class="header-left active">
     <a href="./" class="logo">
@@ -70,7 +69,7 @@ if (isset($_GET['lang']) && isset($_SERVER['HTTP_REFERER'])) {
           <hr class="m-0" />
           <a class="dropdown-item logout pb-0" href="?logout"><img src="<?php echo ICONS ?>/log-out.svg" class="me-2"
               alt="img" />
-            <?php echo $lang['logout'] ?>
+            <?php echo $app_lang['logout'] ?>
           </a>
         </div>
       </div>

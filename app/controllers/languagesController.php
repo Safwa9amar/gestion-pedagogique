@@ -8,16 +8,15 @@ class LanguageController
         $db = new DatabaseController();
         // get row by pa
         $config = $db->getRowByParam('config', 'name', 'language');
-
         $selcted_lang = $config['value'];
-
         if ($selcted_lang) {
             $_SESSION['lang'] = $selcted_lang;
         }
         if (isset($_GET['lang'])) {
             $_SESSION['lang'] = $_GET['lang'];
             // update lang in db
-            $db->updateRow('config', 1, ['language' => $_GET['lang']]);
+            $db->updateRow('config', $config['id'], ['value' => $_GET['lang']]);
+            echo 'success';
         } else if (!isset($_SESSION['lang'])) {
             $_SESSION['lang'] = 'fr';
         }
@@ -26,10 +25,12 @@ class LanguageController
     // include language file 
     public function includeLang($fileList, $path = 'app/config/lang/')
     {
+        $arr = [];
         $lang = $_SESSION['lang'];
         foreach ($fileList as $file) {
-            include $path. $lang . '/' . $file . '.php';
+            $arr[] = $path . $lang . '/' . $file . '.php';
         }
+        return $arr;
     }
 
 }

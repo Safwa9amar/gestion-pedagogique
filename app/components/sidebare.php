@@ -6,19 +6,19 @@ $side_menu = array(
 
   'orientation' =>
   array(
-    'title' => $lang['orientation'],
+    'title' => $app_lang['orientation'],
     'icon' => 'product.svg',
     'link' => '#',
     'sub_menu' => array(
       'add_aprentis' => array(
         'title' =>
-        $lang['add_aprentis'],
+        $app_lang['add_aprentis'],
         'link' =>
         '?view=orientation&sub_view=add_aprentis'
       ),
       'impression_des_formulaires' => array(
         'title' =>
-        $lang['impression_des_formulaires'],
+        $app_lang['impression_des_formulaires'],
         'link' =>
         '?view=orientation&sub_view=impression_des_formulaires'
       ),
@@ -26,13 +26,13 @@ $side_menu = array(
   ),
   'formations' =>
   array(
-    'title' => $lang['formations'],
+    'title' => $app_lang['formations'],
     'icon' => 'product.svg',
     'link' => '#',
     'sub_menu' => array(
       'inscriptions_des_demandeurs' => array(
         'title' =>
-        $lang['inscriptions_des_demandeurs'],
+        $app_lang['inscriptions_des_demandeurs'],
         'link' =>
         '?view=produits&sub_view=add_product'
       ),
@@ -51,7 +51,7 @@ if (isset($_SESSION['lang']) && $_SESSION['lang'] == 'ar') {
       <ul>
         <li>
           <a href="./"><img src="<?php echo ICONS ?>/dashboard.svg" alt="img" /><span>
-              <?php echo $lang['dashboard'] ?>
+              <?php echo $app_lang['dashboard'] ?>
             </span>
           </a>
         </li>

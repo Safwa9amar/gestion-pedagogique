@@ -4,15 +4,15 @@ $db = new DataBaseController();
 $forms = $db->getAllRows('formulaires', 'id', 'DESC');
 // list des formulaires
 $table_head = '<tr>
-        <th scope="col">' . $lang['nom'] . '</th>
+        <th scope="col">' . $app_lang['nom'] . '</th>
         <th scope="col">
-            ' . $lang['description'] . '
+            ' . $app_lang['description'] . '
         </th>
         <th scope="col">
-            ' . $lang['fichier'] . '
+            ' . $app_lang['fichier'] . '
         </th>
         <th scope="col">
-            ' . $lang['actions'] . '
+            ' . $app_lang['actions'] . '
         </th>
     </tr>';
 // delete form
@@ -77,12 +77,12 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && $_SESSION['user']) {
         <ul role="tablist" class="nav nav-tabs card-header-tabs float-right">
             <li class="nav-item">
                 <a href="#tab-1" data-bs-toggle="tab" class="nav-link active">
-                    <?php echo $lang['view_all'] ?>
+                    <?php echo $app_lang['view_all'] ?>
                 </a>
             </li>
             <li class="nav-item">
                 <a href="#tab-2" data-bs-toggle="tab" class="nav-link">
-                    <?php echo $lang['add_form'] ?>
+                    <?php echo $app_lang['add_form'] ?>
                 </a>
             </li>
 
@@ -111,17 +111,17 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && $_SESSION['user']) {
                             $filename_fr = $form['filename_fr']; ?>
                             <?php if (isset($_SESSION['lang']) && $_SESSION['lang'] == 'ar') { ?>
                                 <a href="views/orientation/formulaires/?file=<?php echo $filename_ar ?>&name=<?php echo $form['name_ar'] ?>"
-                                    class="btn btn-primary"><?php echo $lang['imprimer'] ?></a>
+                                    class="btn btn-primary"><?php echo $app_lang['imprimer'] ?></a>
                             <?php } else { ?>
                                 <a href="views/orientation/formulaires/?file=<?php echo $filename_fr ?>&name=<?php echo $form['name_fr'] ?>"
                                     class="btn btn-primary">
-                                    <?php echo $lang['imprimer'] ?></a>
+                                    <?php echo $app_lang['imprimer'] ?></a>
                             <?php } ?>
                         </td>
                         <td>
                             <a href="`<?php echo $_SERVER['REQUEST_URI'] . '`&delete=' . $form['id'] ?>" class="btn ">
                                 <i class="fa fa-trash"></i>
-                                <?php echo $lang['delete'] ?>
+                                <?php echo $app_lang['delete'] ?>
                             </a>
                         </td>
                     </tr>
@@ -213,7 +213,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && $_SESSION['user']) {
 
                         <div class="col-md-12 col-lg-12 col-sm-12 col-xs-12">
                             <button type="submit" name="add_form" class="btn btn-primary">
-                                <?php echo $lang['ajouter'] ?>
+                                <?php echo $app_lang['ajouter'] ?>
                             </button>
                         </div>
                     </form>

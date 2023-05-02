@@ -1,39 +1,39 @@
 <?php
-$lang['dashboard'] = 'Tableau de bord';
-$lang['produit'] = 'Produit';
-$lang['logout'] = 'Se déconnecter';
+$app_lang['dashboard'] = 'Tableau de bord';
+$app_lang['produit'] = 'Produit';
+$app_lang['logout'] = 'Se déconnecter';
 
 
-// general lang file start
-$lang['imprimer'] = 'Imprimer';
-$lang['telecharger'] = 'telecharger';
-$lang['fr'] = 'français';
-$lang['error'] = 'Erreur';
-$lang['print_error'] = 'Erreur d\'impression de formulaire'; 
-$lang['success'] = 'Succès';
-$lang['ajouter'] = 'Ajouter';
+// general app_lang file start
+$app_lang['imprimer'] = 'Imprimer';
+$app_lang['telecharger'] = 'telecharger';
+$app_lang['fr'] = 'français';
+$app_lang['error'] = 'Erreur';
+$app_lang['print_error'] = 'Erreur d\'impression de formulaire'; 
+$app_lang['success'] = 'Succès';
+$app_lang['ajouter'] = 'Ajouter';
 // view all 
-$lang['view_all'] = 'Voir tout';
+$app_lang['view_all'] = 'Voir tout';
 // add formulaire
-$lang['add_form'] = 'Ajouter un formulaire';
-$lang['delete'] = 'Supprimer';
+$app_lang['add_form'] = 'Ajouter un formulaire';
+$app_lang['delete'] = 'Supprimer';
 
 // Nom
-$lang['nom'] = 'Nom';
+$app_lang['nom'] = 'Nom';
 // Description
-$lang['description'] = 'Description';
+$app_lang['description'] = 'Description';
 // Fichier
-$lang['fichier'] = 'Fichier';
+$app_lang['fichier'] = 'Fichier';
 // Actions
-$lang['actions'] = 'Actions';
+$app_lang['actions'] = 'Actions';
 
 
 
 
 
-// 404 page lang file start
-$lang['404'] = '404';
-$lang['page_not_found'] = ' Oups! Page non trouvée!';
-$lang['page_not_found_desc'] = 'La page que vous avez demandée n\'a pas été trouvée.';
-$lang['back_to_home'] = 'Retour à l\'accueil';
-// 404 page lang file end
+// 404 page app_lang file start
+$app_lang['404'] = '404';
+$app_lang['page_not_found'] = ' Oups! Page non trouvée!';
+$app_lang['page_not_found_desc'] = 'La page que vous avez demandée n\'a pas été trouvée.';
+$app_lang['back_to_home'] = 'Retour à l\'accueil';
+// 404 page app_lang file end

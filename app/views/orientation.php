@@ -1,5 +1,4 @@
 <?php
-include urlFor(LANG, $_SESSION['lang'] . '.php');
 $sub_views = [
     'impression_des_formulaires',
     'add_aprentis',
@@ -13,4 +12,5 @@ if (isset($_GET['sub_view'])) {
         gotoPage('404_box');
     }  
 }
+
 ?>

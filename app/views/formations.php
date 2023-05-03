@@ -8,13 +8,12 @@ foreach ($db_lang->includeLang(LANUAGES_FILES, LANG . '/') as $file) {
 }
 
 $sub_views = [
-    'impression_des_formulaires',
-    'add_aprentis',
+    'branch_et_specialite',
 ];
 if (isset($_GET['sub_view'])) {
     $sub_view = $_GET['sub_view'];
     if (in_array($sub_view, $sub_views)) {
-        include 'views/orientation/' . $sub_view . '.php';
+        include 'views/formations/' . $sub_view . '.php';
     } else {
         // error document 404 
         gotoPage('404_box');

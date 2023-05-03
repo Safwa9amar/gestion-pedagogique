@@ -22,6 +22,7 @@ $side_menu = array(
         'link' =>
         '?view=orientation&sub_view=impression_des_formulaires'
       ),
+     
     )
   ),
   'formations' =>
@@ -30,12 +31,13 @@ $side_menu = array(
     'icon' => 'product.svg',
     'link' => '#',
     'sub_menu' => array(
-      'inscriptions_des_demandeurs' => array(
-        'title' =>
-        $app_lang['inscriptions_des_demandeurs'],
-        'link' =>
-        '?view=produits&sub_view=add_product'
-      ),
+         // branch et specialite
+         'branch_et_specialite' => array(
+          'title' =>
+          $app_lang['branch_et_specialite'],
+          'link' =>
+          '?view=formations&sub_view=branch_et_specialite'
+        ),
      
     )
   ),

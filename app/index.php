@@ -1,5 +1,6 @@
 <?php
 session_start();
+$_SESSION['toggle_sidebar'] = false;
 include 'config/config.php';
 include 'helpers/urlFor.php';
 include 'helpers/goTopage.php';
@@ -21,7 +22,12 @@ include urlFor(LANG, 'lang.php');
 <!DOCTYPE html>
 <?php include urlFor(COMPONENTS, 'header.php'); ?>
 
-<body dir="<?php
+<body class="<?php if ($_SESSION['toggle_sidebar']) {
+    echo 'mini-sidebar';
+} else {
+    echo 'mini-sidebar expand-menu';
+}
+?>" dir="<?php
 if (isset($_SESSION['lang'])) {
     if ($_SESSION['lang'] == 'ar') {
         echo 'rtl';

@@ -3,11 +3,12 @@
 
 define('APP_NAME', 'Gestion de service technique');
 define('CURRENCY', 'DZD');
-define('API', './api/?route=');
 
 // app map path 
 // app
 define('APP', 'app');
+// api
+define('API', 'api/');
 // ├── components
 define('COMPONENTS', 'components');
 // │   ├── header.php
@@ -86,4 +87,5 @@ define('LANUAGES_FILES', [
     'ui',
     'aprentis',
     'sideBare',
+    'branches_et_specialities'
 ]);

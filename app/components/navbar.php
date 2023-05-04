@@ -88,5 +88,24 @@ if (isset($_GET['lang']) && isset($_SERVER['HTTP_REFERER'])) {
     </div>
   </div>
 </div>
+<script>
+  // get collapssidebar element
+  const collapssidebar = document.getElementById('toggle_btn');
+  // add event listener
+  collapssidebar.addEventListener('click', () => {
+    $.ajax
+      ({
+        type: "POST",
+        url: "api/ui.php",
+        data: { action: 'collapssidebar' },
+        success: function (response) {
+          // alert(response);
+          console.log(response);
+          // document.getElementById("collapssidebar").innerHTML = response;
+        }
+      });
+  });
+</script>
+
 <?php
 ob_start(); // Turn on output buffering

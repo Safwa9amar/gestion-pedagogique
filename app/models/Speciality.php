@@ -1,6 +1,4 @@
 <?php
-include '../app/config/config.php';
-include '../app/controllers/dataBaseController.php';
 // Speciality class model
 class Speciality {
     private $id;
@@ -121,6 +119,6 @@ class Speciality {
             'training_mode' => $this->training_mode,
             'updated_at' => $this->updated_at
         );
-        $db->updateRow('specialities', $arr, $this->id);
+        return $db->updateRow('specialities', $this->id, $arr) ? true : false;
     }
 }

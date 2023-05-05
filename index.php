@@ -4,10 +4,9 @@ include './app/config/config.php';
 
 session_start();
 
-if (isset($_SESSION['user'])) {
+if (isset($_SESSION['is_logged'])) {
     header('location:' .APP);
 }
-
 
 ?>
 

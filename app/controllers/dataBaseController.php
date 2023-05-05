@@ -90,6 +90,22 @@ class DataBaseController
         return $result;
     }
 
+    static function getRowByIdStatic($table, $id)
+    {
+        $db = new DataBaseController();
+        $query = "SELECT * FROM $table WHERE id = '$id'";
+        $row = mysqli_fetch_assoc(mysqli_query($db->connection, $query));
+        return $row;
+    }
+    // getAllStatic
+    static function getAllRowsStatic($table, $order = 'id', $sort = 'DESC')
+    {
+        $db = new DataBaseController();
+        $query = "SELECT * FROM $table ORDER BY $order $sort";
+        // fetch all rows from the table
+        $rows = mysqli_fetch_all(mysqli_query($db->connection, $query), MYSQLI_ASSOC);
+        return $rows;
+    }
 
 
 }

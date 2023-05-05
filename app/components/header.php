@@ -27,7 +27,7 @@
     // check if the app folder in  request url
     if (strpos($_SERVER['REQUEST_URI'], 'app')) {
         echo '../' . urlFor('../' . CSS, 'bootstrap.min.css', 24);
-        
+
     } else {
         echo '../' . urlFor('../' . CSS, 'bootstrap.min.css', 24);
         echo urlFor(CSS, 'bootstrap.min.css', 24);
@@ -80,4 +80,9 @@
     }
     ?>">
     <!-- bootstrap cdn -->
+    <?php
+    if (!isset($_SESSION['is_logged'])) {
+        echo '<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">';
+    }
+    ?>
 </head>

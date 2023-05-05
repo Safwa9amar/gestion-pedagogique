@@ -1,12 +1,16 @@
 <?php
-include '../app/config/config.php';
-include '../app/controllers/dataBaseController.php';
+// include '../app/config/config.php';
+// include '../app/controllers/dataBaseController.php';
 class Branch{
+    private $id;
     private $code;
     private $name_ar;
     private $name_fr;
 
    
+    public function getID(){
+        return $this->id;
+    }
     public function getCode(){
         return $this->code;
     }
@@ -18,7 +22,9 @@ class Branch{
     public function getNameFr(){
         return $this->name_fr;
     }
-
+    public function setID($id){
+        $this->id = $id;
+    }
     public function setCode($code){
         $this->code = $code;
     }
@@ -48,7 +54,7 @@ class Branch{
             'Intitule_ar' => $this->name_ar,
             'Intitule_fr' => $this->name_fr
         );
-        $db->updateRow('branches', $this->code, $data);
+        return $db->updateRow('branches', $this->id, $data) ? true : false;
     }
 
 }

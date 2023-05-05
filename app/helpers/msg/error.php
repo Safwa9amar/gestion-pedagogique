@@ -6,9 +6,22 @@
     z-index: 9999;
     " class="alert alert-danger alert-dismissible fade show" role="alert">
     <strong>
-        <?php echo $lang['error'] ?>
+        <?php echo $app_lang['error'] ?>
     </strong>
-    <?php echo $_SESSION['error'] ?><button type="button" class="btn-close" data-bs-dismiss="alert"
+    <?php echo $_SESSION['error'] ?><button id="closeMsg" type="button" class="btn-close" data-bs-dismiss="alert"
         aria-label="Close"></button>
 </div>
 </div>
+
+<script>
+    // button closeMsg
+    document.getElementById('closeMsg').addEventListener('click', function () {
+        // remove the msg from session
+        fetch('../api/removeMsg.php?type=success').then(res => res.json()).then(data => {
+            console.log(data);
+        });
+        
+    });
+
+
+</script>

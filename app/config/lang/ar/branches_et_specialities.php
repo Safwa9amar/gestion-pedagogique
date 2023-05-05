@@ -5,7 +5,9 @@ $app_lang['list_of_branches'] = 'قائمة الشعب';
 $app_lang['specialities'] = 'التخصصات';
 $app_lang['list_of_specialities'] = 'قائمة التخصصات';
 $app_lang['add_branch'] = 'إضافة شعبة';
+$app_lang['edit_branch'] = 'تعديل شعبة';
 $app_lang['add_speciality'] = 'إضافة تخصص';
+$app_lang['edit_speciality'] = 'تعديل تخصص';
 
 
 

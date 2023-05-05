@@ -16,6 +16,8 @@ define('COMPONENTS', 'components');
 // │   ├── scripts.php
 // │   ├── sidebare.php
 // │   └── topbar.php
+define('MODELS', 'models');
+
 define('CONFIG', 'config');
 // ├── config
 // │   └── config.php

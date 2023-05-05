@@ -15,7 +15,8 @@ if (!isset($_SESSION['user'])) {
 if (isset($_GET['logout'])) {
     unset($_SESSION['user']);
     session_destroy();
-    header('location:../index.php');
+    sleep(1);
+    header('location:../index.php');    
 }
 include urlFor(LANG, 'lang.php');
 ?>
@@ -67,7 +68,7 @@ if (isset($_SESSION['lang'])) {
         if (isset($_SESSION[$type])) {
             echo $_SESSION[$type];
             include 'helpers/msg/' . $type . '.php';
-            unset($_SESSION[$type]);
+            
         }
     }
     ?>

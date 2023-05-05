@@ -75,11 +75,14 @@ if (isset($_GET['delete_speciality'])) {
             </td>
             <td>
                 <a href="<?php echo '?view=formations&sub_view=branch_et_specialite&edit_speciality=' . $speciality['id']; ?>"
-                    class="btn btn-primary">
+                    class="btn">
+                    <i class="fa fa-edit"></i>
+
                     <?php echo $app_lang['modifier'] ?>
                 </a>
                 <a href="<?php echo '?view=formations&sub_view=branch_et_specialite&delete_speciality=' . $speciality['id']; ?>"
-                    class="btn btn-danger">
+                    class="btn">
+                    <i class="fa fa-trash"></i>
                     <?php echo $app_lang['delete'] ?>
                 </a>
             </td>

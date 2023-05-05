@@ -26,6 +26,14 @@ class DataBaseController
             }
         }
     }
+    // execute
+    public function execute($query, $params = [])
+    {
+        print_r($params);
+        $stmt = $this->connection->prepare($query);
+        $stmt->execute($params);
+        return $stmt;
+    }
     // get all rows from table
     public function getAllRows($table, $order = 'id', $sort = 'DESC')
     {

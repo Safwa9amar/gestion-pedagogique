@@ -1,6 +1,5 @@
 <?php
-function gotoPage($name)
+function gotoPage($name, $role = '/admin')
 {
-  // echo urlFor(VIEWS, $name . '.php');
-  return include_once urlFor(VIEWS, $name . '.php');
+  return include_once urlFor(VIEWS.$role, $name . '.php');
 }

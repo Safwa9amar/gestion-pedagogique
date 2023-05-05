@@ -65,17 +65,20 @@ if (isset($_GET['delete_speciality'])) {
                 <?php echo $speciality['duration']; ?>
             </td>
             <td>
-                <?php echo $speciality['conditions']; ?>
+                <textarea disabled >
+                    <?php echo $speciality['conditions']; ?>
+
+                </textarea>
             </td>
             <td>
                 <?php echo $speciality['training_mode']; ?>
             </td>
             <td>
-                <a href="<?php echo urlFor(COMPONENTS, 'edit_speciality.php?edit_speciality=' . $speciality['id']); ?>"
+                <a href="<?php echo '?view=formations&sub_view=branch_et_specialite&edit_speciality=' . $speciality['id']; ?>"
                     class="btn btn-primary">
                     <?php echo $app_lang['modifier'] ?>
                 </a>
-                <a href="<?php echo urlFor(COMPONENTS, 'specialities.php?delete_speciality=' . $speciality['id']); ?>"
+                <a href="<?php echo '?view=formations&sub_view=branch_et_specialite&delete_speciality=' . $speciality['id']; ?>"
                     class="btn btn-danger">
                     <?php echo $app_lang['delete'] ?>
                 </a>

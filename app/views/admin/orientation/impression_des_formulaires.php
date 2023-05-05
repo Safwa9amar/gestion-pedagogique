@@ -127,6 +127,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && $_SESSION['user']) {
                     </tr>
                 <?php } ?>
                 <?php include urlFor(COMPONENTS, 'list_table_footer.php'); ?>
+            </div>
                 <div role="tabpanel" id="tab-2" class="tab-pane fade ">
                     <form method="post" enctype="multipart/form-data">
                         <div class="row">

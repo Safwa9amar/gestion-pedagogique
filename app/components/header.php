@@ -79,4 +79,5 @@
         echo urlFor(CSS, 'style.css', 24);
     }
     ?>">
+    <!-- bootstrap cdn -->
 </head>

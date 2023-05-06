@@ -50,20 +50,18 @@ if (isset($_SESSION['lang'])) {
 
     <div class="main-wrapper ">
 
-        <div style="width: 100vw;" class="content container-fluid ">
             <?php
             //    check user role
             if ($_SESSION['user']['role'] == 'admin') {
                 include urlFor(VIEWS . '/admin/', 'index.php');
-            } elseif ($_SESSION['user']['role'] == 'aprentis') {
-                include urlFor(VIEWS . '/aprentis/', 'index.php');
+            } elseif ($_SESSION['user']['role'] == 'student') {
+                include urlFor(VIEWS . '/student/', 'index.php');
             } elseif ($_SESSION['user']['role'] == 'formateur') {
                 include urlFor(VIEWS . '/formateur/', 'index.php');
 
             }
 
             ?>
-        </div>
 
     </div>
     <?php

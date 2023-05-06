@@ -10,6 +10,8 @@ class Student extends MainModel
     private $gender;
     private $first_name;
     private $last_name;
+    private $birthday;
+    private $born_place;
     private $email;
     private $phone;
     private $address;
@@ -57,6 +59,14 @@ class Student extends MainModel
     public function setLastName($last_name)
     {
         $this->last_name = $last_name;
+    }
+    public function setBirthday($birthday)
+    {
+        $this->birthday = $birthday;
+    }
+    public function setBornPlace($born_place)
+    {
+        $this->born_place = $born_place;
     }
     public function setEmail($email)
     {
@@ -131,6 +141,15 @@ class Student extends MainModel
     {
         return $this->last_name;
     }
+    public function getBirthday()
+    {
+        return $this->birthday;
+    }
+    public function getBornPlace()
+    {
+        return $this->born_place;
+    }
+
     public function getEmail()
     {
         return $this->email;
@@ -198,6 +217,8 @@ class Student extends MainModel
         $params = [
             'first_name' => $this->first_name,
             'last_name' => $this->last_name,
+            'birthday' => $this->birthday,
+            'born_place' => $this->born_place,
             'matricule' => $this->matricule,
             'password' => $this->password,
             'gender' => $this->gender,
@@ -217,6 +238,13 @@ class Student extends MainModel
             'updated_at' => $this->updated_at
             // 199 - 218 = 19
         ];
+        parent::createRow('users', [
+            'name' => $this->first_name.' '.$this->last_name,
+            'tel' => $this->phone,
+            'email' => $this->email,
+            'password' => $this->password,
+            'role' => 'student',
+        ]);
         return parent::createRow($this->table, $params) ? true : false;
     }
     // update
@@ -225,6 +253,8 @@ class Student extends MainModel
         $params = [
             'first_name' => $this->first_name,
             'last_name' => $this->last_name,
+            'birthday' => $this->birthday,
+            'born_place' => $this->born_place,
             'matricule' => $this->matricule,
             'password' => $this->password,
             'gender' => $this->gender,
@@ -259,7 +289,7 @@ class Student extends MainModel
         //removce first 2 digits from current year
         $year = substr(date("Y"), 2);
         // the first part of matricule should be 4 digits
-        $seriel_number = str_pad($max_id, 4, "0", STR_PAD_LEFT);
+        $seriel_number = str_pad($max_id+1, 4, "0", STR_PAD_LEFT);
         // $matricule = $seriel_number . $current_session . $year;
         $matricule = $seriel_number . "-" . $current_session['month'] . "-" . $year;
         return $matricule;

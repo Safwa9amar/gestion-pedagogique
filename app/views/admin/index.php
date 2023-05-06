@@ -17,20 +17,18 @@ if (isset($_SESSION['lang'])) {
 }
 ?>
     " class="page-wrapper">
-    <div class="content container-fluid ">
-        <?php
-        if (isset($_GET['view'])) {
-            $view = $_GET['view'];
-            if (in_array($view, VIEWSLIST)) {
-                gotoPage($view);
-            } else {
-                // error document 404 
-                gotoPage('404_box');
-            }
+    <?php
+    if (isset($_GET['view'])) {
+        $view = $_GET['view'];
+        if (in_array($view, VIEWSLIST)) {
+            gotoPage($view);
         } else {
-            gotoPage('dashboard');
+            // error document 404 
+            gotoPage('404_box');
         }
+    } else {
+        gotoPage('dashboard');
+    }
 
-        ?>
-    </div>
+    ?>
 </div>

@@ -10,6 +10,9 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $student->setFirstName($_POST['first_name']);
     $student->setGender($_POST['gender']);
     $student->setLastName($_POST['last_name']);
+    $student->setBirthday($_POST['birthday']);
+    $student->setBornPlace($_POST['born_place']);
+
     $student->setEmail($_POST['email']);
     $student->setPhone($_POST['phone']);
     $student->setAddress($_POST['address']);
@@ -75,13 +78,13 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             <label for="date_naissance">
                 <?php echo $app_lang['date_de_naissance'] ?>
             </label>
-            <input type="date" class="form-control" name="date_naissance" id="date_naissance">
+            <input type="date" class="form-control" name="birthday" id="date_naissance">
         </div>
         <div class="form-group col-sm-12  col-lg-4">
             <label for="lieu_naissance">
                 <?php echo $app_lang['lieu_de_naissance'] ?>
             </label>
-            <input type="text" class="form-control" name="lieu_naissance" id="lieu_naissance">
+            <input type="text" class="form-control" name="born_place" id="lieu_naissance">
         </div>
         <!-- situation fam -->
         <div class="form-group col-sm-12  col-lg-4">

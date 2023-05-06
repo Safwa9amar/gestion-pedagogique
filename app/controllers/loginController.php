@@ -32,9 +32,7 @@ class LoginController
                 $password = filter_var($password, FILTER_SANITIZE_STRING);
                 // TODO: check if user exists in database (use method from DatabaseController)
                 $user = $this->db->getRowByParam('users', 'email', $email);
-                $student = $this->db->getRowByParam('students', 'matriclue', $email) ;
-                $formateur = $this->db->getRowByParam('formateurs', 'matriclue', $email) ;
-                if (count($user) > 0 || count($student) > 0 || count($formateur) > 0) {
+                if (count($user) > 0 ) {
                     // get hashed password from database
                     $hashed_password = $user['password'];
                     // verify password

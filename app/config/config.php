@@ -89,5 +89,6 @@ define('LANUAGES_FILES', [
     'ui',
     'aprentis',
     'sideBare',
-    'branches_et_specialities'
+    'branches_et_specialities',
+    'open_section'
 ]);

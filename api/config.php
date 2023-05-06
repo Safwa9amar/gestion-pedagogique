@@ -4,6 +4,7 @@ session_start();
 include '../app/controllers/dataBaseController.php';
 $routes = [
     'users' => 'users',
+    'students' => 'students',
 ];
 
 function globalApi($table, $id = null)
@@ -25,7 +26,7 @@ function globalApi($table, $id = null)
             // filter the result
             $result = array_filter($result, function ($item) use ($search) {
                 // check if the search query is in the item name and suk
-                if (strpos(strtolower($item['name']), strtolower($search)) !== false) {
+                if (strpos(strtolower($item['matricule']), strtolower($search)) !== false) {
                     return true;
                 } else if (strpos($item['id'], $search) !== false) {
                     return true;

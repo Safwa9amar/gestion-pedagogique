@@ -4,6 +4,8 @@
 $app_lang['informations_de_lapprenti'] = "معلومات المتربص";
 // رقم التسجيل
 $app_lang['numero_dinscription'] = "رقم التسجيل";
+$app_lang['numero_seriel'] = 'الرقم التسلسلي للمتربص';
+
 // السنة : رقم id الخاص بالسنة
 $app_lang['annee'] = "السنة";
 // كشف مسار التكوين (rel)
@@ -14,8 +16,12 @@ $app_lang['nom_et_prenom'] = "الاسم واللقب";
 $app_lang['nom'] = "اللقب";
 // اللقب
 $app_lang['prenom'] = "الاسم";
+// nom et prenom
+$app_lang['nom_prenom'] = "الاسم واللقب";
 // تاريخ الميلاد
 $app_lang['adresse'] = "العنوان";
+// date et lieu de naissance
+$app_lang['date_et_lieu_de_naissance'] = "تاريخ ومكان الميلاد";
 // tel 
 $app_lang['telephone'] = "رقم الهاتف";
 $app_lang['email'] = "البريد الإلكتروني";

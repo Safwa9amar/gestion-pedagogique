@@ -10,18 +10,19 @@ $side_menu = array(
     'icon' => 'product.svg',
     'link' => '#',
     'sub_menu' => array(
+      'list_aprentis' => array(
+        'title' =>
+        $app_lang['list_aprentis'],
+        'link' =>
+        '?view=orientation&sub_view=list_aprentis'
+      ),
       'add_aprentis' => array(
         'title' =>
         $app_lang['add_aprentis'],
         'link' =>
         '?view=orientation&sub_view=add_aprentis'
       ),
-      'impression_des_formulaires' => array(
-        'title' =>
-        $app_lang['impression_des_formulaires'],
-        'link' =>
-        '?view=orientation&sub_view=impression_des_formulaires'
-      ),
+     
      
     )
   ),
@@ -38,8 +39,20 @@ $side_menu = array(
           'link' =>
           '?view=formations&sub_view=branch_et_specialite'
         ),
-     
-    )
+        'impression_des_formulaires' => array(
+          'title' =>
+          $app_lang['impression_des_formulaires'],
+          'link' =>
+          '?view=formations&sub_view=impression_des_formulaires'
+        ),
+        // open section
+        'open_section' => array(
+          'title' =>
+          $app_lang['open_section'],
+          'link' =>
+          '?view=formations&sub_view=open_section'
+        ),
+      )
   ),
   
 ); ?>

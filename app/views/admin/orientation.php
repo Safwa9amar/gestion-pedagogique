@@ -8,8 +8,8 @@ foreach ($db_lang->includeLang(LANUAGES_FILES, LANG . '/') as $file) {
 }
 
 $sub_views = [
-    'impression_des_formulaires',
     'add_aprentis',
+    'list_aprentis',
 ];
 if (isset($_GET['sub_view'])) {
     $sub_view = $_GET['sub_view'];

@@ -33,4 +33,8 @@ $app_lang['fichier'] = 'الملف';
 // Actions
 $app_lang['actions'] = 'الإجراءات';
 
+// date
+$app_lang['date'] = 'التاريخ';
+// search
+$app_lang['search'] = 'بحث';
 

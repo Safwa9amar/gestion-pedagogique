@@ -1,4 +1,3 @@
-
 <div style="
     position: fixed;
     bottom: 0;
@@ -17,10 +16,7 @@
     // button closeMsg
     document.getElementById('closeMsg').addEventListener('click', function () {
         // remove the msg from session
-        fetch('../api/removeMsg.php?type=success').then(res => res.json()).then(data => {
-            console.log(data);
-        });
-        
+        fetch('../api/removeMsg.php?type=success')
     });
 
 

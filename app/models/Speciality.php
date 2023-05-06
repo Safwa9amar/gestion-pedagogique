@@ -87,10 +87,10 @@ class Speciality {
     public function setUpdatedAt($updated_at) {
         $this->updated_at = $updated_at;
     }
+    // create
     public function create() {
         // dataBaseController
         $db = new dataBaseController();
-        print_r($this);
         $arr = array(
             'branch_id' => $this->branch_id,
             'code' => $this->code,

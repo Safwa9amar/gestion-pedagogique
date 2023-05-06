@@ -1,4 +1,6 @@
 <?php
+require '../vendor/autoload.php';
+
 session_start();
 $_SESSION['toggle_sidebar'] = false;
 include 'config/config.php';
@@ -7,6 +9,8 @@ include 'helpers/goTopage.php';
 include 'helpers/alert.php';
 include 'helpers/uploadFile.php';
 include 'controllers/dataBaseController.php';
+include 'models/MainModel.php';
+include 'models/Student.php';
 // url for config
 // check if user is logged in
 if (!isset($_SESSION['user'])) {
@@ -40,9 +44,9 @@ if (isset($_SESSION['lang'])) {
 }
 
 ?>">
-    <div id="global-loader">
+    <!-- <div id="global-loader">
         <div class="whirly-loader"> </div>
-    </div>
+    </div> -->
 
     <div class="main-wrapper ">
 

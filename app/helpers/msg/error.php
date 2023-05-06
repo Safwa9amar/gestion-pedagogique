@@ -8,18 +8,16 @@
     <strong>
         <?php echo $app_lang['error'] ?>
     </strong>
-    <?php echo $_SESSION['error'] ?><button id="closeMsg" type="button" class="btn-close" data-bs-dismiss="alert"
+    <?php echo $_SESSION['error'] ?><button id="closeErrMsg" type="button" class="btn-close" data-bs-dismiss="alert"
         aria-label="Close"></button>
 </div>
 </div>
 
 <script>
-    // button closeMsg
-    document.getElementById('closeMsg').addEventListener('click', function () {
+    // button closeErrMsg
+    document.getElementById('closeErrMsg').addEventListener('click', function () {
         // remove the msg from session
-        fetch('../api/removeMsg.php?type=success').then(res => res.json()).then(data => {
-            console.log(data);
-        });
+        fetch('../api/removeMsg.php?type=error')
         
     });
 

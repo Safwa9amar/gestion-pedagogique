@@ -25,13 +25,14 @@ class DataBaseController
                 echo "Error importing SQL file: " . mysqli_error($this->connection);
             }
         }
+
     }
     // execute
     public function execute($query, $params = [])
     {
-        print_r($params);
-        $stmt = $this->connection->prepare($query);
-        $stmt->execute($params);
+        $db = new DataBaseController();
+        $stmt = $db->connection->prepare($query);
+        $stmt->execute();
         return $stmt;
     }
     // get all rows from table
@@ -49,6 +50,7 @@ class DataBaseController
         $row = mysqli_fetch_assoc(mysqli_query($this->connection, $query));
         return $row;
     }
+
     // get row by param
     public function getRowByParam($table, $param, $qr)
     {
@@ -56,6 +58,14 @@ class DataBaseController
         $row = mysqli_fetch_assoc(mysqli_query($this->connection, $query));
         return $row;
     }
+    // getRowsByParam 
+    public function getRowsByParam($table, $param, $qr)
+    {
+        $query = "SELECT * FROM $table WHERE $param = '$qr'";
+        $rows = mysqli_fetch_all(mysqli_query($this->connection, $query), MYSQLI_ASSOC);
+        return $rows;
+    }
+
     // insert row
     public function insertRow($table, $params)
     {
@@ -106,6 +116,25 @@ class DataBaseController
         $rows = mysqli_fetch_all(mysqli_query($db->connection, $query), MYSQLI_ASSOC);
         return $rows;
     }
-
+    // getMaxId
+    public function getMaxId($table)
+    {
+        $db = new DataBaseController();
+        $query = "SELECT MAX(id) FROM $table";
+        $result = mysqli_query($db->connection, $query);
+        $row = mysqli_fetch_row($result);
+        return $row[0];
+    }
+    // getCurrentSession
+    public function getCurrentSession()
+    {
+        $db = new DataBaseController();
+        // check if the session is in february or september
+        $current_month = date('m') < 9 ? 2 : 9;
+        $current_year = date('Y');
+        $query = "SELECT * FROM `sessions` WHERE `year` = '$current_year' AND `month` = '$current_month'";
+        $row = mysqli_fetch_assoc(mysqli_query($db->connection, $query));
+        return $row;
+    }
 
 }

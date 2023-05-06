@@ -1,4 +1,7 @@
 <?php
+$whoops = new \Whoops\Run;
+$whoops->pushHandler(new \Whoops\Handler\PrettyPageHandler);
+$whoops->register();
 include urlFor(COMPONENTS, 'sidebare.php');
 include urlFor(COMPONENTS, 'navbar.php');
 ?>

@@ -19,6 +19,13 @@ $app_lang['adresse'] = "العنوان";
 // tel 
 $app_lang['telephone'] = "رقم الهاتف";
 $app_lang['email'] = "البريد الإلكتروني";
+$app_lang['sex'] = "الجنس";
+$app_lang['homme'] = "ذكر";
+$app_lang['femme'] = "أنثى";
+
+// matricule
+$app_lang['matricule'] = "رقم التسجيل";
+
 
 
 $app_lang['informations_personnelles'] = "المعلومات الشخصية";

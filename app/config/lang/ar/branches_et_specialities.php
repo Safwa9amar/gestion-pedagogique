@@ -1,6 +1,7 @@
 <?php
 $app_lang['branches_et_specialities'] = 'الشعب والتخصصات';
 $app_lang['branches'] = 'الشعب';
+$app_lang['branche'] = 'الشعبة';
 $app_lang['list_of_branches'] = 'قائمة الشعب';
 $app_lang['specialities'] = 'التخصصات';
 $app_lang['list_of_specialities'] = 'قائمة التخصصات';
@@ -21,6 +22,8 @@ $app_lang['branch_name_fr'] = 'الشعبة بالفرنسية';
 $app_lang['branch_name_ar'] = 'الشعبة بالعربية';
 
 // specialities
+
+$app_lang['speciality'] = 'التخصص';
 $app_lang['speciality_id'] = 'الرقم التسلسلي للتخصص';
 $app_lang['speciality_code'] = 'رمز التخصص';
 $app_lang['speciality_name'] = 'اسم التخصص';

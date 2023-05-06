@@ -12,7 +12,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $update_speciality->setLevel($_POST['speciality_level']);
     $update_speciality->setCertificate($_POST['speciality_certificate']);
     $update_speciality->setDuration($_POST['speciality_duration']);
-    $update_speciality->setConditions(htmlspecialchars($_POST['speciality_conditions']));
+    $update_speciality->setConditions($_POST['speciality_conditions']);
     $update_speciality->setBranchID($_POST['spec_branch-code']);
     $update_speciality->setTrainingMode($_POST['speciality_training_mode']);
     $update_speciality->setUpdatedAt(date('Y-m-d H:i:s'));
@@ -31,7 +31,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
 <div role="tabpanel" id="add-speciality"
     class="tab-pane fade <?php echo isset($_GET['edit_speciality']) ? 'active show' : '' ?>">
-    <form method="post" >
+    <form method="post">
         <div class="row">
             <!-- رمز الشعبة -->
             <div class="form-group col-md-6 col-sm-12 col-xs-12">
@@ -97,9 +97,8 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                 <label for="speciality_conditions">
                     <?php echo $app_lang['speciality_conditions'] ?>
                 </label>
-                <textarea class="form-control" name="speciality_conditions">
-                    <?php echo $speciality['conditions']; ?>
-                </textarea>
+                <textarea class="form-control"
+                    name="speciality_conditions"><?php echo $speciality['conditions']; ?></textarea>
             </div>
             <div class="form-group col-md-6 col-sm-12 col-xs-12">
                 <label for="speciality_training_mode">

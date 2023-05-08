@@ -11,6 +11,7 @@ include 'helpers/uploadFile.php';
 include 'controllers/dataBaseController.php';
 include 'models/MainModel.php';
 include 'models/Student.php';
+include 'models/Formateur.php';
 // url for config
 // check if user is logged in
 if (!isset($_SESSION['user'])) {
@@ -20,7 +21,7 @@ if (isset($_GET['logout'])) {
     unset($_SESSION['user']);
     session_destroy();
     sleep(1);
-    header('location:../index.php');    
+    header('location:../index.php');
 }
 include urlFor(LANG, 'lang.php');
 ?>
@@ -50,18 +51,18 @@ if (isset($_SESSION['lang'])) {
 
     <div class="main-wrapper ">
 
-            <?php
-            //    check user role
-            if ($_SESSION['user']['role'] == 'admin') {
-                include urlFor(VIEWS . '/admin/', 'index.php');
-            } elseif ($_SESSION['user']['role'] == 'student') {
-                include urlFor(VIEWS . '/student/', 'index.php');
-            } elseif ($_SESSION['user']['role'] == 'formateur') {
-                include urlFor(VIEWS . '/formateur/', 'index.php');
+        <?php
+        //    check user role
+        if ($_SESSION['user']['role'] == 'admin') {
+            include urlFor(VIEWS . '/admin/', 'index.php');
+        } elseif ($_SESSION['user']['role'] == 'student') {
+            include urlFor(VIEWS . '/student/', 'index.php');
+        } elseif ($_SESSION['user']['role'] == 'formateur') {
+            include urlFor(VIEWS . '/formateur/', 'index.php');
 
-            }
+        }
 
-            ?>
+        ?>
 
     </div>
     <?php
@@ -70,7 +71,6 @@ if (isset($_SESSION['lang'])) {
         if (isset($_SESSION[$type])) {
             echo $_SESSION[$type];
             include 'helpers/msg/' . $type . '.php';
-            
         }
     }
     ?>

@@ -4,6 +4,7 @@ class MainModel extends DataBaseController{
     private $connection;
     // create connection from dataBaseController
     public function __construct(){
+        parent::__construct();
         $this->connection = new DataBaseController();
     }
     // create
@@ -30,7 +31,7 @@ class MainModel extends DataBaseController{
         }
         $query = substr($query, 0, -1);
         $query .= " WHERE id = '$id'";
-        $this->connection->execute($query);
+        return $this->connection->execute($query) ? true : false;
     }
 
     // delete
@@ -50,5 +51,10 @@ class MainModel extends DataBaseController{
         $query = "SELECT * FROM $table ORDER BY id DESC LIMIT 1";
         $result = $this->connection->execute($query);
         return $result;
+    }
+    // executeSqlCode
+    public function executeSqlCode($query){
+        $result = $this->connection->execute($query);
+        return $result ;
     }
 }

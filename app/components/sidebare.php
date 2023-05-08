@@ -22,8 +22,19 @@ $side_menu = array(
         'link' =>
         '?view=orientation&sub_view=add_aprentis'
       ),
-     
-     
+      'add_formateur' => array(
+        'title' =>
+        $app_lang['add_formateur'],
+        'link' =>
+        '?view=orientation&sub_view=add_formateur'
+      ),
+      'list_formateur' => array(
+        'title' =>
+        $app_lang['list_formateur'],
+        'link' =>
+        '?view=orientation&sub_view=list_formateur'
+      ),
+
     )
   ),
   'formations' =>
@@ -32,29 +43,36 @@ $side_menu = array(
     'icon' => 'product.svg',
     'link' => '#',
     'sub_menu' => array(
-         // branch et specialite
-         'branch_et_specialite' => array(
-          'title' =>
-          $app_lang['branch_et_specialite'],
-          'link' =>
-          '?view=formations&sub_view=branch_et_specialite'
-        ),
-        'impression_des_formulaires' => array(
-          'title' =>
-          $app_lang['impression_des_formulaires'],
-          'link' =>
-          '?view=formations&sub_view=impression_des_formulaires'
-        ),
-        // open section
-        'open_section' => array(
-          'title' =>
-          $app_lang['open_section'],
-          'link' =>
-          '?view=formations&sub_view=open_section'
-        ),
-      )
+      // branch et specialite
+      'branch_et_specialite' => array(
+        'title' =>
+        $app_lang['branch_et_specialite'],
+        'link' =>
+        '?view=formations&sub_view=branch_et_specialite'
+      ),
+      'impression_des_formulaires' => array(
+        'title' =>
+        $app_lang['impression_des_formulaires'],
+        'link' =>
+        '?view=formations&sub_view=impression_des_formulaires'
+      ),
+      // open section
+      'open_section' => array(
+        'title' =>
+        $app_lang['open_section'],
+        'link' =>
+        '?view=formations&sub_view=open_section'
+      ),
+      'show_section' => array(
+        'title' =>
+        $app_lang['show_section'],
+        'link' =>
+        '?view=formations&sub_view=show_section'
+      ),
+
+    )
   ),
-  
+
 ); ?>
 <div style="<?php
 if (isset($_SESSION['lang']) && $_SESSION['lang'] == 'ar') {

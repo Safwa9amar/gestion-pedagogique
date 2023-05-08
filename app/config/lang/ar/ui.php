@@ -20,7 +20,7 @@ $app_lang['view_all'] = 'عرض الكل';
 // add formulaire
 $app_lang['add_form'] = 'إضافة نموذج';
 // delete
-$app_lang['delete'] = 'ازالة';
+$app_lang['delete'] = 'حذف';
 $app_lang['ajouter'] = 'إضافة';
 $app_lang['modifier'] = 'تعديل';
 $app_lang['loading'] = 'جار التحميل...';
@@ -38,3 +38,15 @@ $app_lang['date'] = 'التاريخ';
 // search
 $app_lang['search'] = 'بحث';
 
+// save
+$app_lang['save'] = 'حفظ';
+
+//حدث خطأ ما يرجى المحاولة مرة أخرى
+$app_lang['try_again'] = 'حدث خطأ ما يرجى المحاولة مرة أخرى';
+// تأكد ان جميع الحقول ممتلئة
+$app_lang['all_fields_required'] = 'تأكد ان جميع الحقول ممتلئة';
+
+
+
+// حروف الوصل
+$app_lang['and'] = 'و';

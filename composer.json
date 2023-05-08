@@ -1,5 +1,6 @@
 {
     "require": {
-        "filp/whoops": "^2.15"
+        "filp/whoops": "^2.15",
+        "phpoffice/phpword": "^1.0"
     }
 }

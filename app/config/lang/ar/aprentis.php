@@ -4,7 +4,7 @@
 $app_lang['informations_de_lapprenti'] = "معلومات المتربص";
 // رقم التسجيل
 $app_lang['numero_dinscription'] = "رقم التسجيل";
-$app_lang['numero_seriel'] = 'الرقم التسلسلي للمتربص';
+$app_lang['numero_seriel'] = 'الرقم التسلسلي ';
 
 // السنة : رقم id الخاص بالسنة
 $app_lang['annee'] = "السنة";
@@ -73,11 +73,16 @@ $app_lang['specialites_demandees'] = "الاختصاصات المرغوب فيه
 // situation_familiale
 $app_lang['situation_familiale'] = "الوضعية العائلية";
 // celibataire
-    $app_lang['celibataire'] = "عازب";
+$app_lang['celibataire'] = "عازب";
 // marie
-    $app_lang['marie'] = "متزوج";
+$app_lang['marie'] = "متزوج";
 // divorce
-    $app_lang['divorce'] = "مطلق";
+$app_lang['divorce'] = "مطلق";
 // veuf
-    $app_lang['veuf'] = "أرمل";
+$app_lang['veuf'] = "أرمل";
 
+
+// Diplome
+$app_lang['diplome'] = "الشهادة";
+// experience professionnelle
+$app_lang['experience_professionnelle'] = "الخبرة المهنية";

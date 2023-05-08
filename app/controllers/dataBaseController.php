@@ -32,6 +32,7 @@ class DataBaseController
     {
         $db = new DataBaseController();
         $stmt = $db->connection->prepare($query);
+        if (!$stmt) return ;
         $stmt->execute();
         return $stmt;
     }
@@ -47,6 +48,7 @@ class DataBaseController
     public function getRowById($table, $id)
     {
         $query = "SELECT * FROM $table WHERE id = '$id'";
+        // get the first row from the table
         $row = mysqli_fetch_assoc(mysqli_query($this->connection, $query));
         return $row;
     }

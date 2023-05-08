@@ -14,6 +14,11 @@ class ComposerStaticInit3dc1b9e9d6c7e9695bba5dec50d005e3
         'P' => 
         array (
             'Psr\\Log\\' => 8,
+            'PhpOffice\\PhpWord\\' => 18,
+        ),
+        'L' => 
+        array (
+            'Laminas\\Escaper\\' => 16,
         ),
     );
 
@@ -25,6 +30,14 @@ class ComposerStaticInit3dc1b9e9d6c7e9695bba5dec50d005e3
         'Psr\\Log\\' => 
         array (
             0 => __DIR__ . '/..' . '/psr/log/src',
+        ),
+        'PhpOffice\\PhpWord\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/phpoffice/phpword/src/PhpWord',
+        ),
+        'Laminas\\Escaper\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/laminas/laminas-escaper/src',
         ),
     );
 

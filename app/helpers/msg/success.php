@@ -1,7 +1,7 @@
 <div style="
     position: fixed;
-    bottom: 0;
-    left: 0;
+    bottom: 1rem;
+    left: 1rem;
     z-index: 9999;
     " class="alert alert-success alert-dismissible fade show" role="alert">
     <strong>

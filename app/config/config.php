@@ -9,6 +9,7 @@ define('CURRENCY', 'DZD');
 define('APP', 'app');
 // api
 define('API', 'api/');
+define('TEMPLATES', 'templates');
 // ├── components
 define('COMPONENTS', 'components');
 // │   ├── header.php
@@ -90,5 +91,6 @@ define('LANUAGES_FILES', [
     'aprentis',
     'sideBare',
     'branches_et_specialities',
-    'open_section'
+    'open_section',
+    'formateur',
 ]);

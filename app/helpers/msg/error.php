@@ -1,8 +1,8 @@
 <!-- bootstrap error box -->
 <div style="
     position: fixed;
-    bottom: 0;
-    left: 0;
+    bottom: 1rem;
+    left: 1rem;
     z-index: 9999;
     " class="alert alert-danger alert-dismissible fade show" role="alert">
     <strong>
@@ -15,10 +15,10 @@
 
 <script>
     // button closeErrMsg
-    document.getElementById('closeErrMsg').addEventListener('click', function () {
+    document.getElementById('closeErrMsg').addEventListener('click', function (e) {
+        // 
         // remove the msg from session
         fetch('../api/removeMsg.php?type=error')
-        
     });
 
 

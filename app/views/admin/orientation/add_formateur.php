@@ -3,6 +3,7 @@ $formateur = new Formateur();
 $formateurs = $formateur->generateSql();
 // INSERT
 if (isset($_POST['add'])) {
+    $formateur->setCin($_POST['cin']);
     $formateur->setNom($_POST['nom']);
     $formateur->setPrenom($_POST['prenom']);
     $formateur->setDateNaissance($_POST['date_naissance']);
@@ -12,11 +13,22 @@ if (isset($_POST['add'])) {
     $formateur->setEmail($_POST['email']);
     $formateur->setDiplome($_POST['diplome']);
     $formateur->setSpecialite($_POST['specialite']);
-    $result = $formateur->create();
-    if ($result) {
-        $_SESSION['success'] = $app_lang['formateur_added'];
+    $checkEmail = $formateur->checkIfRowExistsByParam($formateur->table, 'email', $_POST['email']);
+    if ($checkEmail) {
+        unset($_SESSION['success']);
+        $_SESSION['error'] = $app_lang['email_exists'];
+        // history back to the previous page
+        echo "<script>window.history.back()</script>";
     } else {
-        $_SESSION['error'] = $app_lang['formateur_not_added'];
+        $result = $formateur->create();
+        if ($result) {
+            unset($_SESSION['error']);
+            $_SESSION['success'] = $app_lang['formateur_added'];
+            echo "<script>window.location.href='?view=orientation&sub_view=list_formateur'</script>";
+        } else {
+            unset($_SESSION['success']);
+            $_SESSION['error'] = $app_lang['formateur_not_added'];
+        }
     }
 }
 

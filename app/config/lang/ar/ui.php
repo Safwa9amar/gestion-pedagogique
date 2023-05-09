@@ -15,6 +15,8 @@ $app_lang['print_error'] = 'خطأ في طباعة النموذج';
 $app_lang['success'] = 'نجاح';
 // تم الاضافة بنجاح
 $app_lang['add_success'] = 'تمت الإضافة بنجاح';
+//erreur_ajouter
+$app_lang['add_error'] = 'حدث خطأ ما لم يتم الإضافة';
 // view all
 $app_lang['view_all'] = 'عرض الكل';
 // add formulaire
@@ -50,3 +52,5 @@ $app_lang['all_fields_required'] = 'تأكد ان جميع الحقول ممتل
 
 // حروف الوصل
 $app_lang['and'] = 'و';
+// email_exists
+$app_lang['email_exists'] = 'البريد الإلكتروني موجود بالفعل';

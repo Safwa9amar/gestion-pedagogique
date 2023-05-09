@@ -274,11 +274,19 @@ class Student extends MainModel
             'updated_at' => $this->updated_at
 
         ];
+        parent::updateRow('users', $this->id, [
+            'name' => $this->first_name.' '.$this->last_name,
+            'tel' => $this->phone,
+            'email' => $this->email,
+            'password' => $this->password,
+            'role' => 'student',
+        ]);
         parent::updateRow($this->table, $this->id, $params);
     }
     // delete
     public function delete()
     {
+        parent::deleteRow('users', $this->id);
         parent::deleteRow($this->table, $this->id);
     }
     // generate student matricule : 1-seriel number 2-session 3-year

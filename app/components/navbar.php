@@ -1,7 +1,7 @@
 <?php
 // check if language is set and back referer is set
-if (isset($_GET['lang']) && isset($_SERVER['HTTP_REFERER'])) {
-  // set language
+if (isset($_GET['lang']) && isset($_SERVER['HTTP_REFERER']) && $_SESSION['lang'] != $_GET['lang']) {
+  // remove lang from url
   header('Location: ' . $_SERVER['HTTP_REFERER']);}
   ?>
 <div style="display: flex; width: 100%; justify-content: space-between;" class="header">

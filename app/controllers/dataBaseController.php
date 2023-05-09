@@ -36,6 +36,17 @@ class DataBaseController
         $stmt->execute();
         return $stmt;
     }
+    // checkIfRowExistsByParam
+    public function checkIfRowExistsByParam($table, $param, $qr)
+    {
+        $query = "SELECT * FROM $table WHERE $param = '$qr'";
+        $result = mysqli_query($this->connection, $query);
+        if (mysqli_num_rows($result) > 0) {
+            return true;
+        } else {
+            return false;
+        }
+    }
     // get all rows from table
     public function getAllRows($table, $order = 'id', $sort = 'DESC')
     {
@@ -101,7 +112,17 @@ class DataBaseController
         $result = mysqli_query($this->connection, $query);
         return $result;
     }
-
+    // update row where one param
+    public function updateRowByParam($table, $params, $qr, $param)
+    {
+        $query = "UPDATE $table SET ";
+        $query .= join(", ", array_map(function ($key, $value) {
+            return "$key = '$value'";
+        }, array_keys($params), array_values($params)));
+        $query .= " WHERE $param = '$qr'";
+        $result = mysqli_query($this->connection, $query);
+        return $result;
+    }
     static function getRowByIdStatic($table, $id)
     {
         $db = new DataBaseController();

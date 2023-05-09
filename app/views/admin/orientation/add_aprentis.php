@@ -25,8 +25,19 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $student->setMotherJob($_POST['mother_job']);
     $student->setBranchId($_POST['branch_id']);
     $student->setSpecialityId($_POST['speciality_id']);
-    // 25 - 10 = 15
-    echo $student->create() ? $_SESSION['success'] = 'Student created successfully' : $_SESSION['error'] = 'Student not created';
+    $checkEmail = $student->checkIfRowExistsByParam($formateur->table, 'email', $_POST['email']);
+    if ($checkEmail) {
+        $error = $app_lang['email_existe'];
+        echo "<script>window.history.back()</script>";
+
+    } else {
+        if ($student->create()) {
+            $success = $app_lang['ajouter_avec_succes'];
+            echo '<script>window.location.href = "view=orientation&sub_view=list_aprentis"</script>';
+        } else {
+            $error = $app_lang['erreur_ajouter'];
+        }
+    }
 }
 
 

@@ -1,12 +1,5 @@
 <?php
 
-$db_lang = new LanguageController();
-$db_lang->getLang();
-
-foreach ($db_lang->includeLang(LANUAGES_FILES, LANG . '/') as $file) {
-    include $file;
-}
-
 $sub_views = [
     'branch_et_specialite',
     'impression_des_formulaires',

@@ -20,7 +20,9 @@ if (isset($_GET['delete_formateur'])) {
     echo "<script>window.location.href = 'index.php?view=orientation&sub_view=list_formateur';</script>";
 }
 ?>
-<div class="content">
+<div 
+style="padding:1rem;"
+class="card">
     <?php include urlFor(COMPONENTS, 'list_table_head.php') ?>
     <?php foreach ($formateurs as $formateur) { ?>
         <tr>

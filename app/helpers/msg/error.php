@@ -20,6 +20,6 @@
         // remove the msg from session
         fetch('../api/removeMsg.php?type=error')
     });
-
+  
 
 </script>

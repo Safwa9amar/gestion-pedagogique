@@ -23,6 +23,7 @@ if (isset($_GET['logout'])) {
     sleep(1);
     header('location:../index.php');
 }
+
 include urlFor(LANG, 'lang.php');
 ?>
 <!DOCTYPE html>
@@ -50,20 +51,24 @@ if (isset($_SESSION['lang'])) {
     </div> -->
 
     <div class="main-wrapper ">
+        <div class="content"
+        style="margin:3rem;padding:1rem;"
+        >
 
-        <?php
-        //    check user role
-        if ($_SESSION['user']['role'] == 'admin') {
-            include urlFor(VIEWS . '/admin/', 'index.php');
-        } elseif ($_SESSION['user']['role'] == 'student') {
-            include urlFor(VIEWS . '/student/', 'index.php');
-        } elseif ($_SESSION['user']['role'] == 'formateur') {
-            include urlFor(VIEWS . '/formateur/', 'index.php');
+            <?php
+            //    check user role
+            if ($_SESSION['user']['role'] == 'admin') {
+                include urlFor(VIEWS . '/admin/', 'index.php');
+            } elseif ($_SESSION['user']['role'] == 'student') {
+                include urlFor(VIEWS . '/student/', 'index.php');
+            } elseif ($_SESSION['user']['role'] == 'formateur') {
+                include urlFor(VIEWS . '/formateur/', 'index.php');
 
-        }
+            }
 
-        ?>
+            ?>
 
+        </div>
     </div>
     <?php
 

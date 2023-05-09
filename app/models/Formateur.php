@@ -27,14 +27,17 @@ class Formateur extends MainModel
     // Experience
     private $experience;
     private $specialite;
+    // password
+    private $password;
     // constructor
     public function __construct()
     {
         parent::__construct();
-        $this -> generateSql();
+        $this->generateSql();
         $max_id = parent::getMaxId($this->table);
         // return if id is not set
-        if (!isset($this->id)) return;
+        if (!isset($this->id))
+            return;
         $data = parent::getRowById($this->table, $this->id ?? $max_id);
         // set all properties
         $this->cin = $data['CIN'];
@@ -47,10 +50,14 @@ class Formateur extends MainModel
         $this->email = $data['email'];
         $this->diplome = $data['diplome'];
         $this->specialite = $data['specialite'];
+        // hash password
+        $this->password = password_hash($this->cin, PASSWORD_DEFAULT);
+
     }
     //create
     public function create()
     {
+        $this->password = password_hash($this->cin, PASSWORD_DEFAULT);
         $param = [
             'CIN' => $this->cin,
             'nom' => $this->nom,
@@ -63,6 +70,13 @@ class Formateur extends MainModel
             'diplome' => $this->diplome,
             'specialite' => $this->specialite,
         ];
+        parent::createRow('users', [
+            'name' => $this->nom . ' ' . $this->prenom,
+            'tel' => $this->telephone,
+            'email' => $this->email,
+            'password' => $this->password,
+            'role' => 'formateur',
+        ]);
         return parent::createRow($this->table, $param);
     }
     //update
@@ -81,13 +95,23 @@ class Formateur extends MainModel
             'experience' => $this->experience,
             'specialite' => $this->specialite,
         ];
+        parent::updateRowByParam('users', [
+            'name' => $this->nom . ' ' . $this->prenom,
+            'tel' => $this->telephone,
+            'email' => $this->email,
+            'password' => $this->password,
+            'role' => 'formateur',
+        ], 'email', $this->email);
         return parent::updateRow($this->table, $this->id, $param) ? true : false;
     }
     //delete
     public function delete()
     {
-        return parent::deleteRow($this->table, $this->id);
+        parent::deleteRowByParam('users', 'email', $this->email);
+        return parent::deleteRow($this->table, $this->id) ? true : false;
+        
     }
+    
     // getById
     public function getById()
     {
@@ -147,6 +171,7 @@ class Formateur extends MainModel
     public function setId($id)
     {
         $this->id = $id;
+        $this->__construct();
     }
     public function setCin($cin)
     {

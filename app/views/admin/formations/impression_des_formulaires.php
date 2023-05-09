@@ -110,16 +110,17 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && $_SESSION['user']) {
                             <?php $filename_ar = $form['filename_ar'];
                             $filename_fr = $form['filename_fr']; ?>
                             <?php if (isset($_SESSION['lang']) && $_SESSION['lang'] == 'ar') { ?>
-                                <a href="views/orientation/formulaires/?file=<?php echo $filename_ar ?>&name=<?php echo $form['name_ar'] ?>"
+                                <a href="views/admin/orientation/formulaires/?file=<?php echo $filename_ar ?>&name=<?php echo $form['name_ar'] ?>"
                                     class="btn btn-primary"><?php echo $app_lang['imprimer'] ?></a>
                             <?php } else { ?>
-                                <a href="views/orientation/formulaires/?file=<?php echo $filename_fr ?>&name=<?php echo $form['name_fr'] ?>"
+                                <a href="views/admin/orientation/formulaires/?file=<?php echo $filename_fr ?>&name=<?php echo $form['name_fr'] ?>"
                                     class="btn btn-primary">
                                     <?php echo $app_lang['imprimer'] ?></a>
                             <?php } ?>
                         </td>
                         <td>
-                            <a href="`<?php echo $_SERVER['REQUEST_URI'] . '`&delete=' . $form['id'] ?>" class="btn ">
+                            <a href="?view=formations&sub_view=impression_des_formulaires&delete=<?php echo $form['id'] ?>"
+                                class="btn ">
                                 <i class="fa fa-trash"></i>
                                 <?php echo $app_lang['delete'] ?>
                             </a>
@@ -128,99 +129,99 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && $_SESSION['user']) {
                 <?php } ?>
                 <?php include urlFor(COMPONENTS, 'list_table_footer.php'); ?>
             </div>
-                <div role="tabpanel" id="tab-2" class="tab-pane fade ">
-                    <form method="post" enctype="multipart/form-data">
-                        <div class="row">
-                            <div class="form-group mb-3 col-md-6 col-lg-6 col-sm-12 col-xs-12 ">
-                                <label for="name_fr">
-                                    <?php
-                                    if (isset($_SESSION['lang']) && $_SESSION['lang'] == 'ar') {
-                                        echo 'اسم النموذج بالفرنسية';
-                                    } else {
-                                        echo 'Nom en français';
-                                    }
-                                    ?>
-                                </label>
-                                <input type="text" class="form-control" id="name_fr" name="name_fr">
-                            </div>
-                            <div class="form-group mb-3 col-md-6 col-lg-6 col-sm-12 col-xs-12 ">
-                                <label for="name_ar">
-                                    <?php
-                                    if (isset($_SESSION['lang']) && $_SESSION['lang'] == 'ar') {
-                                        echo 'اسم النموذج بالعربية';
-                                    } else {
-                                        echo 'Nom en arabe';
-                                    }
-                                    ?>
-                                </label>
-                                <input type="text" class="form-control" id="name_ar" name="name_ar">
-                            </div>
+            <div role="tabpanel" id="tab-2" class="tab-pane fade ">
+                <form method="post" enctype="multipart/form-data">
+                    <div class="row">
+                        <div class="form-group mb-3 col-md-6 col-lg-6 col-sm-12 col-xs-12 ">
+                            <label for="name_fr">
+                                <?php
+                                if (isset($_SESSION['lang']) && $_SESSION['lang'] == 'ar') {
+                                    echo 'اسم النموذج بالفرنسية';
+                                } else {
+                                    echo 'Nom en français';
+                                }
+                                ?>
+                            </label>
+                            <input type="text" class="form-control" id="name_fr" name="name_fr">
+                        </div>
+                        <div class="form-group mb-3 col-md-6 col-lg-6 col-sm-12 col-xs-12 ">
+                            <label for="name_ar">
+                                <?php
+                                if (isset($_SESSION['lang']) && $_SESSION['lang'] == 'ar') {
+                                    echo 'اسم النموذج بالعربية';
+                                } else {
+                                    echo 'Nom en arabe';
+                                }
+                                ?>
+                            </label>
+                            <input type="text" class="form-control" id="name_ar" name="name_ar">
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="form-group mb-3 col-md-6 col-lg-6 col-sm-12 col-xs-12 ">
+                            <label for="description_fr">
+                                <?php
+                                if (isset($_SESSION['lang']) && $_SESSION['lang'] == 'ar') {
+                                    echo 'وصف النموذج بالفرنسية';
+                                } else {
+                                    echo 'description en français';
+                                }
+                                ?>
+                            </label>
+                            <textarea class="form-control" name="description_fr"></textarea>
+                        </div>
+                        <div class="form-group mb-3 col-md-6 col-lg-6 col-sm-12 col-xs-12 ">
+                            <label for="description_ar">
+                                <?php
+                                if (isset($_SESSION['lang']) && $_SESSION['lang'] == 'ar') {
+                                    echo 'وصف النموذج بالعربية';
+                                } else {
+                                    echo 'description en arabe';
+                                }
+                                ?>
+                            </label>
+                            <textarea class="form-control" name="description_ar"></textarea>
+                        </div>
+                        <!-- input file  -->
+                    </div>
+                    <div class="row">
+                        <div class="form-group col-md-6 col-lg-6 col-sm-12 col-xs-12">
+                            <label for="formFile_fr" class="form-label">
+                                <?php
+                                if (isset($_SESSION['lang']) && $_SESSION['lang'] == 'ar') {
+                                    echo 'الملف بلغة الفرنسية';
+                                } else {
+                                    echo 'formulaire en français';
+                                }
+                                ?>
+                            </label>
+                            <input class="form-control" type="file" name="filename_fr" id="formFile_fr">
                         </div>
 
-                        <div class="row">
-                            <div class="form-group mb-3 col-md-6 col-lg-6 col-sm-12 col-xs-12 ">
-                                <label for="description_fr">
-                                    <?php
-                                    if (isset($_SESSION['lang']) && $_SESSION['lang'] == 'ar') {
-                                        echo 'وصف النموذج بالفرنسية';
-                                    } else {
-                                        echo 'description en français';
-                                    }
-                                    ?>
-                                </label>
-                                <textarea class="form-control" name="description_fr"></textarea>
-                            </div>
-                            <div class="form-group mb-3 col-md-6 col-lg-6 col-sm-12 col-xs-12 ">
-                                <label for="description_ar">
-                                    <?php
-                                    if (isset($_SESSION['lang']) && $_SESSION['lang'] == 'ar') {
-                                        echo 'وصف النموذج بالعربية';
-                                    } else {
-                                        echo 'description en arabe';
-                                    }
-                                    ?>
-                                </label>
-                                <textarea class="form-control" name="description_ar"></textarea>
-                            </div>
-                            <!-- input file  -->
+                        <div class="form-group col-md-6 col-lg-6 col-sm-12 col-xs-12">
+                            <label for="formFile_ar" class="form-label">
+                                <?php
+                                if (isset($_SESSION['lang']) && $_SESSION['lang'] == 'ar') {
+                                    echo 'الملف بلغة العربية';
+                                } else {
+                                    echo 'formulaire en arabe';
+                                }
+                                ?>
+                            </label>
+                            <input class="form-control" type="file" name="filename_ar" id="formFile_ar">
                         </div>
-                        <div class="row">
-                            <div class="form-group col-md-6 col-lg-6 col-sm-12 col-xs-12">
-                                <label for="formFile_fr" class="form-label">
-                                    <?php
-                                    if (isset($_SESSION['lang']) && $_SESSION['lang'] == 'ar') {
-                                        echo 'الملف بلغة الفرنسية';
-                                    } else {
-                                        echo 'formulaire en français';
-                                    }
-                                    ?>
-                                </label>
-                                <input class="form-control" type="file" name="filename_fr" id="formFile_fr">
-                            </div>
+                    </div>
 
-                            <div class="form-group col-md-6 col-lg-6 col-sm-12 col-xs-12">
-                                <label for="formFile_ar" class="form-label">
-                                    <?php
-                                    if (isset($_SESSION['lang']) && $_SESSION['lang'] == 'ar') {
-                                        echo 'الملف بلغة العربية';
-                                    } else {
-                                        echo 'formulaire en arabe';
-                                    }
-                                    ?>
-                                </label>
-                                <input class="form-control" type="file" name="filename_ar" id="formFile_ar">
-                            </div>
-                        </div>
-
-                        <div class="col-md-12 col-lg-12 col-sm-12 col-xs-12">
-                            <button type="submit" name="add_form" class="btn btn-primary">
-                                <?php echo $app_lang['ajouter'] ?>
-                            </button>
-                        </div>
-                    </form>
-                </div>
-
+                    <div class="col-md-12 col-lg-12 col-sm-12 col-xs-12">
+                        <button type="submit" name="add_form" class="btn btn-primary">
+                            <?php echo $app_lang['ajouter'] ?>
+                        </button>
+                    </div>
+                </form>
             </div>
+
         </div>
     </div>
+</div>
 </div>

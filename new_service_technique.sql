@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: May 06, 2023 at 04:45 PM
+-- Generation Time: May 09, 2023 at 06:33 PM
 -- Server version: 10.4.27-MariaDB
 -- PHP Version: 8.0.25
 
@@ -92,18 +92,28 @@ INSERT INTO `config` (`id`, `name`, `value`) VALUES
 --
 
 CREATE TABLE `formateurs` (
-  `id` int(11) NOT NULL,
-  `name` varchar(255) NOT NULL,
-  `matriclue` varchar(255) NOT NULL,
-  `email` varchar(255) NOT NULL
+  `id` int(6) UNSIGNED NOT NULL,
+  `CIN` varchar(255) NOT NULL,
+  `nom` varchar(30) NOT NULL,
+  `prenom` varchar(30) NOT NULL,
+  `date_naissance` date NOT NULL,
+  `lieu_naissance` varchar(30) NOT NULL,
+  `adresse` varchar(30) NOT NULL,
+  `telephone` varchar(30) NOT NULL,
+  `email` varchar(30) NOT NULL,
+  `diplome` varchar(30) NOT NULL,
+  `experience` varchar(255) NOT NULL,
+  `specialite` varchar(30) NOT NULL,
+  `created_at` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Dumping data for table `formateurs`
 --
 
-INSERT INTO `formateurs` (`id`, `name`, `matriclue`, `email`) VALUES
-(1, 'as', '', '');
+INSERT INTO `formateurs` (`id`, `CIN`, `nom`, `prenom`, `date_naissance`, `lieu_naissance`, `adresse`, `telephone`, `email`, `diplome`, `experience`, `specialite`, `created_at`) VALUES
+(20, '1242424234', 'hamza', 'hassani', '2023-05-08', 'sidi tidour', 'citty hassani slimane', '+213674020244', 'hassanih97@gmail.com', 'm2', '', 'bem', '2023-05-09 10:16:05'),
+(21, '1242424234', 'hamza', 'hassani', '2023-05-08', 'sidi tidour', 'citty hassani slimane', '+213674020244', 'astroboy@gmail.com', 'm2', '', 'bem', '2023-05-09 10:29:11');
 
 -- --------------------------------------------------------
 
@@ -126,7 +136,6 @@ CREATE TABLE `formulaires` (
 --
 
 INSERT INTO `formulaires` (`id`, `name_ar`, `name_fr`, `description_ar`, `description_fr`, `filename_ar`, `filename_fr`) VALUES
-(22, 'qwe', 'qwe', 'qweqwe', 'weqe', '6441dc8b87d2d3.90977575.docx', '6441dc8b87f178.40194522.docx'),
 (38, 'qwe', 'e', 'qwe', 'qwe', '6441df29d7aca0.45200113.docx', '6441df29d7d040.60780062.docx'),
 (75, 'qwe', 'qwe', 'qw', 'qw', '6441e169d5b6a1.09229251.docx', '6441e169d61c00.99525350.docx'),
 (76, 'qwe', 'qwe', 'qw', 'qw', '6441e1f477fc45.33669608.docx', '6441e1f4781515.19433311.docx');
@@ -139,15 +148,17 @@ INSERT INTO `formulaires` (`id`, `name_ar`, `name_fr`, `description_ar`, `descri
 
 CREATE TABLE `lang` (
   `id` int(11) NOT NULL,
-  `lang` varchar(255) NOT NULL
+  `key` varchar(255) NOT NULL,
+  `arabic` varchar(255) NOT NULL,
+  `french` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Dumping data for table `lang`
 --
 
-INSERT INTO `lang` (`id`, `lang`) VALUES
-(1, 'ar');
+INSERT INTO `lang` (`id`, `key`, `arabic`, `french`) VALUES
+(1, 'ar', '', '');
 
 -- --------------------------------------------------------
 
@@ -201,6 +212,37 @@ INSERT INTO `niveau_scolar` (`id`, `niveau`) VALUES
 (33, 'CMTC_+_3ème AS_OU__EXPER-PROF__\"OU\"_Major De Promo'),
 (34, 'CMTC + دورة تكوينية في CED'),
 (35, 'CMP + classés parmi les cinq (5) premiers');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `sections`
+--
+
+CREATE TABLE `sections` (
+  `id` int(11) NOT NULL,
+  `date` varchar(255) NOT NULL,
+  `code` varchar(255) NOT NULL,
+  `numero` varchar(255) NOT NULL,
+  `speciality` int(11) NOT NULL,
+  `start` varchar(255) NOT NULL,
+  `end` varchar(255) NOT NULL,
+  `qualification` varchar(255) NOT NULL,
+  `effectif` int(11) NOT NULL,
+  `manager` int(11) NOT NULL,
+  `trainees` varchar(255) NOT NULL,
+  `girls` int(11) NOT NULL,
+  `boys` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `sections`
+--
+
+INSERT INTO `sections` (`id`, `date`, `code`, `numero`, `speciality`, `start`, `end`, `qualification`, `effectif`, `manager`, `trainees`, `girls`, `boys`) VALUES
+(7, '2023-05-12', '7528', '', 3, '2023-06-09', '2023-06-01', 'asd', 1, 20, '39', 0, 0),
+(8, '2023-05-12', '7528', '', 3, '2023-06-09', '2023-06-01', 'asd', 1, 21, '39', 0, 0),
+(9, '2023-05-04', '259042', '', 3, '2023-05-24', '2023-05-23', 'asd', 1, 123, '39', 0, 0);
 
 -- --------------------------------------------------------
 
@@ -266,6 +308,7 @@ CREATE TABLE `students` (
   `last_name` varchar(255) NOT NULL,
   `birthday` varchar(255) NOT NULL,
   `born_place` varchar(255) NOT NULL,
+  `situation_familiale` varchar(255) NOT NULL,
   `matricule` varchar(255) NOT NULL,
   `password` varchar(255) NOT NULL,
   `gender` varchar(255) NOT NULL,
@@ -289,10 +332,10 @@ CREATE TABLE `students` (
 -- Dumping data for table `students`
 --
 
-INSERT INTO `students` (`id`, `first_name`, `last_name`, `birthday`, `born_place`, `matricule`, `password`, `gender`, `email`, `phone`, `address`, `study_level`, `study_year`, `study_last_etablissement_name`, `father_name`, `father_job`, `mother_name`, `mother_job`, `branch_id`, `speciality_id`, `created_at`, `updated_at`) VALUES
-(25, 'hassani', 'hamza', '', '', '0024-2-23', '$2y$10$XwO1qL2fgen3.7Pxmsl7Uuy1Uy8uL9cjj9DDkn2UEQdtpQTusYWXG', 'm', 'hassanih97@gmail.com', '0674020244', 'citty hassani slimane', 'CMTC_+_3ème AS_OU__EXPER-PROF__', 's', 'asdasd', 'asd', 'asdas', 'asdasd', 'asd', '7', '6', '2023-05-06 10:25:31', '2023-05-06 10:25:31'),
-(38, 'hassani', 'hamza', '', '', '0025-2-23', '$2y$10$dk/HKz5jdPT3eVM5KnQd9.3uOCqAm27SpMdtkmxK/Jwr.mE2T8gNm', 'm', 'hassanih97@gmail.com', '0674020244', 'citty hassani slimane', 'CMP + 02 ans d’expérience professionnelle, pour les candidats justifiant du niveau scolaire inférieur à la 4eme annee moyenne', 'asdasd', 'asdasd', 'asdas', 'dasdas', 'dasd', 'asdasd', '7', '2', '2023-05-06 12:00:16', '2023-05-06 12:00:16'),
-(39, 'hassani', 'hamza', '1992-02-20', 'سيدي طيفور', '0038-2-23', '$2y$10$rEfwFXZvJGPX2nYXL8s9TOzA8izY4ktISB2kcF6fNO2aipJwON7Fm', 'f', 'hassanih97@gmail.com', '0674020244', 'citty hassani slimane', 'CMTC_+_3ème AS_OU__EXPER-PROF__', '2022', 'ثانوية زش احمد سيدي طيفور', 'محمد', 'حارس', 'حساني حليمة', 'لاشيء', '7', '2', '2023-05-06 13:29:00', '2023-05-06 13:29:00');
+INSERT INTO `students` (`id`, `first_name`, `last_name`, `birthday`, `born_place`, `situation_familiale`, `matricule`, `password`, `gender`, `email`, `phone`, `address`, `study_level`, `study_year`, `study_last_etablissement_name`, `father_name`, `father_job`, `mother_name`, `mother_job`, `branch_id`, `speciality_id`, `created_at`, `updated_at`) VALUES
+(25, 'hamza', 'hassani', '1997-03-22', 'SIDI TIFOUR', 'divorce', '0024-2-23', '$2y$10$QLgBkxi02lpnW8A7Ijr1FOC3EhW.MAMmTSx858MUASs/Uo7fVW5Na', 'f', 'hassanih97@gmail.com', '0674020244', 'citty hassani slimane', 'CMTC_+_3ème AS_OU__EXPER-PROF__', '2015', 'asdasd', 'asd', 'asdas', 'asdasd', 'asd', '7', '2', '2023-05-06 12:00:16', '2023-05-06 12:00:16'),
+(38, 'hassani', 'hamza', '', '', '', '0025-2-23', '$2y$10$dk/HKz5jdPT3eVM5KnQd9.3uOCqAm27SpMdtkmxK/Jwr.mE2T8gNm', 'm', 'hassanih97@gmail.com', '0674020244', 'citty hassani slimane', 'CMP + 02 ans d’expérience professionnelle, pour les candidats justifiant du niveau scolaire inférieur à la 4eme annee moyenne', 'asdasd', 'asdasd', 'asdas', 'dasdas', 'dasd', 'asdasd', '7', '2', '2023-05-06 12:00:16', '2023-05-06 12:00:16'),
+(40, 'hamza', 'hassani', '1997-03-22', 'SIDI TIFOUR', '', '0025-2-23', '$2y$10$vmnk9JE4y9yRmt3o82z9j.DaQHEssl07824dU1RMoiKiVExCMGCWa', 'm', 'hassanih97@gmail.com', '0674020244', 'citty hassani slimane', 'CMTC_+_3ème AS_OU__EXPER-PROF__', 's', 'asdasd', 'asd', 'asdas', 'asdasd', 'asd', '7', '2', '2023-05-06 12:00:16', '2023-05-06 12:00:16');
 
 -- --------------------------------------------------------
 
@@ -317,8 +360,11 @@ CREATE TABLE `users` (
 
 INSERT INTO `users` (`id`, `name`, `first_name`, `tel`, `email`, `password`, `img`, `role`) VALUES
 (1, 'admin', '', '', 'admin@gmail.com', '$2y$10$LEKyEGFcZs04xWUdZr0SyeEh7l3zHIBRIf5HfiGZLlWcNcN6UeF6O', '', 'admin'),
-(2, 'hassani hamza', '', '0674020244', 'hassanih97@gmail.com', '$2y$10$dk/HKz5jdPT3eVM5KnQd9.3uOCqAm27SpMdtkmxK/Jwr.mE2T8gNm', '', 'student'),
-(3, 'hassani hamza', '', '0674020244', 'hassanih97@gmail.com', '$2y$10$rEfwFXZvJGPX2nYXL8s9TOzA8izY4ktISB2kcF6fNO2aipJwON7Fm', '', 'student');
+(14, 'hamza hassani', '', '+213674020244', 'hassanih97@gmail.com', '$2y$10$nuYAkjsOTI6qvHV9cjZlcu87ueLoMlf8ihg/irwBMFaDl4s8TPnWi', '', 'formateur'),
+(15, 'hamza hassani', '', '+213674020244', 'astroboy@gmail.com', '$2y$10$qClbs2/Hc.klfsvdPK0a2.eZkBSCllwYUtMJry4V1qpj39KOhvKxS', '', 'formateur'),
+(17, 'hamza hassani', '', '0674020244', 'hassanih97@gmail.com', '$2y$10$vmnk9JE4y9yRmt3o82z9j.DaQHEssl07824dU1RMoiKiVExCMGCWa', '', 'student'),
+(18, 'hamza hassani', '', '0674020244', 'hassanih97@gmail.com', '$2y$10$s5E7tWEFK/NLVQUaRH7/OeDJ5F4xSkkf/4oTwVAV72HylogZYPIBi', '', 'student'),
+(19, 'hamza hassani', '', '0674020244', 'hassanih97@gmail.com', '$2y$10$eO46Kg79jyEoZ4jXLFwxO.ww2m/qXj1S22gJYB1MpJOxU1cjEh5yG', '', 'student');
 
 --
 -- Indexes for dumped tables
@@ -353,6 +399,14 @@ ALTER TABLE `formulaires`
 --
 ALTER TABLE `lang`
   ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `sections`
+--
+ALTER TABLE `sections`
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `speciality` (`speciality`),
+  ADD KEY `manager` (`manager`);
 
 --
 -- Indexes for table `sessions`
@@ -401,7 +455,7 @@ ALTER TABLE `config`
 -- AUTO_INCREMENT for table `formateurs`
 --
 ALTER TABLE `formateurs`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` int(6) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=23;
 
 --
 -- AUTO_INCREMENT for table `formulaires`
@@ -414,6 +468,12 @@ ALTER TABLE `formulaires`
 --
 ALTER TABLE `lang`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+
+--
+-- AUTO_INCREMENT for table `sections`
+--
+ALTER TABLE `sections`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 
 --
 -- AUTO_INCREMENT for table `sessions`
@@ -431,13 +491,13 @@ ALTER TABLE `specialities`
 -- AUTO_INCREMENT for table `students`
 --
 ALTER TABLE `students`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=40;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=43;
 
 --
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=20;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

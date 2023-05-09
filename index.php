@@ -5,7 +5,7 @@ include './app/config/config.php';
 session_start();
 
 if (isset($_SESSION['is_logged'])) {
-    header('location:' .APP);
+    header('location:' . APP);
 }
 
 ?>
@@ -15,7 +15,7 @@ if (isset($_SESSION['is_logged'])) {
 
 <head>
     <?php
-    include APP.DIRECTORY_SEPARATOR.COMPONENTS.DIRECTORY_SEPARATOR.'header.php';
+    include APP . DIRECTORY_SEPARATOR . COMPONENTS . DIRECTORY_SEPARATOR . 'header.php';
     ?>
     <style>
         body {
@@ -72,7 +72,7 @@ if (isset($_SESSION['is_logged'])) {
         </div>
     </div>
 </body>
-<?php include APP.DIRECTORY_SEPARATOR.COMPONENTS.DIRECTORY_SEPARATOR.'scripts.php'; ?>
+<?php include APP . DIRECTORY_SEPARATOR . COMPONENTS . DIRECTORY_SEPARATOR . 'scripts.php'; ?>
 
 <script>
     $(document).ready(function () {
@@ -99,7 +99,6 @@ if (isset($_SESSION['is_logged'])) {
                         .html(`
                             <div class='alert alert-success alert-dismissible fade show' role='alert'>
                                 ${JSON.parse(response).message}
-                            <button type='button' class='btn-close' data-bs-dismiss='alert' aria-label='Close'></button>
                             </div>
                         `)
                     setTimeout(() => {
@@ -111,9 +110,9 @@ if (isset($_SESSION['is_logged'])) {
                         .html(`
                             <div class='alert alert-danger alert-dismissible fade show' role='alert'>
                                 ${JSON.parse(response.responseText).message}
-                            <button type='button' class='btn-close' data-bs-dismiss='alert' aria-label='Close'></button>
                             </div>
                         `)
+                    submitBtn.html('Login');
                 }
             });
         });

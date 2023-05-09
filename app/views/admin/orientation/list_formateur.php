@@ -21,7 +21,7 @@ if (isset($_GET['delete_formateur'])) {
 }
 ?>
 <div 
-style="padding:1rem;"
+style="padding:1rem; width:80vw;"
 class="card">
     <?php include urlFor(COMPONENTS, 'list_table_head.php') ?>
     <?php foreach ($formateurs as $formateur) { ?>

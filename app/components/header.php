@@ -14,15 +14,7 @@
         }
         ?>
     </title>
-    <link rel="shortcut icon" type="image/x-icon" href="<?php
-    // check if the app folder in  request url
-    if (strpos($_SERVER['REQUEST_URI'], 'app')) {
-        echo '../' . urlFor('../' . IMG, 'favicon.jfif', 24);
-    } else {
-        echo urlFor(IMG, 'favicon.jfif', 24);
-    }
-
-    ?>">
+    <link rel="shortcut icon" type="image/x-icon" href="https://mir-s3-cdn-cf.behance.net/project_modules/max_1200/7a3ec529632909.55fc107b84b8c.png?>">
     <link rel="stylesheet" href="<?php
     // check if the app folder in  request url
     if (strpos($_SERVER['REQUEST_URI'], 'app')) {
@@ -34,15 +26,7 @@
     }
 
     ?>">
-    <link rel="stylesheet" href="<?php
-    // check if the app folder in  request url
-    if (strpos($_SERVER['REQUEST_URI'], 'app')) {
-        echo '../' . urlFor('../' . CSS, 'animate.css', 24);
 
-    } else {
-        echo urlFor(CSS, 'animate.css', 24);
-    }
-    ?>">
     <link rel="stylesheet" href="<?php
     // check if the app folder in  request url
     if (strpos($_SERVER['REQUEST_URI'], 'app')) {
@@ -72,6 +56,24 @@
 
     ?>">
     <link rel="stylesheet" href="<?php
+    // check if the app folder in  request url
+    if (strpos($_SERVER['REQUEST_URI'], 'app')) {
+        echo '../' . urlFor('../' . CSS, 'navbar-fixed-right.min.css', 24);
+
+    } else {
+        echo urlFor(CSS, 'navbar-fixed-right.min.css', 24);
+    }
+    ?>">
+    <link rel="stylesheet" href="<?php
+    // check if the app folder in  request url
+    if (strpos($_SERVER['REQUEST_URI'], 'app')) {
+        echo '../' . urlFor('../' . CSS, 'navbar-fixed-left.min.css', 24);
+
+    } else {
+        echo urlFor(CSS, 'navbar-fixed-left.min.css', 24);
+    }
+    ?>">
+    <link rel="stylesheet" href="<?php
 
     if (strpos($_SERVER['REQUEST_URI'], 'app')) {
         echo '../' . urlFor('../' . CSS, 'style.css', 24);
@@ -79,7 +81,9 @@
         echo urlFor(CSS, 'style.css', 24);
     }
     ?>">
-    <!-- bootstrap cdn -->
+
+
+
     <?php
     if (!isset($_SESSION['is_logged'])) {
         echo '<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">';

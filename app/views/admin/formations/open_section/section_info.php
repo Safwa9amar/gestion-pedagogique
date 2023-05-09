@@ -1,3 +1,7 @@
+<?php
+    // managers
+    $managers = $db->getAllRows('formateurs');
+?>
 <div role="tabpanel" id="section" class="tab-pane fade active show">
 
 <form id="section_info" action="">
@@ -73,7 +77,16 @@
             <label for="manager" class="form-label">
                 <?php echo $app_lang['responsable']; ?>
             </label>
-            <input type="text" class="form-control" id="manager" name="manager">
+            <select  class="form-control" id="manager" name="manager">
+                <option value="0">
+                    ...
+                </option>
+                <?php
+                foreach ($managers as $manager) {
+                    echo "<option value='" . $manager['id'] . "'>" . $manager['nom'] . " " . $manager['prenom'] . "</option>";
+                }
+                ?>
+            </select>
         </div>
 
         <input type="text" name="trainees" id="trainees" hidden>

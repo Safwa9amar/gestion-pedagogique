@@ -1,7 +1,7 @@
 <h1>
     <?php echo $app_lang['branches_et_specialities'] ?>
 </h1>
-<div class="card flex-fill bg-white">
+<div style="padding:1rem; width:80vw;" class="card">
     <div class="card-header">
         <ul role="tablist" class="nav nav-tabs nav-tabs-solid">
             <li class="nav-item">

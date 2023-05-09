@@ -14,12 +14,11 @@ $table_head = '<tr>
 
 </tr>'
     ?>
+<div style="padding:1rem; width:80vw;" class="card">
 
-<br>
 <h2>
     <?php echo $app_lang['open_section']; ?>
 </h2>
-<div style="padding: 2rem;" class="card flex-fill bg-white ">
     <div class="card-header">
         <ul role="tablist" class="nav nav-tabs nav-tabs-solid">
             <li class="nav-item">
@@ -49,4 +48,5 @@ $table_head = '<tr>
             <?php include_once 'open_section/save.php'; ?>
         </div>
     </div>
+</div>
 </div>

@@ -22,8 +22,7 @@ if (isset($_GET['delete_section'])) {
 
 ?>
 
-<br>
-<div class="row">
+<div style="padding:1rem; width:80vw;" class="card">
     <?php include urlFor(COMPONENTS, 'list_table_head.php'); ?>
     <?php foreach ($sections as $section) { ?>
         <tr>
@@ -34,7 +33,7 @@ if (isset($_GET['delete_section'])) {
                 <?php
                 $db = new DataBaseController();
                 echo $db->getRowById('specialities', $section['speciality'])['name']
-                ?>
+                    ?>
             </td>
             <td>
                 <?php echo $section['start'] ?>
@@ -46,19 +45,29 @@ if (isset($_GET['delete_section'])) {
                 <?php echo $section['qualification'] ?>
             </td>
             <td>
-                <?php echo $section['effectif']?>
+                <?php echo $section['effectif'] ?>
             </td>
             <td>
-                <?php echo $section['manager'] ?>
+                <?php
+                $db = new DataBaseController();
+                $responsable = $db->getRowById('formateurs', $section['manager']);
+                try {
+                    //code...
+                    echo $responsable['nom'] . ' ' . $responsable['prenom'];
+                } catch (\Throwable $th) {
+                    echo '/';
+                }
+                ?>
             </td>
             <td>
                 <!-- print -->
-                <a href="<?php echo '../'.API.'print_section.php?print_section=' . $section['id']; ?>" class="btn">
+                <a href="<?php echo '../' . API . 'print_section.php?print_section=' . $section['id']; ?>" class="btn">
                     <i class="fa fa-download "></i>
                     <?php echo $app_lang['telecharger'] ?>
                 </a>
                 <!-- delete -->
-                <a href="<?php echo '?view=formations&sub_view=show_section&delete_section=' . $section['id']; ?>" class="btn">
+                <a href="<?php echo '?view=formations&sub_view=show_section&delete_section=' . $section['id']; ?>"
+                    class="btn">
                     <i class="fa fa-trash"></i>
                     <?php echo $app_lang['delete'] ?>
                 </a>

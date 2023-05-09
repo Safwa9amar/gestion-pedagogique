@@ -72,7 +72,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && $_SESSION['user']) {
 }
 
 ?>
-<div class="card flex-fill bg-white">
+<div style="padding:1rem; width:80vw;" class="card">
     <div class="card-header">
         <ul role="tablist" class="nav nav-tabs card-header-tabs float-right">
             <li class="nav-item">

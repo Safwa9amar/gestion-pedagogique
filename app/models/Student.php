@@ -12,6 +12,8 @@ class Student extends MainModel
     private $last_name;
     private $birthday;
     private $born_place;
+    // situation_familiale
+    private $situation_familiale;
     private $email;
     private $phone;
     private $address;
@@ -30,17 +32,45 @@ class Student extends MainModel
     private $connection;
     public function __construct()
     {
+        parent::__construct();
+        $max_id = parent::getMaxId($this->table);
         $this->created_at = date('Y-m-d H:i:s');
         $this->updated_at = date('Y-m-d H:i:s');
         // set matricule
         $this->matricule = $this->generateMatricule();
         // set password from matricule hash
         $this->password = password_hash($this->matricule, PASSWORD_DEFAULT);
+        $data = parent::getRowById($this->table, $this->id ?? $max_id);
+        $this->matricule = $data['matricule'];
+        $this->gender = $data['gender'];
+        $this->first_name = $data['first_name'];
+        $this->last_name = $data['last_name'];
+        $this->birthday = $data['birthday'];
+        $this->born_place = $data['born_place'];
+        $this->situation_familiale = $data['situation_familiale'];
+        $this->email = $data['email'];
+        $this->phone = $data['phone'];
+        $this->address = $data['address'];
+        $this->study_level = $data['study_level'];
+        $this->study_year = $data['study_year'];
+        $this->study_last_etablissement_name = $data['study_last_etablissement_name'];
+        $this->father_name = $data['father_name'];
+        $this->father_job = $data['father_job'];
+        $this->mother_name = $data['mother_name'];
+        $this->mother_job = $data['mother_job'];
+        $this->branch_id = $data['branch_id'];
+        $this->speciality_id = $data['speciality_id'];
+        $this->created_at = $data['created_at'];
+        $this->updated_at = $data['updated_at'];
+
+
+
     }
 
     // setters
     public function setId($id)
     {
+        $this->__construct();
         $this->id = $id;
     }
     public function setMatricule($matricule)
@@ -67,6 +97,10 @@ class Student extends MainModel
     public function setBornPlace($born_place)
     {
         $this->born_place = $born_place;
+    }
+    public function setSituationFamiliale($situation_familiale)
+    {
+        $this->situation_familiale = $situation_familiale;
     }
     public function setEmail($email)
     {
@@ -149,6 +183,10 @@ class Student extends MainModel
     {
         return $this->born_place;
     }
+    public function getSituationFamiliale()
+    {
+        return $this->situation_familiale;
+    }
 
     public function getEmail()
     {
@@ -210,7 +248,10 @@ class Student extends MainModel
     {
         return $this->matricule;
     }
-
+    public function getById()
+    {
+        return parent::getRowById($this->table, $this->id);
+    }
     // create
     public function create()
     {
@@ -219,6 +260,7 @@ class Student extends MainModel
             'last_name' => $this->last_name,
             'birthday' => $this->birthday,
             'born_place' => $this->born_place,
+            'situation_familiale' => $this->situation_familiale,
             'matricule' => $this->matricule,
             'password' => $this->password,
             'gender' => $this->gender,
@@ -239,7 +281,7 @@ class Student extends MainModel
             // 199 - 218 = 19
         ];
         parent::createRow('users', [
-            'name' => $this->first_name.' '.$this->last_name,
+            'name' => $this->first_name . ' ' . $this->last_name,
             'tel' => $this->phone,
             'email' => $this->email,
             'password' => $this->password,
@@ -255,7 +297,7 @@ class Student extends MainModel
             'last_name' => $this->last_name,
             'birthday' => $this->birthday,
             'born_place' => $this->born_place,
-            'matricule' => $this->matricule,
+            'situation_familiale' => $this->situation_familiale,
             'password' => $this->password,
             'gender' => $this->gender,
             'email' => $this->email,
@@ -275,13 +317,13 @@ class Student extends MainModel
 
         ];
         parent::updateRow('users', $this->id, [
-            'name' => $this->first_name.' '.$this->last_name,
+            'name' => $this->first_name . ' ' . $this->last_name,
             'tel' => $this->phone,
             'email' => $this->email,
             'password' => $this->password,
             'role' => 'student',
         ]);
-        parent::updateRow($this->table, $this->id, $params);
+        return parent::updateRow($this->table, $this->id, $params) ? true : false;
     }
     // delete
     public function delete()
@@ -297,7 +339,7 @@ class Student extends MainModel
         //removce first 2 digits from current year
         $year = substr(date("Y"), 2);
         // the first part of matricule should be 4 digits
-        $seriel_number = str_pad($max_id+1, 4, "0", STR_PAD_LEFT);
+        $seriel_number = str_pad($max_id + 1, 4, "0", STR_PAD_LEFT);
         // $matricule = $seriel_number . $current_session . $year;
         $matricule = $seriel_number . "-" . $current_session['month'] . "-" . $year;
         return $matricule;

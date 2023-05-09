@@ -49,12 +49,8 @@ if (isset($_SESSION['lang'])) {
     <!-- <div id="global-loader">
         <div class="whirly-loader"> </div>
     </div> -->
-
-    <div class="main-wrapper ">
-        <div class="content"
-        style="margin:3rem;padding:1rem;"
-        >
-
+  
+            
             <?php
             //    check user role
             if ($_SESSION['user']['role'] == 'admin') {
@@ -68,7 +64,6 @@ if (isset($_SESSION['lang'])) {
 
             ?>
 
-        </div>
     </div>
     <?php
 

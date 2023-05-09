@@ -86,3 +86,8 @@ $app_lang['veuf'] = "أرمل";
 $app_lang['diplome'] = "الشهادة";
 // experience professionnelle
 $app_lang['experience_professionnelle'] = "الخبرة المهنية";
+
+// لم يتم تخديث معلومات المتربص بعد
+$app_lang['aucune_information'] = "لم يتم تخديث معلومات المتربص بعد";
+// تم تخديث معلومات المتربص بنجاح
+$app_lang['mise_a_jour_reussi'] = "تم تخديث معلومات المتربص بنجاح";

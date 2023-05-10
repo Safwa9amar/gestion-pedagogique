@@ -5,6 +5,7 @@ $app_lang['section'] = "الفرع";
 $app_lang['section_info'] = "معلومات الفرع";
 // محضر فتح فرع
 $app_lang['open_section'] = "محضر فتح فرع";
+
 // numero
 $app_lang['numero'] = "رقم";
 // رمز الفرع

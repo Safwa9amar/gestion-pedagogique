@@ -1,9 +1,4 @@
-<?php
-// check if language is set and back referer is set
-if (isset($_GET['lang']) && isset($_SERVER['HTTP_REFERER']) && $_SESSION['lang'] != $_GET['lang']) {
-  // remove lang from url
-  header('Location: ' . $_SERVER['HTTP_REFERER']);}
-  ?>
+
 <div style="display: flex; width: 100%; justify-content: space-between;" class="header ">
   <div class="header-left active">
     <a href="./" class="logo">
@@ -13,7 +8,7 @@ if (isset($_GET['lang']) && isset($_SERVER['HTTP_REFERER']) && $_SESSION['lang']
       <img src="https://mir-s3-cdn-cf.behance.net/project_modules/max_1200/7a3ec529632909.55fc107b84b8c.png" alt="" />
 
     </a>
-  
+
   </div>
   <a id="mobile_btn" class="mobile_btn" href="#sidebar">
     <span class="bar-icon">
@@ -50,7 +45,7 @@ if (isset($_GET['lang']) && isset($_SERVER['HTTP_REFERER']) && $_SESSION['lang']
 
       <div class="dropdown-menu menu-drop-user">
         <div class="profilename">
-       
+
           <hr class="m-0" />
           <a class="dropdown-item" href="?page=profile">
             <i class="me-2" data-feather="user"></i> My Profile</a>

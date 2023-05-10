@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: May 09, 2023 at 06:33 PM
+-- Generation Time: May 10, 2023 at 05:31 PM
 -- Server version: 10.4.27-MariaDB
 -- PHP Version: 8.0.25
 
@@ -83,7 +83,7 @@ CREATE TABLE `config` (
 --
 
 INSERT INTO `config` (`id`, `name`, `value`) VALUES
-(1, 'language', 'ar');
+(1, 'language', 'fr');
 
 -- --------------------------------------------------------
 
@@ -92,7 +92,7 @@ INSERT INTO `config` (`id`, `name`, `value`) VALUES
 --
 
 CREATE TABLE `formateurs` (
-  `id` int(6) UNSIGNED NOT NULL,
+  `id` int(11) NOT NULL,
   `CIN` varchar(255) NOT NULL,
   `nom` varchar(30) NOT NULL,
   `prenom` varchar(30) NOT NULL,
@@ -158,7 +158,140 @@ CREATE TABLE `lang` (
 --
 
 INSERT INTO `lang` (`id`, `key`, `arabic`, `french`) VALUES
-(1, 'ar', '', '');
+(1, 'dashboard', 'لوحة القيادة', 'Tableau de bord'),
+(2, 'produit', 'المنتج', 'Produit'),
+(3, 'logout', 'تسجيل خروج', 'Se déconnecter'),
+(4, 'options', 'خيارات', 'Options'),
+(5, 'imprimer', 'طباعة', 'Imprimer'),
+(6, 'telecharger', 'تحميل', 'Télécharger'),
+(7, 'ar', 'عربي', 'Arabe'),
+(8, 'error', 'خطأ', 'Erreur'),
+(9, 'success', 'نجاح', 'Succès'),
+(10, 'add_success', 'تمت الإضافة بنجاح', 'Ajout réussi'),
+(11, 'view_all', 'عرض الكل', 'Tout voir'),
+(12, 'add_form', 'إضافة نموذج', 'Ajouter un formulaire'),
+(13, 'delete', 'حذف', 'Supprimer'),
+(14, 'ajouter', 'إضافة', 'Ajouter'),
+(15, 'modifier', 'تعديل', 'Modifier'),
+(16, 'loading', 'جار التحميل...', 'Chargement...'),
+(17, 'description', 'الوصف', 'Description'),
+(18, 'fichier', 'الملف', 'Fichier'),
+(19, 'actions', 'الإجراءات', 'Actions'),
+(20, 'date', 'التاريخ', 'Date'),
+(21, 'search', 'بحث', 'Rechercher'),
+(22, 'save', 'حفظ', 'Enregistrer'),
+(23, 'all_fields_required', 'تأكد ان جميع الحقول ممتلئة', 'Tous les champs sont requis'),
+(24, 'and', 'و', 'et'),
+(25, 'informations_de_lapprenti', 'معلومات المتربص', 'Informations sur le stagiaire'),
+(26, 'numero_seriel', 'الرقم التسلسلي ', 'Numéro de série'),
+(27, 'annee', 'السنة', 'Année'),
+(28, 'kashf_masar_takwin', 'كشف مسار التكوين', 'Révélation du parcours de formation'),
+(29, 'nom_et_prenom', 'الاسم واللقب', 'Nom et prénom'),
+(30, 'nom', 'اللقب', 'Nom'),
+(31, 'prenom', 'الاسم', 'Prénom'),
+(32, 'nom_prenom', 'الاسم واللقب', 'Nom et prénom'),
+(33, 'adresse', 'العنوان', 'Adresse'),
+(34, 'date_et_lieu_de_naissance', 'تاريخ ومكان الميلاد', 'Date et lieu de naissance'),
+(35, 'telephone', 'رقم الهاتف', 'Téléphone'),
+(36, 'email', 'البريد الإلكتروني', 'E-mail'),
+(37, 'sex', 'الجنس', 'Sexe'),
+(38, 'homme', 'ذكر', 'Homme'),
+(39, 'femme', 'أنثى', 'Femme'),
+(40, 'matricule', 'رقم التسجيل', 'Matricule'),
+(41, 'informations_personnelles', 'المعلومات الشخصية', 'Informations personnelles'),
+(42, 'informations_sur_le_niveau_scolaire', 'المستوى التعليمي', 'Informations sur le niveau scolaire'),
+(43, 'informations_sur_la_famille', 'معلومات عن العائلة', 'Informations sur la famille'),
+(44, 'formation', 'التكوين', 'Formation'),
+(45, 'date_de_naissance', 'تاريخ الميلاد', 'Date de naissance'),
+(46, 'lieu_de_naissance', 'مكان الميلاد', 'Lieu de naissance'),
+(47, 'annee_scolaire', 'السنة الدراسية', 'Année scolaire'),
+(48, 'dernier_etablissement', 'اخر مؤسسة تعليمية', 'Dernier établissement'),
+(49, 'etat_civil', 'الحالة العائلية', 'État civil'),
+(50, 'nom_du_pere', 'اسم الاب', 'Nom du père'),
+(51, 'profession_du_pere', 'مهنة الأب', 'Profession du père'),
+(52, 'nom_et_prenom_de_la_mere', 'اسم ولقب الأم', 'Nom et prénom de la mère'),
+(53, 'profession_de_la_mere', 'مهنة الأم', 'Profession de la mère'),
+(54, 'nombre_de_freres', 'عدد الاخوة', 'Nombre de frères'),
+(55, 'profession_des_freres', 'مهن الاخوة', 'Professions des frères'),
+(56, 'situation_familiale_des_parents', 'الوضعية العائلية للوالدين', 'Situation familiale des parents'),
+(57, 'specialites_demandees', 'الاختصاصات المرغوب فيها', 'Spécialités demandées'),
+(58, 'situation_familiale', 'الوضعية العائلية', 'Situation familiale'),
+(59, 'celibataire', 'عازب', 'Célibataire'),
+(60, 'marie', 'متزوج', 'Marié'),
+(61, 'divorce', 'مطلق', 'Divorcé'),
+(62, 'veuf', 'أرمل', 'Veuf'),
+(63, 'diplome', 'الشهادة', 'Diplôme'),
+(64, 'experience_professionnelle', 'الخبرة المهنية', 'Expérience professionnelle'),
+(65, 'aucune_information', 'لم يتم تخديث معلومات المتربص بعد', 'Aucune information mise à jour pour le stagiaire'),
+(66, 'mise_a_jour_reussi', 'تم تخديث معلومات المتربص بنجاح', 'Mise à jour réussie pour le stagiaire'),
+(67, 'orientation', 'توجيه وإدماج المترشحين', 'Orientation et intégration des candidats'),
+(68, 'inscriptions_des_demandeurs', 'تنظيم تسجيلات طالبي التكوين', 'Organisation des inscriptions des demandeurs de formation'),
+(69, 'add_aprentis', 'إضافة متربص', 'Ajouter un stagiaire'),
+(70, 'list_aprentis', 'قائمة المتربصين', 'Liste des stagiaires'),
+(71, 'add_formateur', 'اضافة استاذ مكون', 'Ajouter un formateur'),
+(72, 'list_formateur', 'قائمة المكونين', 'Liste des formateurs'),
+(73, 'formations', 'تنظيم وتسيير التكوين', 'Organisation et gestion de la formation'),
+(74, 'branch_et_specialite', 'الشعب والتخصصات', 'Filières et spécialités'),
+(75, 'impression_des_formulaires', 'طباعة النماذج', 'Impression des formulaires'),
+(76, 'show_section', 'قائمة الفروع', 'Liste des filières'),
+(77, 'techniques', 'تسيير الأجهزة التقنية والبيداغوجية', 'Gestion des équipements techniques et pédagogiques'),
+(78, 'manifestations', 'الإنضباط والتظاهرات الثقافية والرياضية', 'Discipline et manifestations culturelles et sportives'),
+(79, 'branches_et_specialities', 'الشعب والتخصصات', 'Filières et spécialités'),
+(80, 'branches', 'الشعب', 'Filières'),
+(81, 'branche', 'الشعبة', 'Filière'),
+(82, 'list_of_branches', 'قائمة الشعب', 'Liste des filières'),
+(83, 'specialities', 'التخصصات', 'Spécialités'),
+(84, 'list_of_specialities', 'قائمة التخصصات', 'Liste des spécialités'),
+(85, 'add_branch', 'إضافة شعبة', 'Ajouter une filière'),
+(86, 'edit_branch', 'تعديل شعبة', 'Modifier une filière'),
+(87, 'add_speciality', 'إضافة تخصص', 'Ajouter une spécialité'),
+(88, 'edit_speciality', 'تعديل تخصص', 'Modifier une spécialité'),
+(89, 'branch_id', 'الرقم التسلسلي للشعبة', 'Identifiant de la filière'),
+(90, 'branch_name', 'اسم الشعبة', 'Nom de la filière'),
+(91, 'branch_code', 'رمز الشعبة', 'Code de la filière'),
+(92, 'branch_intitule', 'الشعبة بالفرنسية', 'Intitulé de la filière en français'),
+(93, 'branch_name_fr', 'الشعبة بالفرنسية', 'Nom de la filière en français'),
+(94, 'branch_name_ar', 'الشعبة بالعربية', 'Nom de la filière en arabe'),
+(95, 'speciality', 'التخصص', 'Spécialité'),
+(96, 'speciality_id', 'الرقم التسلسلي للتخصص', 'Identifiant de la spécialité'),
+(97, 'speciality_code', 'رمز التخصص', 'Code de la spécialité'),
+(98, 'speciality_name', 'اسم التخصص', 'Nom de la spécialité'),
+(99, 'speciality_level', 'مستوى التأهيل', 'Niveau de qualification'),
+(100, 'speciality_certificate', 'الشهادة المسلمة', 'Certificat délivré'),
+(101, 'speciality_duration', 'مدة النكوين', 'Durée de la formation'),
+(102, 'speciality_training_mode', 'نمط التكوين', 'Mode de formation'),
+(103, 'section', 'الفرع', 'Filière'),
+(104, 'section_info', 'معلومات الفرع', 'Informations sur la filière'),
+(105, 'numero', 'رقم', 'Numéro'),
+(106, 'code_section', 'رمز الفرع', 'Code de la filière'),
+(107, 'qualification', 'مستوى التأهيل', 'Niveau de qualification'),
+(108, 'debut', 'بداية', 'Début'),
+(109, 'fin', 'نهاية', 'Fin'),
+(110, 'debut_stage', 'بداية التربص', 'Début de stage'),
+(111, 'fin_stage', 'نهاية التربص', 'Fin de stage'),
+(112, 'responsable', 'مسؤول الفرع', 'Responsable de la filière'),
+(113, 'trainees', 'قائمة المتربصين', 'Liste des stagiaires'),
+(114, 'trainee_added', 'تم اضافة المتربص بنجاح', 'Stagiaire ajouté avec succès'),
+(115, 'trainee_found', 'تم العثور على المتربص', 'Stagiaire trouvé'),
+(116, 'trainee_not_found', 'لم يتم العثور على المتربص', 'Stagiaire introuvable'),
+(117, 'section_created', 'تم انشاء الفرع بنجاح', 'Filière créée avec succès'),
+(118, 'effectif', 'العدد', 'Effectif'),
+(119, 'trainees_number', 'عدد المتربصين', 'Nombre de stagiaires'),
+(120, 'boys', 'ذكور', 'Hommes'),
+(121, 'girls', 'اناث', 'Femmes'),
+(122, 'formateur', 'استاذ مكون', 'Formateur'),
+(123, 'formateur_added', 'تم اضافة الاستاذ بنجاح', 'Formateur ajouté avec succès'),
+(124, 'formateur_updated', 'تم تحديث الاستاذ بنجاح', 'Formateur mis à jour avec succès'),
+(125, 'formateur_not_updated', 'حدث خطأ ما لم يتم تحديث الاستاذ', 'Erreur lors de la mise à jour du formateur'),
+(126, 'open_section', 'محضر فتح فرع', 'PV d\'ouverture de section'),
+(127, 'speciality_conditions', 'شروط الالتحاق بالتكوين', 'conditions d\\\'accès à la formation'),
+(128, 'niveau_d_etude', 'المستوى الدراسي', 'niveau d\'etude'),
+(129, 'numero_dinscription', 'رقم التسجيل', 'le numéro d\'inscription'),
+(130, 'recently_added_students', 'المتربصين المضافين حديثا', 'derneirs étudiants ajoutés'),
+(131, 'total_stagaire', 'إجمالي المتربصين', 'total stagiaire'),
+(132, 'total_formateur', 'اجمالي الاستاذة المكونين', 'Total formateurs'),
+(133, 'total_section', 'إجمالي الفروع', 'sections totales'),
+(134, 'total_specialite', 'مجموع التخصصات والفروع', 'Total specialities et branches');
 
 -- --------------------------------------------------------
 
@@ -229,20 +362,11 @@ CREATE TABLE `sections` (
   `end` varchar(255) NOT NULL,
   `qualification` varchar(255) NOT NULL,
   `effectif` int(11) NOT NULL,
-  `manager` int(11) NOT NULL,
   `trainees` varchar(255) NOT NULL,
   `girls` int(11) NOT NULL,
-  `boys` int(11) NOT NULL
+  `boys` int(11) NOT NULL,
+  `manager` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
-
---
--- Dumping data for table `sections`
---
-
-INSERT INTO `sections` (`id`, `date`, `code`, `numero`, `speciality`, `start`, `end`, `qualification`, `effectif`, `manager`, `trainees`, `girls`, `boys`) VALUES
-(7, '2023-05-12', '7528', '', 3, '2023-06-09', '2023-06-01', 'asd', 1, 20, '39', 0, 0),
-(8, '2023-05-12', '7528', '', 3, '2023-06-09', '2023-06-01', 'asd', 1, 21, '39', 0, 0),
-(9, '2023-05-04', '259042', '', 3, '2023-05-24', '2023-05-23', 'asd', 1, 123, '39', 0, 0);
 
 -- --------------------------------------------------------
 
@@ -279,22 +403,10 @@ CREATE TABLE `specialities` (
   `duration` varchar(255) NOT NULL,
   `conditions` varchar(255) NOT NULL,
   `training_mode` varchar(255) NOT NULL,
-  `branch_id` int(11) NOT NULL,
   `created_at` varchar(255) NOT NULL,
-  `updated_at` varchar(255) NOT NULL
+  `updated_at` varchar(255) NOT NULL,
+  `branch_id` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
-
---
--- Dumping data for table `specialities`
---
-
-INSERT INTO `specialities` (`id`, `code`, `name`, `level`, `certificate`, `duration`, `conditions`, `training_mode`, `branch_id`, `created_at`, `updated_at`) VALUES
-(2, 'ssssssssss', 'ssssssss', 'ssssssssssss', 'ssssssssssss', 'sssssssss', 'adasd', 's', 7, '2023-05-05 14:59:35', '2023-05-06 01:03:42'),
-(3, 's', 's', 's', 's', 's', 's', 's', 3, '2023-05-05 15:04:52', '2023-05-05 15:04:52'),
-(4, 's', 's', 's', 's', 's', 's', 's', 5, '2023-05-05 15:14:50', '2023-05-05 15:14:50'),
-(5, 's', 's', 's', 's', 's', 's', 's', 49, '2023-05-05 15:17:21', '2023-05-05 15:17:21'),
-(6, 's', 's', 's', 's', 's', 's', 's', 7, '2023-05-05 15:17:48', '2023-05-05 15:17:48'),
-(8, 'e', 'qw', 'qw', 'e', 'e', 'w', 'e', 10, '2023-05-05 17:53:51', '2023-05-05 17:53:51');
 
 -- --------------------------------------------------------
 
@@ -322,20 +434,11 @@ CREATE TABLE `students` (
   `father_job` varchar(255) NOT NULL,
   `mother_name` varchar(255) NOT NULL,
   `mother_job` varchar(255) NOT NULL,
-  `branch_id` varchar(255) NOT NULL,
-  `speciality_id` varchar(255) NOT NULL,
+  `branch_id` int(11) NOT NULL,
+  `speciality_id` int(11) NOT NULL,
   `created_at` varchar(255) NOT NULL,
   `updated_at` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
-
---
--- Dumping data for table `students`
---
-
-INSERT INTO `students` (`id`, `first_name`, `last_name`, `birthday`, `born_place`, `situation_familiale`, `matricule`, `password`, `gender`, `email`, `phone`, `address`, `study_level`, `study_year`, `study_last_etablissement_name`, `father_name`, `father_job`, `mother_name`, `mother_job`, `branch_id`, `speciality_id`, `created_at`, `updated_at`) VALUES
-(25, 'hamza', 'hassani', '1997-03-22', 'SIDI TIFOUR', 'divorce', '0024-2-23', '$2y$10$QLgBkxi02lpnW8A7Ijr1FOC3EhW.MAMmTSx858MUASs/Uo7fVW5Na', 'f', 'hassanih97@gmail.com', '0674020244', 'citty hassani slimane', 'CMTC_+_3ème AS_OU__EXPER-PROF__', '2015', 'asdasd', 'asd', 'asdas', 'asdasd', 'asd', '7', '2', '2023-05-06 12:00:16', '2023-05-06 12:00:16'),
-(38, 'hassani', 'hamza', '', '', '', '0025-2-23', '$2y$10$dk/HKz5jdPT3eVM5KnQd9.3uOCqAm27SpMdtkmxK/Jwr.mE2T8gNm', 'm', 'hassanih97@gmail.com', '0674020244', 'citty hassani slimane', 'CMP + 02 ans d’expérience professionnelle, pour les candidats justifiant du niveau scolaire inférieur à la 4eme annee moyenne', 'asdasd', 'asdasd', 'asdas', 'dasdas', 'dasd', 'asdasd', '7', '2', '2023-05-06 12:00:16', '2023-05-06 12:00:16'),
-(40, 'hamza', 'hassani', '1997-03-22', 'SIDI TIFOUR', '', '0025-2-23', '$2y$10$vmnk9JE4y9yRmt3o82z9j.DaQHEssl07824dU1RMoiKiVExCMGCWa', 'm', 'hassanih97@gmail.com', '0674020244', 'citty hassani slimane', 'CMTC_+_3ème AS_OU__EXPER-PROF__', 's', 'asdasd', 'asd', 'asdas', 'asdasd', 'asd', '7', '2', '2023-05-06 12:00:16', '2023-05-06 12:00:16');
 
 -- --------------------------------------------------------
 
@@ -406,7 +509,8 @@ ALTER TABLE `lang`
 ALTER TABLE `sections`
   ADD PRIMARY KEY (`id`),
   ADD KEY `speciality` (`speciality`),
-  ADD KEY `manager` (`manager`);
+  ADD KEY `manager` (`manager`),
+  ADD KEY `manager_2` (`manager`);
 
 --
 -- Indexes for table `sessions`
@@ -419,7 +523,7 @@ ALTER TABLE `sessions`
 --
 ALTER TABLE `specialities`
   ADD PRIMARY KEY (`id`),
-  ADD KEY `branch` (`branch_id`);
+  ADD KEY `branches` (`branch_id`);
 
 --
 -- Indexes for table `students`
@@ -427,7 +531,9 @@ ALTER TABLE `specialities`
 ALTER TABLE `students`
   ADD PRIMARY KEY (`id`),
   ADD KEY `branch_id` (`branch_id`),
-  ADD KEY `speciality_id` (`speciality_id`);
+  ADD KEY `speciality_id` (`speciality_id`),
+  ADD KEY `branch_id_2` (`branch_id`),
+  ADD KEY `speciality_id_2` (`speciality_id`);
 
 --
 -- Indexes for table `users`
@@ -455,7 +561,7 @@ ALTER TABLE `config`
 -- AUTO_INCREMENT for table `formateurs`
 --
 ALTER TABLE `formateurs`
-  MODIFY `id` int(6) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=23;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=23;
 
 --
 -- AUTO_INCREMENT for table `formulaires`
@@ -467,13 +573,13 @@ ALTER TABLE `formulaires`
 -- AUTO_INCREMENT for table `lang`
 --
 ALTER TABLE `lang`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=135;
 
 --
 -- AUTO_INCREMENT for table `sections`
 --
 ALTER TABLE `sections`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT for table `sessions`
@@ -485,19 +591,43 @@ ALTER TABLE `sessions`
 -- AUTO_INCREMENT for table `specialities`
 --
 ALTER TABLE `specialities`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT for table `students`
 --
 ALTER TABLE `students`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=43;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=20;
+
+--
+-- Constraints for dumped tables
+--
+
+--
+-- Constraints for table `sections`
+--
+ALTER TABLE `sections`
+  ADD CONSTRAINT `manager_id` FOREIGN KEY (`manager`) REFERENCES `formateurs` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION,
+  ADD CONSTRAINT `spec` FOREIGN KEY (`speciality`) REFERENCES `specialities` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION;
+
+--
+-- Constraints for table `specialities`
+--
+ALTER TABLE `specialities`
+  ADD CONSTRAINT `branch_id` FOREIGN KEY (`branch_id`) REFERENCES `branches` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION;
+
+--
+-- Constraints for table `students`
+--
+ALTER TABLE `students`
+  ADD CONSTRAINT `branch__id` FOREIGN KEY (`branch_id`) REFERENCES `branches` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION,
+  ADD CONSTRAINT `spec_id` FOREIGN KEY (`speciality_id`) REFERENCES `branches` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

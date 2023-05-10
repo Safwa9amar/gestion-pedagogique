@@ -91,3 +91,8 @@ $app_lang['experience_professionnelle'] = "الخبرة المهنية";
 $app_lang['aucune_information'] = "لم يتم تخديث معلومات المتربص بعد";
 // تم تخديث معلومات المتربص بنجاح
 $app_lang['mise_a_jour_reussi'] = "تم تخديث معلومات المتربص بنجاح";
+
+// Recently Added students
+$app_lang['recently_added_students'] = "المتربصين المضافين حديثا";
+// Total stagaire
+$app_lang['total_stagaire'] = "عدد المتربصين";

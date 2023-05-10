@@ -1,36 +1,38 @@
 <?php
 // create language cotroller class 
-class LanguageController
+class LanguageController extends DataBaseController
 {
-    //  language the first row from config table in this class
-    public function getLang()
+    // table name
+    private $table = 'lang';
+    // language variables
+    // lang
+    private $lang;
+    public $app_lang = [];
+    // constructor
+    public function __construct()
     {
-        $db = new DatabaseController();
-        // get row by pa
-        $config = $db->getRowByParam('config', 'name', 'language');
-        $selcted_lang = $config['value'];
-        if ($selcted_lang) {
-            $_SESSION['lang'] = $selcted_lang;
+        parent::__construct();
+        // get language from database
+        $db_lang = $this->getRowByParam('config', 'name', 'language');
+        $this->setLang($db_lang['value']);
+        // set language session variable
+        $_SESSION['lang'] = $this->lang ? $this->lang : $_SESSION['lang'];
+        $data = $this->getAllRows($this->table);
+        foreach ($data as $key => $value) {
+            if ($_SESSION['lang'] == 'ar') {
+                $this->app_lang[$value['key']] = $value['arabic'];
+            } else if ($_SESSION['lang'] == 'fr') {
+                $this->app_lang[$value['key']] = $value['french'];
+            }
         }
-        if (isset($_GET['lang'])) {
-            $_SESSION['lang'] = $_GET['lang'];
-            // update lang in db
-            $db->updateRow('config', $config['id'], ['value' => $_GET['lang']]);
-            echo 'success';
-        } else if (!isset($_SESSION['lang'])) {
-            $_SESSION['lang'] = 'fr';
-        }
-        
     }
-    // include language file 
-    public function includeLang($fileList, $path = 'app/config/lang/')
+    public function setLang($lang)
     {
-        $arr = [];
-        $lang = $_SESSION['lang'];
-        foreach ($fileList as $file) {
-            $arr[] = $path . $lang . '/' . $file . '.php';
-        }
-        return $arr;
+        $this->lang = $lang;
     }
-
+    public function updateLang()
+    {
+        $this->updateRowByParam('config', ['value' => $this->lang], 'language', 'name');
+        $this->__construct();
+    }
 }

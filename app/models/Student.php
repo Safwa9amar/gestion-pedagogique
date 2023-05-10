@@ -41,6 +41,8 @@ class Student extends MainModel
         // set password from matricule hash
         $this->password = password_hash($this->matricule, PASSWORD_DEFAULT);
         $data = parent::getRowById($this->table, $this->id ?? $max_id);
+        // return if no data
+        if (!$data) return;
         $this->matricule = $data['matricule'];
         $this->gender = $data['gender'];
         $this->first_name = $data['first_name'];

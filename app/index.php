@@ -9,6 +9,7 @@ include 'helpers/goTopage.php';
 include 'helpers/alert.php';
 include 'helpers/uploadFile.php';
 include 'controllers/dataBaseController.php';
+include 'controllers/languagesController.php';
 include 'models/MainModel.php';
 include 'models/Student.php';
 include 'models/Formateur.php';
@@ -24,7 +25,16 @@ if (isset($_GET['logout'])) {
     header('location:../index.php');
 }
 
-include urlFor(LANG, 'lang.php');
+$lang = new LanguageController();
+$app_lang = $lang->app_lang;
+
+if (isset($_GET['lang'])) {
+    $lang->setLang($_GET['lang']);
+    $lang->updateLang();
+    $lang->__construct();
+    echo "<script>location.href='" . $_SERVER['HTTP_REFERER'] . "'</script>";
+}
+
 ?>
 <!DOCTYPE html>
 <?php include urlFor(COMPONENTS, 'header.php'); ?>
@@ -46,23 +56,22 @@ if (isset($_SESSION['lang'])) {
 }
 
 ?>">
-    <!-- <div id="global-loader">
+    <div id="global-loader">
         <div class="whirly-loader"> </div>
-    </div> -->
-  
-            
-            <?php
-            //    check user role
-            if ($_SESSION['user']['role'] == 'admin') {
-                include urlFor(VIEWS . '/admin/', 'index.php');
-            } elseif ($_SESSION['user']['role'] == 'student') {
-                include urlFor(VIEWS . '/student/', 'index.php');
-            } elseif ($_SESSION['user']['role'] == 'formateur') {
-                include urlFor(VIEWS . '/formateur/', 'index.php');
+    </div>
 
-            }
+    <?php
+    //    check user role
+    if ($_SESSION['user']['role'] == 'admin') {
+        include urlFor(VIEWS . '/admin/', 'index.php');
+    } elseif ($_SESSION['user']['role'] == 'student') {
+        include urlFor(VIEWS . '/student/', 'index.php');
+    } elseif ($_SESSION['user']['role'] == 'formateur') {
+        include urlFor(VIEWS . '/formateur/', 'index.php');
 
-            ?>
+    }
+
+    ?>
 
     </div>
     <?php

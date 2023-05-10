@@ -77,16 +77,17 @@ $side_menu = array(
 
 <nav class="navbar sidebar bg-white  <?php echo $_SESSION['lang'] == 'ar' ? 'fixed-right' : 'fixed-left' ?>">
   <div id="sidebar-menu" class="sidebar-menu">
-  <div class="">
-    <a href="./" class="logo">
-      <img src="https://mir-s3-cdn-cf.behance.net/project_modules/max_1200/7a3ec529632909.55fc107b84b8c.png" alt="" />
-    </a>
-   
-  
-  </div>
+    <div class="">
+      <a href="./" class="logo">
+        <img src="https://mir-s3-cdn-cf.behance.net/project_modules/max_1200/7a3ec529632909.55fc107b84b8c.png" alt="" />
+      </a>
+
+
+    </div>
     <ul class="navbar-nav">
       <li>
-        <a href="./"><img src="<?php echo ICONS ?>/dashboard.svg" alt="img" /><span>
+        <a class="<?php echo $view == '' ? 'active' : '' ?>" href="./"><img src="<?php echo ICONS ?>/dashboard.svg"
+            alt="img" /><span>
             <?php echo $app_lang['dashboard'] ?>
           </span>
         </a>
@@ -107,7 +108,7 @@ $side_menu = array(
               }
               ?>
             </a>
-            <ul >
+            <ul>
               <?php
               foreach ($value['sub_menu'] as $sub_key => $sub_value) { ?>
                 <li>

@@ -45,8 +45,7 @@ if (isset($_GET['delete_student'])) {
     <?php foreach ($students as $student) { ?>
         <tr>
             <td>
-                <a href="<?php echo '?view=orientation&sub_view=add_aprentis&update_id=' . $student['id']; ?>"
-                    class="btn">
+                <a href="<?php echo '?view=orientation&sub_view=add_aprentis&update_id=' . $student['id']; ?>" class="btn">
                     <i class="fa fa-edit"></i>
 
                 </a>
@@ -68,8 +67,14 @@ if (isset($_GET['delete_student'])) {
             <td>
                 <?php
                 $speciality = $db->getRowById('specialities', $student['speciality_id']);
-                echo $speciality['code']
-                    ?>
+                try {
+                    //code...
+                    echo $speciality['code'];
+                } catch (\Throwable $th) {
+                    echo '/';
+                    //throw $th;
+                }
+                ?>
             </td>
             <td>
                 <?php echo $student['birthday'] . ' | ' . $student['born_place'] ?>

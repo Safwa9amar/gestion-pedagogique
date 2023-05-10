@@ -298,8 +298,8 @@ if (isset($_POST['update'])) {
                     <label for="matricule">
                         <?php echo $app_lang['matricule'] ?>
                     </label>
-                    <input dir="ltr" value="<?php echo $update_result['matricule'] ?>" disabled type="text" class="form-control"
-                        name="matricule" id="matricule">
+                    <input dir="ltr" value="<?php echo $isUpdate ? $update_result['matricule'] : $matricule ?>" disabled
+                        type="text" class="form-control" name="matricule" id="matricule">
                 </div>
                 <div class="form-group col-sm-12 col-lg-4">
                     <label for="select_branche">
@@ -342,7 +342,15 @@ if (isset($_POST['update'])) {
                         <?php
                         if ($isUpdate) { ?>
                             <option value="<?php echo $update_result['speciality_id'] ?>">
-                                <?php echo $speciality['code'] ?>
+                                <?php
+                                try {
+                                    echo $speciality['code'];
+                                    //code...
+                                } catch (\Throwable $th) {
+                                    //throw $th;
+                                    echo '/';
+                                }
+                                ?>
                             </option>
                         <?php } ?>
 
@@ -362,9 +370,8 @@ if (isset($_POST['update'])) {
             <!-- submit form -->
             <div class="row">
                 <div class="form-group col-12">
-                    <button
-                    name="<?php echo $isUpdate ? 'update' : 'add' ?>"
-                    type="submit" class="btn btn-primary btn-block">
+                    <button name="<?php echo $isUpdate ? 'update' : 'add' ?>" type="submit"
+                        class="btn btn-primary btn-block">
                         <?php echo $app_lang['ajouter'] ?>
                     </button>
                 </div>

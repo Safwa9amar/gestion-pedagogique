@@ -35,5 +35,6 @@ $app_lang['speciality_certificate'] = 'الشهادة المسلمة';
 $app_lang['speciality_duration'] = 'مدة النكوين';
 // شروط الالتحاق بالتكوين
 $app_lang['speciality_conditions'] = 'شروط الالتحاق بالتكوين';
+
 // نمط التكوين
 $app_lang['speciality_training_mode'] = 'نمط التكوين';

@@ -1,13 +1,13 @@
 <?php
 
 // create class to control login for normal users and admins
-class LoginController
+class LoginController extends DataBaseController
 {
     // constructor to initialize database connection
     private $db;
     public function __construct()
     {
-        $this->db = new DatabaseController();
+        parent::__construct();
     }
     // method to handle login
     public function login($email, $password)
@@ -31,7 +31,7 @@ class LoginController
                 // sanitize password
                 $password = filter_var($password, FILTER_SANITIZE_STRING);
                 // TODO: check if user exists in database (use method from DatabaseController)
-                $user = $this->db->getRowByParam('users', 'email', $email);
+                $user = $this->getRowByParam('users', 'email', $email);
                 if (count($user) > 0 ) {
                     // get hashed password from database
                     $hashed_password = $user['password'];
@@ -43,6 +43,8 @@ class LoginController
                         $_SESSION['user']['name'] = $user['name']; // set user session variable
                         $_SESSION['is_logged'] = true;
                         $_SESSION['user']['role'] = $user['role'];
+                        $db_lang = $this ->getRowByParam('config', 'name', 'language');
+                        $_SESSION['lang'] = $db_lang['value'];
                         sleep(1);
                         http_response_code(200);
                         echo '{"message":"connexion réussie"}';

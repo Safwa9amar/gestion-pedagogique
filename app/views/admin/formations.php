@@ -1,10 +1,6 @@
 <?php
-$db_lang = new LanguageController();
-$db_lang->getLang();
-
-foreach ($db_lang->includeLang(LANUAGES_FILES, LANG . '/') as $file) {
-    include $file;
-}
+$lang = new LanguageController();
+$app_lang = $lang->app_lang;
 
 $sub_views = [
     'branch_et_specialite',

@@ -1,5 +1,5 @@
 <?php
-include urlFor(CONTROLLERS, 'languagesController.php');
+// include urlFor(CONTROLLERS, 'languagesController.php');
 $db_lang = new LanguageController();
 $db_lang->getLang();
 

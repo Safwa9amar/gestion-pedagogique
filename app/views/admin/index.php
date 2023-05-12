@@ -1,7 +1,7 @@
 <?php
-$whoops = new \Whoops\Run;
-$whoops->pushHandler(new \Whoops\Handler\PrettyPageHandler);
-$whoops->register();
+// $whoops = new \Whoops\Run;
+// $whoops->pushHandler(new \Whoops\Handler\PrettyPageHandler);
+// $whoops->register();
 include urlFor(COMPONENTS, 'sidebare.php');
 
 ?>

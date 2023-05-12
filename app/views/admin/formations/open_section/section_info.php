@@ -28,6 +28,9 @@
                 <?php echo $app_lang['speciality']; ?>
             </label>
             <select class="form-control" id="speciality" name="speciality">
+                <option>
+                    choisissez une spécialité
+                </option>
                 <?php
                 foreach ($specialities as $speciality) {
                     echo "<option value='" . $speciality['id'] . "'>" . $speciality['name'] . "</option>";

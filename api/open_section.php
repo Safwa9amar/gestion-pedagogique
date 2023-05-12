@@ -4,10 +4,11 @@ include '../app/controllers/DataBaseController.php';
 include '../app/models/MainModel.php';
 include '../app/models/Section.php';
 // check if all required fields are set
+print_r($_POST);
 if (
-    !isset($_POST['code']) ||
     !isset($_POST['numero']) ||
     !isset($_POST['date']) ||
+    !isset($_POST['code']) ||
     !isset($_POST['speciality']) ||
     !isset($_POST['qualification']) ||
     !isset($_POST['debut']) ||

@@ -25,7 +25,7 @@ if (isset($_POST['add'])) {
     $student->setMotherJob($_POST['mother_job']);
     $student->setBranchId($_POST['branch_id']);
     $student->setSpecialityId($_POST['speciality_id']);
-    $checkEmail = $student->checkIfRowExistsByParam($formateur->table, 'email', $_POST['email']);
+    $checkEmail = $student->checkIfRowExistsByParam($student->table, 'email', $_POST['email']);
     if ($checkEmail) {
         $error = $app_lang['email_existe'];
         echo "<script>window.history.back()</script>";

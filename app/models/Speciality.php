@@ -1,6 +1,7 @@
 <?php
+include 'MainModel.php';
 // Speciality class model
-class Speciality {
+class Speciality extends MainModel {
     private $id;
     private $branch_id;
     private $code;
@@ -16,6 +17,7 @@ class Speciality {
     public function __construct() {
         $this->created_at = date('Y-m-d H:i:s');
         $this->updated_at = date('Y-m-d H:i:s');
+        parent::__construct();
     }
     public function getId() {
         return $this->id;
@@ -90,7 +92,6 @@ class Speciality {
     // create
     public function create() {
         // dataBaseController
-        $db = new dataBaseController();
         $arr = array(
             'branch_id' => $this->branch_id,
             'code' => $this->code,
@@ -103,11 +104,10 @@ class Speciality {
             'created_at' => $this->created_at,
             'updated_at' => $this->updated_at
         );
-        return $db->insertRow('specialities', $arr) ? true : false; 
+        return $this->insertRow('specialities', $arr) ? true : false; 
     }
     public function update() {
         // dataBaseController
-        $db = new dataBaseController();
         $arr = array(
             'branch_id' => $this->branch_id,
             'code' => $this->code,
@@ -119,6 +119,6 @@ class Speciality {
             'training_mode' => $this->training_mode,
             'updated_at' => $this->updated_at
         );
-        return $db->updateRow('specialities', $this->id, $arr) ? true : false;
+        return $this->updateRow('specialities', $this->id, $arr) ? true : false;
     }
 }

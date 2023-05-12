@@ -2,7 +2,6 @@
 require '../vendor/autoload.php';
 
 session_start();
-$_SESSION['toggle_sidebar'] = false;
 include 'config/config.php';
 include 'helpers/urlFor.php';
 include 'helpers/goTopage.php';
@@ -39,12 +38,7 @@ if (isset($_GET['lang'])) {
 <!DOCTYPE html>
 <?php include urlFor(COMPONENTS, 'header.php'); ?>
 
-<body class="<?php if ($_SESSION['toggle_sidebar']) {
-    echo 'mini-sidebar';
-} else {
-    echo 'mini-sidebar expand-menu';
-}
-?>" dir="<?php
+<bod dir="<?php
 if (isset($_SESSION['lang'])) {
     if ($_SESSION['lang'] == 'ar') {
         echo 'rtl';

@@ -118,7 +118,7 @@
                           specialitySubmitBtn.innerHTML = html + '<?php echo $app_lang['add_success'] ?>';
                           // reload page
                           setTimeout(() => {
-                                  window.location.reload();
+                                  // window.location.reload();
                           }, 2000);
                   },
                   error: function (err) {

@@ -3,7 +3,7 @@
 class LanguageController extends DataBaseController
 {
     // table name
-    private $table = 'lang';
+    public $table = 'lang';
     // language variables
     // lang
     private $lang;

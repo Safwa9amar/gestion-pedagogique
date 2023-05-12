@@ -2,7 +2,7 @@
 class Student extends MainModel
 {
     // table name
-    private $table = "students";
+    public $table = "students";
     // table fields
     private $id;
     private $matricule;

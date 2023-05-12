@@ -71,6 +71,7 @@ define('VIEWSLIST', [
     'settings',
     'orientation',
     'formations',
+    'settings',
 ]);
 // SUBVIEWSLIST
 define('SUBVIEWSLIST', [

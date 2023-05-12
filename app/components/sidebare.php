@@ -72,6 +72,21 @@ $side_menu = array(
 
     )
   ),
+  'settings' =>
+  array(
+    'title' => $app_lang['settings'],
+    'icon' => 'product.svg',
+    'link' => '#',
+    'sub_menu' => array(
+      
+      'settings' => array(
+        'title' =>
+        $app_lang['settings'],
+        'link' =>
+        '?view=settings&sub_view=settings'
+      ),
+    )
+  ),
 
 ); ?>
 

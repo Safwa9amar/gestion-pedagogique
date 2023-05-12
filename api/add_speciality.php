@@ -1,5 +1,8 @@
 <?php
+include_once '../app/config/config.php';
+include '../app/controllers/dataBaseController.php';
 include '../app/models/Speciality.php';
+
 // request method is POST
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     // check if the submit button is clicked

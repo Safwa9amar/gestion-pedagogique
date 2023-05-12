@@ -41,6 +41,7 @@ class LoginController extends DataBaseController
                         // create session and redirect to dashboard
                         $user_id = $user['id'];
                         $_SESSION['user']['name'] = $user['name']; // set user session variable
+                        $_SESSION['user']['id'] = $user['id']; // set user session variable
                         $_SESSION['user']['email'] = $user['email']; // set user session variable
                         $_SESSION['is_logged'] = true;
                         $_SESSION['user']['role'] = $user['role'];

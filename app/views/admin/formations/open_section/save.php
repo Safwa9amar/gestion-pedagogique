@@ -35,7 +35,7 @@
     // get data from section_info form 
     let section_info_form = document.getElementById('section_info');
     let section_info_form_data = {};
-    section_info_form.querySelectorAll('input,select').forEach((input) => {
+    section_info_form.querySelectorAll('input.select').forEach((input) => {
         input.addEventListener('change', () => {
             section_info_form_data[input.name] = input.value;
             console.log(section_info_form_data);

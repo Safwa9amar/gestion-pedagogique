@@ -336,7 +336,7 @@ class Student extends MainModel
     // generate student matricule : 1-seriel number 2-session 3-year
     public function generateMatricule()
     {
-        $max_id = parent::getMaxId("stagiaires");
+        $max_id = parent::getMaxId("stagaires");
         $current_session = parent::getCurrentSession();
         //removce first 2 digits from current year
         $year = substr(date("Y"), 2);

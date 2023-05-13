@@ -4,7 +4,7 @@ session_start();
 include '../app/controllers/dataBaseController.php';
 $routes = [
     'users' => 'users',
-    'students' => 'students',
+    'stagaires' => 'stagaires',
 ];
 
 function globalApi($table, $id = null)

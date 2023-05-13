@@ -1,7 +1,9 @@
 <?php
 $formateur = new Formateur();
-$section = $formateur->getRowByParam('sections', 'manager', $_SESSION['user']['id']);
-print_r($_SESSION);
+// 
+$section = $formateur->getRowByParam($formateur->table, 'email', $_SESSION['user']['email']);
+$section = $formateur->getRowByParam('sections', 'manager', $section['id']);
+
 ?>
 <div style="
     display: flex;
@@ -14,7 +16,7 @@ print_r($_SESSION);
 
     <div class="card">
         <div class="card-header">
-            <h1>الاطلاع على جدول التوزيع الزمني</h1>
+             <!-- <h1>الاطلاع على جدول التوزيع الزمني</h1> -->
         </div>
         <div class="card-body">
             <div class='row'>

@@ -42,7 +42,7 @@ class LoginController extends DataBaseController
                         $user_id = $user['id'];
                         $_SESSION['user']['name'] = $user['name']; // set user session variable
                         $_SESSION['user']['id'] = $user['id']; // set user session variable
-                        $_SESSION['user']['original_id'] = $user['original_id']; // set user session variable
+                        // $_SESSION['user']['original_id'] = $user['original_id']; // set user session variable
                         $_SESSION['user']['email'] = $user['email']; // set user session variable
                         $_SESSION['is_logged'] = true;
                         $_SESSION['user']['role'] = $user['role'];

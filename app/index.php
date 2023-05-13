@@ -1,6 +1,6 @@
 <?php
 require '../vendor/autoload.php';
-
+echo password_hash('admin0000', PASSWORD_DEFAULT);
 session_start();
 include 'config/config.php';
 include 'helpers/urlFor.php';

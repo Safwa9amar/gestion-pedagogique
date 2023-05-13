@@ -1,6 +1,6 @@
 <?php
 $db = new DataBaseController();
-$stagaire = $db->getAllRows("students");
+$stagaire = $db->getAllRows("stagaires");
 $formateurs = $db->getAllRows("formateurs");
 $branches = $db->getAllRows("branches");
 $specialities = $db->getAllRows("specialities");

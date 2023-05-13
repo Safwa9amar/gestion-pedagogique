@@ -25,7 +25,7 @@ if (
 $db = new dataBaseController();
     $section = new Section();
 $selected_students = [];
-$students = $db->getAllRows('students');
+$students = $db->getAllRows('stagaires');
 foreach ($students as $student) {
     if (in_array($student['id'], $_POST['students'])) {
         array_push($selected_students, $student);

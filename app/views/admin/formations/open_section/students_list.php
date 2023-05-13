@@ -50,7 +50,7 @@ class="
         clearTimeout(timer);
         timer = setTimeout(function () {
             // send request
-            fetch('../api/?route=students&search=' + search.value)
+            fetch('../api/?route=stagaires&search=' + search.value)
                 .then(response => response.json())
                 .then(data => {
 

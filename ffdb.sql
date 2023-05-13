@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: May 10, 2023 at 05:31 PM
+-- Generation Time: May 14, 2023 at 01:38 AM
 -- Server version: 10.4.27-MariaDB
 -- PHP Version: 8.0.25
 
@@ -48,23 +48,7 @@ INSERT INTO `branches` (`id`, `code`, `Intitule_ar`, `Intitule_fr`) VALUES
 (7, 'THC', 'النسيج والألبسة', 'Piquage et montage de vêtements'),
 (8, 'MEE', 'مهن البيئة و المياه', 'Récupération et recyclage des déchets'),
 (10, 'AGR', 'الفلاحة', 'Eleveur de bétail'),
-(14, 'ART', 'الحرف التقليدية', 'Broderie'),
-(16, 'INTEL', 'intel', 'انتل'),
-(42, 's', 's', 's'),
-(43, 's', 's', 's'),
-(48, 'cc', 'cc', 'cc'),
-(49, 's', 's', 's'),
-(50, 'w', 'w', 'w'),
-(51, 'w', 'w', 'w'),
-(52, 'w', 'w', 'w'),
-(53, 'w', 'w', 'w'),
-(54, 'w', 'w', 'w'),
-(55, 'w', 'w', 'w'),
-(56, 'w', 'w', 'w'),
-(57, 'w', 'w', 'w'),
-(58, 'w', 'w', 'w'),
-(59, 'w', 'w', 'w'),
-(60, 'e', 'e', 'erer');
+(14, 'ART', 'الحرف التقليدية', 'Broderie');
 
 -- --------------------------------------------------------
 
@@ -83,7 +67,7 @@ CREATE TABLE `config` (
 --
 
 INSERT INTO `config` (`id`, `name`, `value`) VALUES
-(1, 'language', 'fr');
+(1, 'language', 'ar');
 
 -- --------------------------------------------------------
 
@@ -112,8 +96,10 @@ CREATE TABLE `formateurs` (
 --
 
 INSERT INTO `formateurs` (`id`, `CIN`, `nom`, `prenom`, `date_naissance`, `lieu_naissance`, `adresse`, `telephone`, `email`, `diplome`, `experience`, `specialite`, `created_at`) VALUES
-(20, '1242424234', 'hamza', 'hassani', '2023-05-08', 'sidi tidour', 'citty hassani slimane', '+213674020244', 'hassanih97@gmail.com', 'm2', '', 'bem', '2023-05-09 10:16:05'),
-(21, '1242424234', 'hamza', 'hassani', '2023-05-08', 'sidi tidour', 'citty hassani slimane', '+213674020244', 'astroboy@gmail.com', 'm2', '', 'bem', '2023-05-09 10:29:11');
+(23, 'Ea ex blanditiis exe', 'Vel est laborum iure', 'Fugiat adipisicing q', '1976-09-19', 'Et voluptate suscipi', 'Molestiae quasi mole', 'Officiis est incidun', 'gyragyri@mailinator.com', 'Et suscipit in qui r', 'Duis nostrum excepte', 'Laboriosam eveniet', '2023-05-13 23:20:21'),
+(25, 'Repellendus Et nihi', 'Commodo quia dolorem', 'Iste sed dolor adipi', '1999-09-09', 'Qui nulla optio qui', 'Adipisci et iure eve', 'Necessitatibus conse', 'wyvylowoli@mailinator.com', 'Beatae sunt reprehe', '', 'Odio distinctio Ill', '2023-05-13 23:20:43'),
+(26, 'Rerum dolore laborio', 'Pariatur Et laboris', 'Perferendis exercita', '2012-09-17', 'Eos sunt reprehender', 'Voluptatem ad dolor ', 'Incididunt aliquam u', 'remar@mailinator.com', 'Dolor do ea error ha', '', 'In officiis aperiam ', '2023-05-13 23:20:48'),
+(27, 'Corrupti autem aut ', 'Voluptatem deleniti ', 'In cupiditate amet ', '1988-04-01', 'Qui labore qui itaqu', 'At et nihil minim ve', 'Alias molestiae dolo', 'pinogago@mailinator.com', 'Dignissimos culpa i', '', 'Aspernatur eius aut ', '2023-05-13 23:20:53');
 
 -- --------------------------------------------------------
 
@@ -136,9 +122,10 @@ CREATE TABLE `formulaires` (
 --
 
 INSERT INTO `formulaires` (`id`, `name_ar`, `name_fr`, `description_ar`, `description_fr`, `filename_ar`, `filename_fr`) VALUES
-(38, 'qwe', 'e', 'qwe', 'qwe', '6441df29d7aca0.45200113.docx', '6441df29d7d040.60780062.docx'),
-(75, 'qwe', 'qwe', 'qw', 'qw', '6441e169d5b6a1.09229251.docx', '6441e169d61c00.99525350.docx'),
-(76, 'qwe', 'qwe', 'qw', 'qw', '6441e1f477fc45.33669608.docx', '6441e1f4781515.19433311.docx');
+(93, 'Skyler White', 'Cyrus Harmon', 'Et omnis odio numqua', 'Impedit sunt et pr', '', '64601c81156f91.65196077.doc'),
+(94, 'Skyler White', 'Cyrus Harmon', 'Et omnis odio numqua', 'Impedit sunt et pr', '', '64601cba385c78.38186226.doc'),
+(95, 'Skyler White', 'Cyrus Harmon', 'Et omnis odio numqua', 'Impedit sunt et pr', '', '64601d2c45b3a0.33300241.doc'),
+(97, 'Skyler White', 'Cyrus Harmon', 'Et omnis odio numqua', 'Impedit sunt et pr', '', '64601d441ba194.03384588.doc');
 
 -- --------------------------------------------------------
 
@@ -231,12 +218,12 @@ INSERT INTO `lang` (`id`, `key`, `arabic`, `french`) VALUES
 (71, 'add_formateur', 'اضافة استاذ مكون', 'Ajouter un formateur'),
 (72, 'list_formateur', 'قائمة المكونين', 'Liste des formateurs'),
 (73, 'formations', 'تنظيم وتسيير التكوين', 'Organisation et gestion de la formation'),
-(74, 'branch_et_specialite', 'الشعب والتخصصات', 'Filières et spécialités'),
+(74, 'branch_et_specialite', 'الشعب والتخصصات', 'branches et spécialités'),
 (75, 'impression_des_formulaires', 'طباعة النماذج', 'Impression des formulaires'),
 (76, 'show_section', 'قائمة الفروع', 'Liste des filières'),
 (77, 'techniques', 'تسيير الأجهزة التقنية والبيداغوجية', 'Gestion des équipements techniques et pédagogiques'),
 (78, 'manifestations', 'الإنضباط والتظاهرات الثقافية والرياضية', 'Discipline et manifestations culturelles et sportives'),
-(79, 'branches_et_specialities', 'الشعب والتخصصات', 'Filières et spécialités'),
+(79, 'branches_et_specialities', 'الشعب والتخصصات', 'branches et spécialités'),
 (80, 'branches', 'الشعب', 'Filières'),
 (81, 'branche', 'الشعبة', 'Filière'),
 (82, 'list_of_branches', 'قائمة الشعب', 'Liste des filières'),
@@ -291,7 +278,13 @@ INSERT INTO `lang` (`id`, `key`, `arabic`, `french`) VALUES
 (131, 'total_stagaire', 'إجمالي المتربصين', 'total stagiaire'),
 (132, 'total_formateur', 'اجمالي الاستاذة المكونين', 'Total formateurs'),
 (133, 'total_section', 'إجمالي الفروع', 'sections totales'),
-(134, 'total_specialite', 'مجموع التخصصات والفروع', 'Total specialities et branches');
+(134, 'total_specialite', 'مجموع التخصصات والفروع', 'Total specialities et branches'),
+(135, 'settings', 'اعدادات', 'settings'),
+(136, 'language_settings', 'اعدادات اللغة', 'Paramètres de langue'),
+(137, 'key', 'المفتاح', 'cle'),
+(138, 'french', 'الفرنسية', 'française'),
+(139, 'arabic', 'العربية', 'arabic'),
+(140, 'email_exists', 'البريد الالكتروني موجود بالفعل', 'le mail existe');
 
 -- --------------------------------------------------------
 
@@ -408,13 +401,20 @@ CREATE TABLE `specialities` (
   `branch_id` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
+--
+-- Dumping data for table `specialities`
+--
+
+INSERT INTO `specialities` (`id`, `code`, `name`, `level`, `certificate`, `duration`, `conditions`, `training_mode`, `created_at`, `updated_at`, `branch_id`) VALUES
+(2, 'INT0701', 'EXPLOITANT', '4', 'BREUVET DE TECHNICIEN', '24 MOIS', '2 ANNEE ', 'PRESENTIELLE', '2023-05-12 11:22:05', '2023-05-12 11:22:05', 1);
+
 -- --------------------------------------------------------
 
 --
--- Table structure for table `students`
+-- Table structure for table `stagaires`
 --
 
-CREATE TABLE `students` (
+CREATE TABLE `stagaires` (
   `id` int(11) NOT NULL,
   `first_name` varchar(255) NOT NULL,
   `last_name` varchar(255) NOT NULL,
@@ -440,6 +440,15 @@ CREATE TABLE `students` (
   `updated_at` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
+--
+-- Dumping data for table `stagaires`
+--
+
+INSERT INTO `stagaires` (`id`, `first_name`, `last_name`, `birthday`, `born_place`, `situation_familiale`, `matricule`, `password`, `gender`, `email`, `phone`, `address`, `study_level`, `study_year`, `study_last_etablissement_name`, `father_name`, `father_job`, `mother_name`, `mother_job`, `branch_id`, `speciality_id`, `created_at`, `updated_at`) VALUES
+(3, 'cc', 'cc', '2022-02-22', 'st', '', '0001-2-23', '$2y$10$motosFzevYtPQVWb6QKweuQh4MovXNxGtK/dsOJ32wqp/2ez71iAC', 'm', 'asas@gmail.com', '231231', 'st', 'BEP', '2020', 'st', 'st', 'cc', 'cc', 'cc', 16, 1, '2023-05-13 19:14:32', '2023-05-13 19:14:32'),
+(4, 'Audra', 'Romero', '2020-07-26', 'Eum dolore perspicia', 'veuf', '0001-2-23', '$2y$10$pPiwcdZXXlam1i2KwhNECeKYRWWlKVnWrZ5f31teL4N6RMgOfQZ4i', 'f', 'bakyja@mailinator.com', '+1 (236) 406-1316', 'Minus voluptas repre', 'Dolore quod quod sap', '2003', 'Kathleen Montgomery', 'Joy Floyd', 'Id odio esse tempora', 'Emi Mcconnell', 'Aut magni quidem lab', 16, 1, '2023-05-13 19:14:32', '2023-05-13 19:14:32'),
+(5, 'Tanya', 'Byrd', '1978-08-16', 'Inventore quae quia ', 'veuf', '0001-2-23', '$2y$10$dCL9D9XyA663LZ6.GVRNzuMDAoE4hBih8z/fVRTfjK2wpZ8SZFXBu', 'f', 'howil@mailinator.com', '+1 (675) 732-9838', 'Cum veritatis eaque ', 'In totam voluptatem', '2005', 'Joshua Wynn', 'Zelda Munoz', 'Rerum ducimus quisq', 'Haley Brewer', 'Itaque eiusmod optio', 16, 1, '2023-05-13 19:14:32', '2023-05-13 19:14:32');
+
 -- --------------------------------------------------------
 
 --
@@ -462,12 +471,7 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`id`, `name`, `first_name`, `tel`, `email`, `password`, `img`, `role`) VALUES
-(1, 'admin', '', '', 'admin@gmail.com', '$2y$10$LEKyEGFcZs04xWUdZr0SyeEh7l3zHIBRIf5HfiGZLlWcNcN6UeF6O', '', 'admin'),
-(14, 'hamza hassani', '', '+213674020244', 'hassanih97@gmail.com', '$2y$10$nuYAkjsOTI6qvHV9cjZlcu87ueLoMlf8ihg/irwBMFaDl4s8TPnWi', '', 'formateur'),
-(15, 'hamza hassani', '', '+213674020244', 'astroboy@gmail.com', '$2y$10$qClbs2/Hc.klfsvdPK0a2.eZkBSCllwYUtMJry4V1qpj39KOhvKxS', '', 'formateur'),
-(17, 'hamza hassani', '', '0674020244', 'hassanih97@gmail.com', '$2y$10$vmnk9JE4y9yRmt3o82z9j.DaQHEssl07824dU1RMoiKiVExCMGCWa', '', 'student'),
-(18, 'hamza hassani', '', '0674020244', 'hassanih97@gmail.com', '$2y$10$s5E7tWEFK/NLVQUaRH7/OeDJ5F4xSkkf/4oTwVAV72HylogZYPIBi', '', 'student'),
-(19, 'hamza hassani', '', '0674020244', 'hassanih97@gmail.com', '$2y$10$eO46Kg79jyEoZ4jXLFwxO.ww2m/qXj1S22gJYB1MpJOxU1cjEh5yG', '', 'student');
+(21, 'mastoura', 'hairach', '+213674020244', 'mastourahirecheatp2@gmail.com', '$2y$10$f9YTH.iNZf10edbEd0yEau4er9s3ASLeXjl5dlL/jybZvkMcK/kcS', '', 'admin');
 
 --
 -- Indexes for dumped tables
@@ -526,9 +530,9 @@ ALTER TABLE `specialities`
   ADD KEY `branches` (`branch_id`);
 
 --
--- Indexes for table `students`
+-- Indexes for table `stagaires`
 --
-ALTER TABLE `students`
+ALTER TABLE `stagaires`
   ADD PRIMARY KEY (`id`),
   ADD KEY `branch_id` (`branch_id`),
   ADD KEY `speciality_id` (`speciality_id`),
@@ -549,7 +553,7 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT for table `branches`
 --
 ALTER TABLE `branches`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=71;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=72;
 
 --
 -- AUTO_INCREMENT for table `config`
@@ -561,25 +565,25 @@ ALTER TABLE `config`
 -- AUTO_INCREMENT for table `formateurs`
 --
 ALTER TABLE `formateurs`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=23;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=28;
 
 --
 -- AUTO_INCREMENT for table `formulaires`
 --
 ALTER TABLE `formulaires`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=87;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=98;
 
 --
 -- AUTO_INCREMENT for table `lang`
 --
 ALTER TABLE `lang`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=135;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=141;
 
 --
 -- AUTO_INCREMENT for table `sections`
 --
 ALTER TABLE `sections`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT for table `sessions`
@@ -591,19 +595,19 @@ ALTER TABLE `sessions`
 -- AUTO_INCREMENT for table `specialities`
 --
 ALTER TABLE `specialities`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
--- AUTO_INCREMENT for table `students`
+-- AUTO_INCREMENT for table `stagaires`
 --
-ALTER TABLE `students`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+ALTER TABLE `stagaires`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=20;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=30;
 
 --
 -- Constraints for dumped tables
@@ -623,9 +627,9 @@ ALTER TABLE `specialities`
   ADD CONSTRAINT `branch_id` FOREIGN KEY (`branch_id`) REFERENCES `branches` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION;
 
 --
--- Constraints for table `students`
+-- Constraints for table `stagaires`
 --
-ALTER TABLE `students`
+ALTER TABLE `stagaires`
   ADD CONSTRAINT `branch__id` FOREIGN KEY (`branch_id`) REFERENCES `branches` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION,
   ADD CONSTRAINT `spec_id` FOREIGN KEY (`speciality_id`) REFERENCES `branches` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION;
 COMMIT;

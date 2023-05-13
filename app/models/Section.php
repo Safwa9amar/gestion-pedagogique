@@ -220,6 +220,7 @@ class Section extends MainModel
     // printSection
     public function printSection($id, $template)
     {
+
         $templateProcessor = new \PhpOffice\PhpWord\TemplateProcessor($template);
         // send data to template
         $data = parent::getRowById($this->table, $id);

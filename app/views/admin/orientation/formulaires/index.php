@@ -20,7 +20,7 @@ try {
     header('Location: ' . $_SERVER['HTTP_REFERER']);
 } catch (Exception $e) {
     //set error message and redirect to error page
-    $_SESSION['error'] = $lang['print_error']. $e->getMessage();
+    $_SESSION['error'] = $app_lang['print_error']. $e->getMessage();
     header('Location: ' . $_SERVER['HTTP_REFERER']);
 
 }

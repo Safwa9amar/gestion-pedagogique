@@ -14,6 +14,9 @@ $app_lang = $lang->app_lang;
 
 <div style="width:75vw;" class="content">
     <div class="row">
+        <img src="image.png" alt="">
+    </div>
+    <div class="row">
         <div class="col-lg-3 col-sm-6 col-12">
             <div class="dash-widget">
                 <div class="dash-widgetimg">

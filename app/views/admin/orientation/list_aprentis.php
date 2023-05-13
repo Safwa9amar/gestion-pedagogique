@@ -1,7 +1,7 @@
 <?php
 // list des branchulaires
 $db = new DataBaseController();
-$students = $db->getAllRows('students', 'id', 'ASC');
+$students = $db->getAllRows('stagaires', 'id', 'ASC');
 
 $table_head = '<tr>
                     <th>' . $app_lang['options'] . '</th>

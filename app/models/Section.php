@@ -3,7 +3,7 @@
 class Section extends MainModel
 {
     // table name
-    private $table = "sections";
+    public $table = "sections";
     // Numéro 
     private $id;
     // numero
@@ -57,8 +57,9 @@ class Section extends MainModel
     public function create()
     {
         $param = [
-            'date' => $this->date,
             'code' => $this->code,
+            'numero' => $this->numero,
+            'date' => $this->date,
             'speciality' => $this->speciality,
             'start' => $this->start,
             'end' => $this->end,
@@ -228,14 +229,24 @@ class Section extends MainModel
         }
         $templateProcessor->setValue('numero', $data['numero']);
         $templateProcessor->setValue('date', $data['date']);
-        $templateProcessor->setValue('speciality', $data['speciality']);
+
+        $templateProcessor->setValue(
+            'speciality',
+            parent::getRowById('specialities', $data['speciality'])['name']
+
+        );
+
         $templateProcessor->setValue('code', $data['code']);
         $templateProcessor->setValue('qualification', $data['qualification']);
         $templateProcessor->setValue('start', $data['start']);
         $templateProcessor->setValue('end', $data['end']);
         $templateProcessor->setValue('effective', $data['effectif']);
         $templateProcessor->setValue('girls', $data['girls']);
-        $templateProcessor->setValue('manager', $data['manager']);
+        $manager = parent::getRowById('formateurs', $data['manager']);
+        $templateProcessor->setValue(
+            'manager',
+            $manager['nom'] . ' ' . $manager['prenom']
+        );
         $templateProcessor->cloneRow('matricule', count($data['trainees']));
         $i = 1;
         foreach ($this->trainees as $trainee) {
@@ -262,10 +273,7 @@ class Section extends MainModel
         if (file_exists('section.docx')) {
             readfile('section.docx');
             unlink('section.docx');
-
         }
         exit;
-
     }
-
 }

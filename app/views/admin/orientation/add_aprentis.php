@@ -28,11 +28,13 @@ if (isset($_POST['add'])) {
     $checkEmail = $student->checkIfRowExistsByParam($student->table, 'email', $_POST['email']);
     if ($checkEmail) {
         $error = $app_lang['email_existe'];
+        $_SESSION['error'] = $error;
         echo "<script>window.history.back()</script>";
 
     } else {
         if ($student->create()) {
             $success = $app_lang['add_success'];
+            $_SESSION['success'] = $success;
             echo '<script>window.location.href = "?view=orientation&sub_view=list_aprentis"</script>';
         } else {
             $error = $app_lang['add_error'];

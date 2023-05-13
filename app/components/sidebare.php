@@ -94,7 +94,7 @@ $side_menu = array(
   <div id="sidebar-menu" class="sidebar-menu">
     <div class="">
       <a href="./" class="logo">
-        <img src="https://mir-s3-cdn-cf.behance.net/project_modules/max_1200/7a3ec529632909.55fc107b84b8c.png" alt="" />
+        <img src="<?php echo ICONS.'/MFEP.gif'?>" alt="" />
       </a>
 
 

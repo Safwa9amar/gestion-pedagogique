@@ -23,7 +23,7 @@ if (
     exit();
 }
 $db = new dataBaseController();
-$section = new Section();
+    $section = new Section();
 $selected_students = [];
 $students = $db->getAllRows('students');
 foreach ($students as $student) {

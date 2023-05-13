@@ -1,5 +1,9 @@
 <?php
 // include config file
+include '../app/config/config.php';
+include '../app/controllers/DataBaseController.php';
+include '../app/models/MainModel.php';
+include '../app/models/Section.php';
 include '../app/models/Branch.php';
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     // check if the submit button is clicked

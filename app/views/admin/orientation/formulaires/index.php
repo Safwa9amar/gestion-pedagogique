@@ -1,14 +1,4 @@
 <?php
-session_start();
-
-if ($_SESSION['lang'] == 'ar') {
-    include './lang/ar.php';
-} else {
-    include './lang/fr.php';
-}
-print_r($_SESSION['lang']);
-// ignore fatal errors
-
 $filename = $_GET['file'];
 $prin_name = $_GET['name'];
 

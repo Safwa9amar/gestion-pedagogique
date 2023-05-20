@@ -27,6 +27,11 @@ class DataBaseController
         }
 
     }
+    //getConnection
+    public function getConnection()
+    {
+        return $this->connection;
+    }
     // execute
     public function execute($query, $params = [])
     {

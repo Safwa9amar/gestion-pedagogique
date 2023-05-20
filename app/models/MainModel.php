@@ -7,7 +7,7 @@ class MainModel extends DataBaseController
     public function __construct()
     {
         parent::__construct();
-
+        $this->connection = $this->getConnection();
     }
     // create
     public function createRow($table, $params)
@@ -32,13 +32,12 @@ class MainModel extends DataBaseController
     // uodate
     public function updateRow($table, $id, $params)
     {
-        // ignore special characters and ' in params
+        // ignore special characters from params array
         $params = array_map(function ($value) {
             return mysqli_real_escape_string($this->connection, $value);
         }, $params);
         $query = "UPDATE $table SET ";
         foreach ($params as $key => $value) {
-
             $query .= $key . "='" . $value . "',";
         }
         $query = substr($query, 0, -1);

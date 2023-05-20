@@ -24,12 +24,9 @@ if (
 $db = new dataBaseController();
     $section = new Section();
 $selected_students = [];
-<<<<<<< HEAD
 $students = $db->getAllRows('students');
 $speciality = $db->getRowById('specialities', $_POST['speciality']);
-=======
 $students = $db->getAllRows('stagaires');
->>>>>>> 9011bfa69bb15fa1b898989237cfb8d45c18ac3c
 foreach ($students as $student) {
     if (in_array($student['id'], $_POST['students'])) {
         array_push($selected_students, $student);

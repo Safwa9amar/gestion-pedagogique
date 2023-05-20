@@ -258,12 +258,12 @@ class Student extends MainModel
     public function create()
     {
         $params = [
+            'matricule' => $this->generateMatricule(),
             'first_name' => $this->first_name,
             'last_name' => $this->last_name,
             'birthday' => $this->birthday,
             'born_place' => $this->born_place,
             'situation_familiale' => $this->situation_familiale,
-            'matricule' => $this->matricule,
             'password' => $this->password,
             'gender' => $this->gender,
             'email' => $this->email,

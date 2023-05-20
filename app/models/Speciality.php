@@ -1,5 +1,4 @@
 <?php
-include 'MainModel.php';
 // Speciality class model
 class Speciality extends MainModel {
     private $id;

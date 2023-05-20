@@ -31,35 +31,36 @@ if (isset($_GET['delete_branch'])) {
 }
 ?>
 
-<div role="tabpanel" id="branch-list" class="tab-pane fade <?php echo isset($_GET['edit_branch']) || isset($_GET['edit_speciality']) ? '' : 'active show' ?>">
+<div role="tabpanel" id="branch-list"
+    class="tab-pane fade <?php echo isset($_GET['edit_branch']) || isset($_GET['edit_speciality']) ? '' : 'active show' ?>">
     <?php include urlFor(COMPONENTS, 'list_table_head.php'); ?>
     <?php foreach ($branches as $branch) { ?>
-        <tr>
-            <td>
-                <?php echo $branch['id'] ?>
-            </td>
-            <td>
-                <?php echo $branch['code']; ?>
-            </td>
-            <td>
-                <?php echo $branch['Intitule_ar'] ?>
-            </td>
-            <td>
-                <?php echo $branch['Intitule_fr'] ?>
-            </td>
-            <td>
-                <a href="<?php echo '?view=formations&sub_view=branch_et_specialite&edit_branch=' . $branch['id']; ?>"
-                    class="btn">
-                    <i class="fa fa-edit"></i>
-                    <?php echo $app_lang['modifier'] ?>
-                </a>
-                <a href="<?php echo '?view=formations&sub_view=branch_et_specialite&delete_branch=' . $branch['id'] ?>"
-                    class="btn">
-                    <i class="fa fa-trash"></i>
-                    <?php echo $app_lang['delete'] ?>
-                </a>
-            </td>
-        </tr>
+    <tr>
+        <td>
+            <?php echo $branch['id'] ?>
+        </td>
+        <td>
+            <?php echo $branch['code']; ?>
+        </td>
+        <td>
+            <?php echo $branch['Intitule_ar'] ?>
+        </td>
+        <td>
+            <?php echo $branch['Intitule_fr'] ?>
+        </td>
+        <td>
+            <a href="<?php echo '?view=formations&sub_view=branch_et_specialite&edit_branch=' . $branch['id']; ?>"
+                class="btn">
+                <i class="fa fa-edit"></i>
+                <?php echo $app_lang['modifier'] ?>
+            </a>
+            <a href="<?php echo '?view=formations&sub_view=branch_et_specialite&delete_branch=' . $branch['id'] ?>"
+                class="btn">
+                <i class="fa fa-trash"></i>
+                <?php echo $app_lang['delete'] ?>
+            </a>
+        </td>
+    </tr>
     <?php } ?>
     <?php include urlFor(COMPONENTS, 'list_table_footer.php'); ?>
 </div>

@@ -89,7 +89,7 @@ if (isset($_GET['delete_student'])) {
                 <?php echo $student['email'] ?>
             </td>
             <td>
-                <textarea><?php echo $student['study_level'] . '\n' . $student['study_year'] ?></textarea>
+                <?php echo $student['study_level'] . '\n' . $student['study_year'] ?>
             </td>
             <td>
                 <?php echo $student['study_last_etablissement_name'] ?>

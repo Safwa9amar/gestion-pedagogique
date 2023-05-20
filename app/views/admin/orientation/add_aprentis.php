@@ -215,14 +215,14 @@ if (isset($_POST['update'])) {
                     <?php echo $app_lang['niveau_d_etude'] ?>
                 </label>
                 <input value="<?php echo $isUpdate ? $update_result['study_level'] : ''; ?>" type="text"
-                    list="niveau_d_etude_list" class="form-control" name="study_level" id="niveau_d_etude">
-                <datalist id="niveau_d_etude_list">
+                    class="form-control" name="study_level" id="niveau_d_etude">
+                <!-- <datalist id="niveau_d_etude_list">
                     <?php foreach ($niveau_scolar as $niveau) { ?>
                         <option value="<?php echo $niveau['niveau'] ?>">
                             <?php echo $niveau['niveau'] ?>
                         </option>
                     <?php } ?>
-                </datalist>
+                </datalist> -->
             </div>
             <div class="form-group col-sm-12  col-lg-4">
                 <label for="annee_scolaire">
@@ -374,7 +374,13 @@ if (isset($_POST['update'])) {
                 <div class="form-group col-12">
                     <button name="<?php echo $isUpdate ? 'update' : 'add' ?>" type="submit"
                         class="btn btn-primary btn-block">
-                        <?php echo $app_lang['ajouter'] ?>
+                        <?php
+                        if ($isUpdate) {
+                            echo $app_lang['modifier'];
+                        } else {
+                            echo $app_lang['ajouter'];
+                        }
+                        ?>
                     </button>
                 </div>
             </div>

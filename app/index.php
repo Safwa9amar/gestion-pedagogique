@@ -12,6 +12,7 @@ include 'controllers/languagesController.php';
 include 'models/MainModel.php';
 include 'models/Student.php';
 include 'models/Formateur.php';
+include 'models/Speciality.php';
 // url for config
 // check if user is logged in
 if (!isset($_SESSION['user'])) {

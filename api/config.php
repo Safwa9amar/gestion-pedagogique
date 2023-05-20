@@ -5,6 +5,7 @@ include '../app/controllers/dataBaseController.php';
 $routes = [
     'users' => 'users',
     'students' => 'students',
+    'specialities' => 'specialities',
 ];
 
 function globalApi($table, $id = null)
@@ -25,16 +26,16 @@ function globalApi($table, $id = null)
             $search = $_GET['search'];
             // filter the result
             $result = array_filter($result, function ($item) use ($search) {
-                // check if the search query is in the item name and suk
-                if (strpos(strtolower($item['matricule']), strtolower($search)) !== false) {
-                    return true;
-                } else if (strpos($item['id'], $search) !== false) {
+                // return false if key is not found
+               if (strpos($item['id'], $search) !== false) {
                     return true;
                 } else {
                     return false;
                 }
             });
         }
+        // convert the result to array
+        $result = array_values($result);
         // return the result as json
         echo json_encode($result);
     }

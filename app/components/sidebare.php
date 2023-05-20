@@ -50,12 +50,12 @@ $side_menu = array(
         'link' =>
         '?view=formations&sub_view=branch_et_specialite'
       ),
-      'impression_des_formulaires' => array(
-        'title' =>
-        $app_lang['impression_des_formulaires'],
-        'link' =>
-        '?view=formations&sub_view=impression_des_formulaires'
-      ),
+      // 'impression_des_formulaires' => array(
+      //   'title' =>
+      //   $app_lang['impression_des_formulaires'],
+      //   'link' =>
+      //   '?view=formations&sub_view=impression_des_formulaires'
+      // ),
       // open section
       'open_section' => array(
         'title' =>
@@ -72,21 +72,21 @@ $side_menu = array(
 
     )
   ),
-  'settings' =>
-  array(
-    'title' => $app_lang['settings'],
-    'icon' => 'product.svg',
-    'link' => '#',
-    'sub_menu' => array(
-      
-      'settings' => array(
-        'title' =>
-        $app_lang['settings'],
-        'link' =>
-        '?view=settings&sub_view=settings'
-      ),
-    )
-  ),
+  // 'settings' =>
+  // array(
+  //   'title' => $app_lang['settings'],
+  //   'icon' => 'product.svg',
+  //   'link' => '#',
+  //   'sub_menu' => array(
+
+  //     'settings' => array(
+  //       'title' =>
+  //       $app_lang['settings'],
+  //       'link' =>
+  //       '?view=settings&sub_view=settings'
+  //     ),
+  //   )
+  // ),
 
 ); ?>
 
@@ -94,7 +94,7 @@ $side_menu = array(
   <div id="sidebar-menu" class="sidebar-menu">
     <div class="">
       <a href="./" class="logo">
-        <img src="<?php echo ICONS.'/MFEP.gif'?>" alt="" />
+        <img src="<?php echo ICONS . '/MFEP.gif' ?>" alt="" />
       </a>
 
 
@@ -140,6 +140,14 @@ $side_menu = array(
         }
       }
       ?>
+      <li>
+        <a href="../app/components/guide.xlsm" download>
+
+          <span>
+            <?php echo $app_lang['guide_nom'] ?>
+          </span>
+        </a>
+      </li>
     </ul>
 
   </div>

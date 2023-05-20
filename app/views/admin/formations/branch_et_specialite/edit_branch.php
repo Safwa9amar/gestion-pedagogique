@@ -16,6 +16,13 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         }
         echo "<script>window.location.href = '?view=formations&sub_view=branch_et_specialite';</script>";
     }
+    else {
+        if (isset($_SESSION['lang']) && $_SESSION['lang'] == 'ar') {
+            $_SESSION['error'] = 'حدث خطأ ما';
+        } else {
+            $_SESSION['error'] = 'Une erreur s\'est produite';
+        }
+    }
 }
 ?>
 

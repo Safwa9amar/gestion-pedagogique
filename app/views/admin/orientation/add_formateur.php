@@ -6,6 +6,7 @@ if (isset($_POST['add'])) {
     $formateur->setCin($_POST['cin']);
     $formateur->setNom($_POST['nom']);
     $formateur->setPrenom($_POST['prenom']);
+    $formateur->setGrade($_POST['grade']);
     $formateur->setDateNaissance($_POST['date_naissance']);
     $formateur->setLieuNaissance($_POST['lieu_naissance']);
     $formateur->setAdresse($_POST['adresse']);
@@ -54,6 +55,7 @@ if (isset($_POST['update'])) {
     $formateur->setCin($_POST['cin']);
     $formateur->setNom($_POST['nom']);
     $formateur->setPrenom($_POST['prenom']);
+    $formateur->setGrade($_POST['grade']);
     $formateur->setDateNaissance($_POST['date_naissance']);
     $formateur->setLieuNaissance($_POST['lieu_naissance']);
     $formateur->setAdresse($_POST['adresse']);
@@ -162,11 +164,38 @@ if (isset($_POST['update'])) {
                 <input value="<?php echo $isUpdate ? $update_result['experience'] : ''; ?>" type="text"
                     name="experience" id="experience" class="form-control" aria-describedby="helpId">
             </div>
+
+            <div class="form-group col-lg-4 col-md-6 col-sm-12 ">
+                <label for="grade">
+                    <?php echo $app_lang['grade']; ?>
+                </label>
+                <select value="<?php echo $isUpdate ? $update_result['grade'] : ''; ?>" type="text" name="grade"
+                    id="grade" class="form-control" aria-describedby="helpId">
+                    <option value="">
+                        choisissez un grade
+                    </option>
+                    <option value="PFP">
+                        <?php echo $app_lang['PFP']; ?>
+                    </option>
+                    <option value="PSFEP2">
+                        <?php echo $app_lang['PSFEP2']; ?>
+                    </option>
+                    <option value="PSFEP1">
+                        <?php echo $app_lang['PSFEP1']; ?>
+                    </option>
+                </select>
+            </div>
             <!-- add button -->
             <div class="row">
                 <div class="form-group col-lg-4 col-md-6 col-sm-12 ">
                     <button type="submit" name="<?php echo $isUpdate ? 'update' : 'add'; ?>" class="btn btn-primary">
-                        <?php echo $app_lang['ajouter']; ?>
+                        <?php
+                        if ($isUpdate) {
+                            echo $app_lang['modifier'];
+                        } else {
+                            echo $app_lang['ajouter'];
+                        }
+                        ?>
                     </button>
                 </div>
             </div>

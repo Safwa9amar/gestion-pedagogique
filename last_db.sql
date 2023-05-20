@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: May 10, 2023 at 05:31 PM
+-- Generation Time: May 20, 2023 at 02:24 AM
 -- Server version: 10.4.27-MariaDB
 -- PHP Version: 8.0.25
 
@@ -39,32 +39,8 @@ CREATE TABLE `branches` (
 --
 
 INSERT INTO `branches` (`id`, `code`, `Intitule_ar`, `Intitule_fr`) VALUES
-(1, 'INT', 'إعلام آلي - الرقمنة - الاتصالات', 'Exploitant informatique'),
-(2, 'TAG', 'تقنيات الادارة و التسيير', 'Comptabilité'),
-(3, 'MEE', 'مهن البيئة و المياه', 'Entretien des réseaux d’alimentation en eau potable'),
-(4, 'ART', 'الحرف التقليدية', 'Réalisation des ouvrages de broderie à la main'),
-(5, 'MEE', 'مهن البيئة و المياه', 'Récupération et recyclage des déchets'),
-(6, 'MEE', 'مهن البيئة و المياه', 'Récupération et recyclage des déchets'),
-(7, 'THC', 'النسيج والألبسة', 'Piquage et montage de vêtements'),
-(8, 'MEE', 'مهن البيئة و المياه', 'Récupération et recyclage des déchets'),
-(10, 'AGR', 'الفلاحة', 'Eleveur de bétail'),
-(14, 'ART', 'الحرف التقليدية', 'Broderie'),
-(16, 'INTEL', 'intel', 'انتل'),
-(42, 's', 's', 's'),
-(43, 's', 's', 's'),
-(48, 'cc', 'cc', 'cc'),
-(49, 's', 's', 's'),
-(50, 'w', 'w', 'w'),
-(51, 'w', 'w', 'w'),
-(52, 'w', 'w', 'w'),
-(53, 'w', 'w', 'w'),
-(54, 'w', 'w', 'w'),
-(55, 'w', 'w', 'w'),
-(56, 'w', 'w', 'w'),
-(57, 'w', 'w', 'w'),
-(58, 'w', 'w', 'w'),
-(59, 'w', 'w', 'w'),
-(60, 'e', 'e', 'erer');
+(1, 'INT', 'إعلام آلي - الرقمنة - الاتصالات', 'Exploitant informatiques'),
+(76, 'AGR', 'Agronomie', 'الفلاحة');
 
 -- --------------------------------------------------------
 
@@ -83,7 +59,7 @@ CREATE TABLE `config` (
 --
 
 INSERT INTO `config` (`id`, `name`, `value`) VALUES
-(1, 'language', 'fr');
+(1, 'language', 'ar');
 
 -- --------------------------------------------------------
 
@@ -96,6 +72,7 @@ CREATE TABLE `formateurs` (
   `CIN` varchar(255) NOT NULL,
   `nom` varchar(30) NOT NULL,
   `prenom` varchar(30) NOT NULL,
+  `grade` varchar(255) NOT NULL,
   `date_naissance` date NOT NULL,
   `lieu_naissance` varchar(30) NOT NULL,
   `adresse` varchar(30) NOT NULL,
@@ -111,9 +88,8 @@ CREATE TABLE `formateurs` (
 -- Dumping data for table `formateurs`
 --
 
-INSERT INTO `formateurs` (`id`, `CIN`, `nom`, `prenom`, `date_naissance`, `lieu_naissance`, `adresse`, `telephone`, `email`, `diplome`, `experience`, `specialite`, `created_at`) VALUES
-(20, '1242424234', 'hamza', 'hassani', '2023-05-08', 'sidi tidour', 'citty hassani slimane', '+213674020244', 'hassanih97@gmail.com', 'm2', '', 'bem', '2023-05-09 10:16:05'),
-(21, '1242424234', 'hamza', 'hassani', '2023-05-08', 'sidi tidour', 'citty hassani slimane', '+213674020244', 'astroboy@gmail.com', 'm2', '', 'bem', '2023-05-09 10:29:11');
+INSERT INTO `formateurs` (`id`, `CIN`, `nom`, `prenom`, `grade`, `date_naissance`, `lieu_naissance`, `adresse`, `telephone`, `email`, `diplome`, `experience`, `specialite`, `created_at`) VALUES
+(31, '0912345678', 'Velit omnis similiqu', 'Quis veniam dolorum', 'PSFEP2', '2015-03-11', 'Obcaecati earum expl', 'In laboris quia sit', 'Officia vitae esse ', 'kubov@mailinator.com', 'Inventore sit perfer', '', 'Et porro voluptatibu', '2023-05-19 23:32:52');
 
 -- --------------------------------------------------------
 
@@ -136,7 +112,6 @@ CREATE TABLE `formulaires` (
 --
 
 INSERT INTO `formulaires` (`id`, `name_ar`, `name_fr`, `description_ar`, `description_fr`, `filename_ar`, `filename_fr`) VALUES
-(38, 'qwe', 'e', 'qwe', 'qwe', '6441df29d7aca0.45200113.docx', '6441df29d7d040.60780062.docx'),
 (75, 'qwe', 'qwe', 'qw', 'qw', '6441e169d5b6a1.09229251.docx', '6441e169d61c00.99525350.docx'),
 (76, 'qwe', 'qwe', 'qw', 'qw', '6441e1f477fc45.33669608.docx', '6441e1f4781515.19433311.docx');
 
@@ -291,7 +266,18 @@ INSERT INTO `lang` (`id`, `key`, `arabic`, `french`) VALUES
 (131, 'total_stagaire', 'إجمالي المتربصين', 'total stagiaire'),
 (132, 'total_formateur', 'اجمالي الاستاذة المكونين', 'Total formateurs'),
 (133, 'total_section', 'إجمالي الفروع', 'sections totales'),
-(134, 'total_specialite', 'مجموع التخصصات والفروع', 'Total specialities et branches');
+(134, 'total_specialite', 'مجموع التخصصات والفروع', 'Total specialities et branches'),
+(135, 'settings', 'اعدادات', 'settings'),
+(136, 'language_settings', 'اعدادات اللغة', 'Paramètres de langue'),
+(137, 'key', 'المفتاح', 'cle'),
+(138, 'french', 'الفرنسية', 'française'),
+(139, 'arabic', 'العربية', 'arabic'),
+(140, 'email_exists', 'البريد الالكتروني موجود بالفعل', 'le mail existe'),
+(141, 'grade', 'الرتبة', 'grade'),
+(142, 'PFP', 'أ.ت.م', 'PFP'),
+(143, 'PSFEP1', 'أ.م.ت.ت.م1', 'PSFEP1'),
+(144, 'PSFEP2', 'أ.م.ت.ت.م2', 'PSFEP2'),
+(145, 'guide_nom', 'تحميل الدليل التفاعلي لمدونة الشعب', 'Guide interactif de branches');
 
 -- --------------------------------------------------------
 
@@ -368,6 +354,13 @@ CREATE TABLE `sections` (
   `manager` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
+--
+-- Dumping data for table `sections`
+--
+
+INSERT INTO `sections` (`id`, `date`, `code`, `numero`, `speciality`, `start`, `end`, `qualification`, `effectif`, `trainees`, `girls`, `boys`, `manager`) VALUES
+(21, '2018-10-16', 'AGR1901', '322297000270', 8, '2019-01-26', '2020-01-26', 'الطور الابتدائي', 1, '5', 0, 0, 31);
+
 -- --------------------------------------------------------
 
 --
@@ -408,6 +401,15 @@ CREATE TABLE `specialities` (
   `branch_id` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
+--
+-- Dumping data for table `specialities`
+--
+
+INSERT INTO `specialities` (`id`, `code`, `name`, `level`, `certificate`, `duration`, `conditions`, `training_mode`, `created_at`, `updated_at`, `branch_id`) VALUES
+(1, 'INT1201', 'تصليح الهواتف الثابثة والنقالة', '2', 'ش ك م', '12 شهر', 'الرابعة متوسط', 'تت', '2023-05-19 20:59:48', '2023-05-19 23:00:23', 1),
+(8, 'AGR1901', 'المحاصيل تحت الدفينة', '2', 'ت.ك.م', '12 شهر', 'الطور الابتدائي', 'تكوين حضوري', '2023-05-19 23:46:40', '2023-05-19 23:46:40', 76),
+(9, 'AGR0701', 'زراعة الخضروات', '2', 'ش ك م', '12 شهر', 'الطور الابتدائي', 'تكوين حضوري', '2023-05-19 23:47:42', '2023-05-19 23:47:42', 76);
+
 -- --------------------------------------------------------
 
 --
@@ -440,6 +442,13 @@ CREATE TABLE `students` (
   `updated_at` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
+--
+-- Dumping data for table `students`
+--
+
+INSERT INTO `students` (`id`, `first_name`, `last_name`, `birthday`, `born_place`, `situation_familiale`, `matricule`, `password`, `gender`, `email`, `phone`, `address`, `study_level`, `study_year`, `study_last_etablissement_name`, `father_name`, `father_job`, `mother_name`, `mother_job`, `branch_id`, `speciality_id`, `created_at`, `updated_at`) VALUES
+(5, 'Damian', 'Prince', '2001-11-04', 'Sunt est id aliquam ', '', '0001-2-23', '$2y$10$PrQofLpUime1Yf/yX.7ZDupXbbse6jNgUQw6Don7xNo40LCBu8PFe', 'f', 'xegi@mailinator.com', '+1 (193) 588-7881', 'Ea sunt tempora repu', 'Facilis consequatur', '2013', 'Dara Byrd', 'Tallulah Santos', 'Est sint deserunt id', 'Kevin Andrews', 'Nam illo debitis per', 76, 8, '2023-05-20 01:30:43', '2023-05-20 01:30:43');
+
 -- --------------------------------------------------------
 
 --
@@ -462,12 +471,9 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`id`, `name`, `first_name`, `tel`, `email`, `password`, `img`, `role`) VALUES
-(1, 'admin', '', '', 'admin@gmail.com', '$2y$10$LEKyEGFcZs04xWUdZr0SyeEh7l3zHIBRIf5HfiGZLlWcNcN6UeF6O', '', 'admin'),
-(14, 'hamza hassani', '', '+213674020244', 'hassanih97@gmail.com', '$2y$10$nuYAkjsOTI6qvHV9cjZlcu87ueLoMlf8ihg/irwBMFaDl4s8TPnWi', '', 'formateur'),
-(15, 'hamza hassani', '', '+213674020244', 'astroboy@gmail.com', '$2y$10$qClbs2/Hc.klfsvdPK0a2.eZkBSCllwYUtMJry4V1qpj39KOhvKxS', '', 'formateur'),
-(17, 'hamza hassani', '', '0674020244', 'hassanih97@gmail.com', '$2y$10$vmnk9JE4y9yRmt3o82z9j.DaQHEssl07824dU1RMoiKiVExCMGCWa', '', 'student'),
-(18, 'hamza hassani', '', '0674020244', 'hassanih97@gmail.com', '$2y$10$s5E7tWEFK/NLVQUaRH7/OeDJ5F4xSkkf/4oTwVAV72HylogZYPIBi', '', 'student'),
-(19, 'hamza hassani', '', '0674020244', 'hassanih97@gmail.com', '$2y$10$eO46Kg79jyEoZ4jXLFwxO.ww2m/qXj1S22gJYB1MpJOxU1cjEh5yG', '', 'student');
+(21, 'hamza hassani', '', '+213674020244', 'hassanih97@gmail.com', '$2y$10$RZjMe76tb9R4vdOI6wX/B.Gx3UZmUX/cCBsCdLDvb5Lx5hAzX2EiO', '', 'admin'),
+(39, 'Damian Prince', '', '+1 (193) 588-7881', 'xegi@mailinator.com', '$2y$10$PrQofLpUime1Yf/yX.7ZDupXbbse6jNgUQw6Don7xNo40LCBu8PFe', '', 'student'),
+(41, 'Velit omnis similiqu Quis veniam dolorum', '', 'Officia vitae esse ', 'kubov@mailinator.com', '$2y$10$bC1stpFwOmWoU3Yb4NDal.M.lYZLoWV701KxdYbHmOG/P9A1GeU8S', '', 'formateur');
 
 --
 -- Indexes for dumped tables
@@ -549,7 +555,7 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT for table `branches`
 --
 ALTER TABLE `branches`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=71;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=77;
 
 --
 -- AUTO_INCREMENT for table `config`
@@ -561,7 +567,7 @@ ALTER TABLE `config`
 -- AUTO_INCREMENT for table `formateurs`
 --
 ALTER TABLE `formateurs`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=23;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=32;
 
 --
 -- AUTO_INCREMENT for table `formulaires`
@@ -573,13 +579,13 @@ ALTER TABLE `formulaires`
 -- AUTO_INCREMENT for table `lang`
 --
 ALTER TABLE `lang`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=135;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=146;
 
 --
 -- AUTO_INCREMENT for table `sections`
 --
 ALTER TABLE `sections`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=22;
 
 --
 -- AUTO_INCREMENT for table `sessions`
@@ -591,19 +597,19 @@ ALTER TABLE `sessions`
 -- AUTO_INCREMENT for table `specialities`
 --
 ALTER TABLE `specialities`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 
 --
 -- AUTO_INCREMENT for table `students`
 --
 ALTER TABLE `students`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=20;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=42;
 
 --
 -- Constraints for dumped tables
@@ -627,7 +633,7 @@ ALTER TABLE `specialities`
 --
 ALTER TABLE `students`
   ADD CONSTRAINT `branch__id` FOREIGN KEY (`branch_id`) REFERENCES `branches` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION,
-  ADD CONSTRAINT `spec_id` FOREIGN KEY (`speciality_id`) REFERENCES `branches` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION;
+  ADD CONSTRAINT `spec_id` FOREIGN KEY (`speciality_id`) REFERENCES `specialities` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

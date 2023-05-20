@@ -30,9 +30,11 @@ class DataBaseController
     // execute
     public function execute($query, $params = [])
     {
+
         $db = new DataBaseController();
         $stmt = $db->connection->prepare($query);
-        if (!$stmt) return ;
+        if (!$stmt)
+            return;
         $stmt->execute();
         return $stmt;
     }
@@ -97,6 +99,9 @@ class DataBaseController
     // delete row
     public function deleteRow($table, $id)
     {
+        // disable foreign key check
+        $query = "SET FOREIGN_KEY_CHECKS = 0";
+        $result = mysqli_query($this->connection, $query);
         $query = "DELETE FROM $table WHERE id = '$id'";
         $result = mysqli_query($this->connection, $query);
         return $result;
@@ -104,12 +109,17 @@ class DataBaseController
     // update row
     public function updateRow($table, $id, $params)
     {
+        // ignore special characters and ' in params
+        $params = array_map(function ($value) {
+            return mysqli_real_escape_string($this->connection, $value);
+        }, $params);
         $query = "UPDATE $table SET ";
         $query .= join(", ", array_map(function ($key, $value) {
             return "$key = '$value'";
         }, array_keys($params), array_values($params)));
         $query .= " WHERE id = '$id'";
         $result = mysqli_query($this->connection, $query);
+        print_r($result);
         return $result;
     }
     // update row where one param

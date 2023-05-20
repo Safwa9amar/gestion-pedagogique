@@ -1,5 +1,4 @@
 <?php
-include urlFor(MODELS, 'Speciality.php');
 $speciality_id = $_GET['edit_speciality'];
 $speciality = DataBaseController::getRowByIdStatic('specialities', $speciality_id);
 

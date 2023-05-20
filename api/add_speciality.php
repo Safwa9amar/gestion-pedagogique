@@ -1,6 +1,7 @@
 <?php
 include_once '../app/config/config.php';
 include '../app/controllers/dataBaseController.php';
+include '../app/models/MainModel.php';
 include '../app/models/Speciality.php';
 
 // request method is POST

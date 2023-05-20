@@ -32,8 +32,12 @@ if (isset($_GET['delete_section'])) {
             <td>
                 <?php
                 $db = new DataBaseController();
-                echo $db->getRowById('specialities', $section['speciality'])['name']
-                    ?>
+                try {
+                    echo $db->getRowById('specialities', $section['speciality'])['name'];
+                } catch (\Throwable $th) {
+                    echo '/';
+                }
+                ?>
             </td>
             <td>
                 <?php echo $section['start'] ?>

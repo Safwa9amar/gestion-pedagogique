@@ -34,7 +34,8 @@ class Section extends MainModel
     public function __construct()
     {
         parent::__construct();
-        if (!isset($this->id)) return;
+        if (!isset($this->id))
+            return;
         $max_id = parent::getMaxId($this->table);
         $data = parent::getRowById($this->table, $this->id ?? $max_id);
         // set all properties
@@ -44,7 +45,7 @@ class Section extends MainModel
         $this->code = $data['code'];
         $this->qualification = $data['qualification'];
         $this->start = $data['start'];
-        $this->end = $data['end'];
+        $this->setEnd();
         $this->effective = $data['effectif'];
         $this->manager = $data['manager'];
         // $data['trainees'] to string
@@ -141,8 +142,16 @@ class Section extends MainModel
     {
         $this->start = $start;
     }
-    public function setEnd($end)
+    public function setEnd()
     {
+        $speciality = parent::getRowById('specialities', $this->speciality);
+        $duration = $speciality['duration'];
+        // get number from speciality.duration string
+        $duration = preg_replace('/[^0-9]/', '', $duration);
+        // add duration to debut date with month as unit
+        $date = new DateTime($this->start);
+        $date->add(new DateInterval('P' . $duration . 'M'));
+        $end = $date->format('Y-m-d');
         $this->end = $end;
     }
     public function setEffective($effective)
@@ -243,10 +252,16 @@ class Section extends MainModel
         $templateProcessor->setValue('effective', $data['effectif']);
         $templateProcessor->setValue('girls', $data['girls']);
         $manager = parent::getRowById('formateurs', $data['manager']);
-        $templateProcessor->setValue(
-            'manager',
-            $manager['nom'] . ' ' . $manager['prenom']
-        );
+        // check if manager exists
+        if (!$manager) {
+            $templateProcessor->setValue('manager', 'Pas de responsable');
+        } else {
+
+            $templateProcessor->setValue(
+                'manager',
+                $manager['nom'] . ' ' . $manager['prenom']
+            );
+        }
         $templateProcessor->cloneRow('matricule', count($data['trainees']));
         $i = 1;
         foreach ($this->trainees as $trainee) {

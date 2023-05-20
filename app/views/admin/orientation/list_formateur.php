@@ -2,6 +2,7 @@
 $table_head = '<tr>
                 <th>' . $app_lang['numero_seriel'] . '</th>
                 <th>' . $app_lang['prenom'] . ' ' . $app_lang['and'] . ' ' . $app_lang['nom'] . '</th>
+                <th>' . $app_lang['grade'] . '</th>
                 <th>' . $app_lang['date_de_naissance'] . '</th>
                 <th>' . $app_lang['lieu_de_naissance'] . '</th>
                 <th>' . $app_lang['adresse'] . '</th>
@@ -20,9 +21,7 @@ if (isset($_GET['delete_formateur'])) {
     echo "<script>window.location.href = 'index.php?view=orientation&sub_view=list_formateur';</script>";
 }
 ?>
-<div 
-style="padding:1rem; width:80vw;"
-class="card">
+<div style="padding:1rem; width:80vw;" class="card">
     <?php include urlFor(COMPONENTS, 'list_table_head.php') ?>
     <?php foreach ($formateurs as $formateur) { ?>
         <tr>
@@ -31,6 +30,9 @@ class="card">
             </td>
             <td>
                 <?php echo $formateur['nom'] . ' ' . $formateur['prenom'] ?>
+            </td>
+            <td>
+                <?php echo $formateur['grade'] ?>
             </td>
             <td>
                 <?php echo $formateur['date_naissance'] ?>

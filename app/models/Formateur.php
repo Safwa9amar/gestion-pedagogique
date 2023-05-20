@@ -11,6 +11,7 @@ class Formateur extends MainModel
     private $nom;
     // Prénom 
     private $prenom;
+    private $grade;
     // Date de naissance 
     private $date_naissance;
     // Lieu de naissance 
@@ -42,6 +43,7 @@ class Formateur extends MainModel
         // set all properties
         $this->cin = $data['CIN'];
         $this->nom = $data['nom'];
+        $this->grade = $data['grade'];
         $this->prenom = $data['prenom'];
         $this->date_naissance = $data['date_naissance'];
         $this->lieu_naissance = $data['lieu_naissance'];
@@ -62,6 +64,7 @@ class Formateur extends MainModel
             'CIN' => $this->cin,
             'nom' => $this->nom,
             'prenom' => $this->prenom,
+            'grade' => $this->grade,
             'date_naissance' => $this->date_naissance,
             'lieu_naissance' => $this->lieu_naissance,
             'adresse' => $this->adresse,
@@ -86,6 +89,7 @@ class Formateur extends MainModel
             'CIN' => $this->cin,
             'nom' => $this->nom,
             'prenom' => $this->prenom,
+            'grade' => $this->grade,
             'date_naissance' => $this->date_naissance,
             'lieu_naissance' => $this->lieu_naissance,
             'adresse' => $this->adresse,
@@ -109,9 +113,9 @@ class Formateur extends MainModel
     {
         parent::deleteRowByParam('users', 'email', $this->email);
         return parent::deleteRow($this->table, $this->id) ? true : false;
-        
+
     }
-    
+
     // getById
     public function getById()
     {
@@ -134,6 +138,11 @@ class Formateur extends MainModel
     {
         return $this->prenom;
     }
+    public function getGrade()
+    {
+        return $this->grade;
+    }
+
     public function getDateNaissance()
     {
         return $this->date_naissance;
@@ -184,6 +193,10 @@ class Formateur extends MainModel
     public function setPrenom($prenom)
     {
         $this->prenom = $prenom;
+    }
+    public function setGrade($grade)
+    {
+        $this->grade = $grade;
     }
     public function setDateNaissance($date_naissance)
     {
@@ -246,4 +259,5 @@ class Formateur extends MainModel
     {
         return parent::getAllRows($this->table);
     }
+    
 }

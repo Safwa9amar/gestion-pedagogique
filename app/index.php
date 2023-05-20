@@ -1,6 +1,5 @@
 <?php
 require '../vendor/autoload.php';
-
 session_start();
 include 'config/config.php';
 include 'helpers/urlFor.php';
@@ -28,7 +27,7 @@ if (isset($_GET['logout'])) {
 $lang = new LanguageController();
 $app_lang = $lang->app_lang;
 
-if (isset($_GET['lang'])) {
+    if (isset($_GET['lang'])) {
     $lang->setLang($_GET['lang']);
     $lang->updateLang();
     $lang->__construct();

@@ -19,11 +19,13 @@ function uploadFile($file, $folder)
             if ($file_size <= 2097152) {
                 $file_name_new = uniqid('', true) . '.' . $file_ext;
                 $file_destination = $folder . $file_name_new;
-                if (move_uploaded_file($file_tmp, $file_destination)) {
+                try {
+                    move_uploaded_file($file_tmp, $file_destination);
                     return $file_name_new;
-                } else {
+                } catch (Exception $e) {
                     return false;
                 }
+                
             } else {
                 return false;
             }

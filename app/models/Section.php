@@ -229,12 +229,13 @@ class Section extends MainModel
     // printSection
     public function printSection($id, $template)
     {
+
         $templateProcessor = new \PhpOffice\PhpWord\TemplateProcessor($template);
         // send data to template
         $data = parent::getRowById($this->table, $id);
         $data['trainees'] = explode(',', $data['trainees']);
         foreach ($data['trainees'] as $train) {
-            $this->trainees[] = parent::getRowById('students', $train);
+            $this->trainees[] = parent::getRowById('stagaires', $train);
         }
         $templateProcessor->setValue('numero', $data['numero']);
         $templateProcessor->setValue('date', $data['date']);
